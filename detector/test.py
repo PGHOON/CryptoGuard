@@ -1,8 +1,13 @@
 import psutil
 import time
 
-interval = 1
-
 while True:
-    cpu_percent = psutil.cpu_percent(interval=interval)
-    print(f"현재 CPU 사용량: {cpu_percent}%")
+    cpu_cores = psutil.cpu_percent(interval=1, percpu=True)
+    total_cpu_percent = sum(cpu_cores) / len(cpu_cores)  # 전체 CPU 사용량 계산
+
+    for core, usage in enumerate(cpu_cores):
+        print(f"CPU 코어 {core}: {usage}%")
+
+    print(f"전체 CPU 사용량: {total_cpu_percent}%")
+
+    # time.sleep(1)
