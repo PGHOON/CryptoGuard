@@ -79,6 +79,7 @@ int main()
         return 1;
 	}
 
+	printf("[PID]  [UID]  [COMMAND]        [PATH]                           [MESSAGE]\n");
 	while (true) {
 		err = perf_buffer__poll(pb, 100 /* timeout, ms */);
 		// Ctrl-C gives -EINTR
