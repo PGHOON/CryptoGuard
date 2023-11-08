@@ -18,7 +18,14 @@ void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
 
-	printf("%-6d %-6d %-16s %-32s %s\n", m->pid, m->uid, m->command, m->path, m->message);
+	printf("%-6d %-6d %-16s %-32s %s", m->pid, m->uid, m->command, m->path, m->message);
+	for (int i = 0; i < MAX_ARGS; i++) {
+        if (m->argcv[i][0] != '\0') {
+            printf(" %s", m->argcv[i]);
+        }
+		printf(" %s", m->argcv[i]);
+    }
+    printf("\n");
 }
 
 void lost_event(void *ctx, int cpu, long long unsigned int data_sz)

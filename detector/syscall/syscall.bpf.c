@@ -111,7 +111,9 @@ struct my_syscalls_enter_execve {
 
 SEC("tp/syscalls/sys_enter_execve")
 int tp_sys_enter_execve(struct my_syscalls_enter_execve *ctx) {
-   struct data_t data = {}; 
+   struct data_t data = {};
+   const char *argp = NULL;
+   long ret;
 
    bpf_probe_read_kernel(&data.message, sizeof(data.message), tp_msg);
    bpf_printk("%s: ctx->filename_ptr: %s", tp_msg, ctx->filename_ptr);
@@ -122,7 +124,17 @@ int tp_sys_enter_execve(struct my_syscalls_enter_execve *ctx) {
    bpf_get_current_comm(&data.command, sizeof(data.command));
    bpf_probe_read_user(&data.path, sizeof(data.path), ctx->filename_ptr);  
 
-   bpf_perf_event_output(ctx, &output, BPF_F_CURRENT_CPU, &data, sizeof(data));   
+   bpf_perf_event_output(ctx, &output, BPF_F_CURRENT_CPU, &data, sizeof(data));
+
+   #pragma unroll
+   for (int i = 0; i < MAX_ARGS; i++) {
+       ret = bpf_probe_read_user(&argp, sizeof(argp), (const char *const *)ctx->argv_ptr + i);
+       if (ret == 0 && argp) {
+           bpf_probe_read_user_str(&data.argcv[i], ARG_LEN, argp);
+       } else {
+           break;
+       }
+   }  
    return 0;
 }
 
