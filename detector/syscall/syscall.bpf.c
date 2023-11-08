@@ -4,12 +4,12 @@
 #include <bpf/bpf_core_read.h>
 #include "syscall.h"
 
-const char kprobe_sys_msg[32] = "sys_execve";
-const char kprobe_msg[32] = "do_execve";
-const char fentry_msg[32] = "fentry_execve";
-const char tp_msg[32] = "tp_execve";
-const char tp_btf_exec_msg[32] = "tp_btf_exec";
-const char raw_tp_exec_msg[32] = "raw_tp_exec";
+const char kprobe_sys_msg[16] = "sys_execve";
+const char kprobe_msg[16] = "do_execve";
+const char fentry_msg[16] = "fentry_execve";
+const char tp_msg[16] = "tp_execve";
+const char tp_btf_exec_msg[16] = "tp_btf_exec";
+const char raw_tp_exec_msg[16] = "raw_tp_exec";
 struct {
     __uint(type, BPF_MAP_TYPE_PERF_EVENT_ARRAY);
     __uint(key_size, sizeof(u32));

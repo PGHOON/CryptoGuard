@@ -1,8 +1,8 @@
 struct data_t {
    int pid;
    int uid;
-   char command[32];
-   char message[32];
+   char command[16];
+   char message[12];
    char path[32];
 };
 
