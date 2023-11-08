@@ -41,7 +41,7 @@ int main()
 		.kernel_log_size = sizeof(log_buf),
 		.kernel_log_level = 1,
 	);
-
+	
 	skel = syscall_bpf__open_opts(&opts);
 	if (!skel) {
 		printf("Failed to open BPF object\n");
@@ -49,13 +49,14 @@ int main()
 	}
 
 	err = syscall_bpf__load(skel);
-	// Print the verifier log
+	/* VERIFIER log
 	for (int i=0; i < sizeof(log_buf); i++) {
 		if (log_buf[i] == 0 && log_buf[i+1] == 0) {
 			break;
 		}
 		printf("%c", log_buf[i]);
 	}
+	*/
 	
 	if (err) {
 		printf("Failed to load BPF object\n");
