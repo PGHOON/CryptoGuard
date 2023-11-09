@@ -18,14 +18,7 @@ void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
 
-	printf("%-6d %-6d %-16s %-32s %s", m->pid, m->uid, m->command, m->path, m->message);
-	for (int i = 0; i < MAX_ARGS; i++) {
-        if (m->argcv[i][0] != '\0') {
-            printf(" %s", m->argcv[i]);
-        }
-		printf(" %s", m->argcv[i]);
-    }
-    printf("\n");
+	printf("%-6d %-6d %-16s %-32s %s\n", m->pid, m->uid, m->command, m->path, m->message);
 }
 
 void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
@@ -56,6 +49,7 @@ int main()
 	}
 
 	err = syscall_bpf__load(skel);
+
 	/* VERIFIER log
 	for (int i=0; i < sizeof(log_buf); i++) {
 		if (log_buf[i] == 0 && log_buf[i+1] == 0) {
@@ -89,8 +83,7 @@ int main()
 
 	printf("[PID]  [UID]  [COMMAND]        [PATH]                           [MESSAGE]\n");
 	while (true) {
-		err = perf_buffer__poll(pb, 100 /* timeout, ms */);
-		// Ctrl-C gives -EINTR
+		err = perf_buffer__poll(pb, 100);
 		if (err == -EINTR) {
 			err = 0;
 			break;
