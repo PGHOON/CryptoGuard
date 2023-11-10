@@ -36,6 +36,17 @@ int trace_##syscall_name(struct kernel_tracepoints *ctx) { \
     return 0; \
 }
 
+/*
+Disabled:
+sys_enter_write
+sys_enter_rt_sigprocmask
+sys_enter_epoll_pwait
+sys_enter_ppoll
+sys_enter_rt_sigaction
+sys_enter_getpid
+sys_enter_read
+*/
+
 SEC("tp/syscalls/sys_enter_llistxattr")
 TRACE_SYSCALL(sys_enter_llistxattr, "tp_llistxattr")
 SEC("tp/syscalls/sys_enter_setgroups")
@@ -218,8 +229,10 @@ SEC("tp/syscalls/sys_enter_msgget")
 TRACE_SYSCALL(sys_enter_msgget, "tp_msgget")
 SEC("tp/syscalls/sys_enter_symlinkat")
 TRACE_SYSCALL(sys_enter_symlinkat, "tp_symlinkat")
+/*
 SEC("tp/syscalls/sys_enter_epoll_pwait")
 TRACE_SYSCALL(sys_enter_epoll_pwait, "tp_pwait")
+*/
 SEC("tp/syscalls/sys_enter_msgrcv")
 TRACE_SYSCALL(sys_enter_msgrcv, "tp_msgrcv")
 SEC("tp/syscalls/sys_enter_sync")
@@ -342,8 +355,10 @@ SEC("tp/syscalls/sys_enter_unlinkat")
 TRACE_SYSCALL(sys_enter_unlinkat, "tp_unlinkat")
 SEC("tp/syscalls/sys_enter_finit_module")
 TRACE_SYSCALL(sys_enter_finit_module, "tp_module")
+/*
 SEC("tp/syscalls/sys_enter_ppoll")
 TRACE_SYSCALL(sys_enter_ppoll, "tp_ppoll")
+*/
 SEC("tp/syscalls/sys_enter_unshare")
 TRACE_SYSCALL(sys_enter_unshare, "tp_unshare")
 SEC("tp/syscalls/sys_enter_flistxattr")
@@ -386,8 +401,10 @@ SEC("tp/syscalls/sys_enter_fsopen")
 TRACE_SYSCALL(sys_enter_fsopen, "tp_fsopen")
 SEC("tp/syscalls/sys_enter_process_mrelease")
 TRACE_SYSCALL(sys_enter_process_mrelease, "tp_mrelease")
+/*
 SEC("tp/syscalls/sys_enter_write")
 TRACE_SYSCALL(sys_enter_write, "tp_write")
+*/
 SEC("tp/syscalls/sys_enter_fspick")
 TRACE_SYSCALL(sys_enter_fspick, "tp_fspick")
 SEC("tp/syscalls/sys_enter_process_vm_readv")
@@ -428,8 +445,10 @@ SEC("tp/syscalls/sys_enter_quotactl_fd")
 TRACE_SYSCALL(sys_enter_quotactl_fd, "tp_fd")
 SEC("tp/syscalls/sys_enter_getdents64")
 TRACE_SYSCALL(sys_enter_getdents64, "tp_getdents64")
+/*
 SEC("tp/syscalls/sys_enter_read")
 TRACE_SYSCALL(sys_enter_read, "tp_read")
+*/
 SEC("tp/syscalls/sys_enter_getegid")
 TRACE_SYSCALL(sys_enter_getegid, "tp_getegid")
 SEC("tp/syscalls/sys_enter_readahead")
@@ -458,8 +477,10 @@ SEC("tp/syscalls/sys_enter_getpgid")
 TRACE_SYSCALL(sys_enter_getpgid, "tp_getpgid")
 SEC("tp/syscalls/sys_enter_recvmsg")
 TRACE_SYSCALL(sys_enter_recvmsg, "tp_recvmsg")
+/*
 SEC("tp/syscalls/sys_enter_getpid")
 TRACE_SYSCALL(sys_enter_getpid, "tp_getpid")
+*/
 SEC("tp/syscalls/sys_enter_remap_file_pages")
 TRACE_SYSCALL(sys_enter_remap_file_pages, "tp_pages")
 SEC("tp/syscalls/sys_enter_getppid")
@@ -488,16 +509,20 @@ SEC("tp/syscalls/sys_enter_rseq")
 TRACE_SYSCALL(sys_enter_rseq, "tp_rseq")
 SEC("tp/syscalls/sys_enter_getrusage")
 TRACE_SYSCALL(sys_enter_getrusage, "tp_getrusage")
+/*
 SEC("tp/syscalls/sys_enter_rt_sigaction")
 TRACE_SYSCALL(sys_enter_rt_sigaction, "tp_sigaction")
+*/
 SEC("tp/syscalls/sys_enter_getsid")
 TRACE_SYSCALL(sys_enter_getsid, "tp_getsid")
 SEC("tp/syscalls/sys_enter_rt_sigpending")
 TRACE_SYSCALL(sys_enter_rt_sigpending, "tp_sigpending")
 SEC("tp/syscalls/sys_enter_getsockname")
 TRACE_SYSCALL(sys_enter_getsockname, "tp_getsockname")
+/*
 SEC("tp/syscalls/sys_enter_rt_sigprocmask")
 TRACE_SYSCALL(sys_enter_rt_sigprocmask, "tp_sigprocmask")
+*/
 SEC("tp/syscalls/sys_enter_getsockopt")
 TRACE_SYSCALL(sys_enter_getsockopt, "tp_getsockopt")
 SEC("tp/syscalls/sys_enter_rt_sigqueueinfo")
