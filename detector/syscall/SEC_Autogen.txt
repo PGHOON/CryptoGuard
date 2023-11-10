@@ -1,41 +1,3 @@
-#include "vmlinux.h"
-#include <bpf/bpf_helpers.h>
-#include <bpf/bpf_tracing.h>
-#include <bpf/bpf_core_read.h>
-#include "syscall.h"
-struct {
-    __uint(type, BPF_MAP_TYPE_PERF_EVENT_ARRAY);
-    __uint(key_size, sizeof(u32));
-    __uint(value_size, sizeof(u32));
-} output SEC(".maps");
-
-struct kernel_tracepoints {
-	unsigned short common_type;
-    unsigned char common_flags;
-    unsigned char common_preempt_count;
-    int common_pid;
-
-	long syscall_nr;
-	void *filename_ptr;
-	long argv_ptr;
-	long envp_ptr;
-};
-
-//로직 매크로
-//syscall_name: 모니터링 할 커널 트레이스 포인트
-//tp_name: message에 출력할 메세지(tp_내용으로 통일)
-#define TRACE_SYSCALL(syscall_name, tp_name) \
-int trace_##syscall_name(struct kernel_tracepoints *ctx) { \
-    struct data_t data = {}; \
-    bpf_probe_read_kernel(&data.message, sizeof(data.message), tp_name); \
-    bpf_printk(#syscall_name); \
-    data.pid = bpf_get_current_pid_tgid() >> 32; \
-    data.uid = bpf_get_current_uid_gid() & 0xFFFFFFFF; \
-    bpf_get_current_comm(&data.command, sizeof(data.command)); \
-    bpf_perf_event_output(ctx, &output, BPF_F_CURRENT_CPU, &data, sizeof(data)); \
-    return 0; \
-}
-
 SEC("tp/syscalls/sys_enter_llistxattr")
 TRACE_SYSCALL(sys_enter_llistxattr, "tp_llistxattr")
 SEC("tp/syscalls/sys_enter_lremovexattr")
@@ -98,10 +60,8 @@ SEC("tp/syscalls/sys_enter_epoll_create1")
 TRACE_SYSCALL(sys_enter_epoll_create1, "tp_create1")
 SEC("tp/syscalls/sys_enter_epoll_ctl")
 TRACE_SYSCALL(sys_enter_epoll_ctl, "tp_ctl")
-/*
 SEC("tp/syscalls/sys_enter_epoll_pwait")
 TRACE_SYSCALL(sys_enter_epoll_pwait, "tp_pwait")
-*/
 SEC("tp/syscalls/sys_enter_epoll_pwait2")
 TRACE_SYSCALL(sys_enter_epoll_pwait2, "tp_pwait2")
 SEC("tp/syscalls/sys_enter_eventfd2")
@@ -192,10 +152,8 @@ SEC("tp/syscalls/sys_enter_getpeername")
 TRACE_SYSCALL(sys_enter_getpeername, "tp_getpeername")
 SEC("tp/syscalls/sys_enter_getpgid")
 TRACE_SYSCALL(sys_enter_getpgid, "tp_getpgid")
-/*
 SEC("tp/syscalls/sys_enter_getpid")
 TRACE_SYSCALL(sys_enter_getpid, "tp_getpid")
-*/
 SEC("tp/syscalls/sys_enter_getppid")
 TRACE_SYSCALL(sys_enter_getppid, "tp_getppid")
 SEC("tp/syscalls/sys_enter_getpriority")
@@ -280,5 +238,3 @@ SEC("tp/syscalls/sys_enter_listen")
 TRACE_SYSCALL(sys_enter_listen, "tp_listen")
 SEC("tp/syscalls/sys_enter_listxattr")
 TRACE_SYSCALL(sys_enter_listxattr, "tp_listxattr")
-
-char LICENSE[] SEC("license") = "Dual BSD/GPL";
