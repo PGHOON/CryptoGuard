@@ -1,4 +1,5 @@
 /sys/kernel/debug/tracing/events/syscalls:
+total 598 syscall tracepoints
 
                                    sys_enter_llistxattr              sys_enter_setgroups         sys_exit_fstatfs                  sys_exit_process_vm_writev
 	                               sys_enter_lremovexattr            sys_enter_sethostname       sys_exit_fsync                    sys_exit_pselect6
