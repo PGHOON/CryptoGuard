@@ -21,6 +21,60 @@ struct kernel_tracepoints {
 	long envp_ptr;
 };
 
+
+//로직 매크로
+//syscall_name: 모니터링 할 커널 트레이스 포인트
+//tp_name: message에 출력할 메세지(tp_내용으로 통일)
+#define TRACE_SYSCALL(syscall_name, tp_name) \
+int trace_##syscall_name(struct kernel_tracepoints *ctx) { \
+    struct data_t data = {}; \
+    bpf_probe_read_kernel(&data.message, sizeof(data.message), tp_name); \
+    bpf_printk(#syscall_name); \
+    data.pid = bpf_get_current_pid_tgid() >> 32; \
+    data.uid = bpf_get_current_uid_gid() & 0xFFFFFFFF; \
+    bpf_get_current_comm(&data.command, sizeof(data.command)); \
+    bpf_perf_event_output(ctx, &output, BPF_F_CURRENT_CPU, &data, sizeof(data)); \
+    return 0; \
+}
+
+SEC("tp/syscalls/sys_enter_execve")
+TRACE_SYSCALL(sys_enter_execve, "tp_execve")
+
+
+SEC("tp/syscalls/sys_enter_accept")
+int sys_enter_accept(struct kernel_tracepoints *ctx) {
+   struct data_t data = {};
+
+   bpf_probe_read_kernel(&data.message, sizeof(data.message), "tp_accept");
+   bpf_printk("sys_enter_accept");
+
+   data.pid = bpf_get_current_pid_tgid() >> 32;
+   data.uid = bpf_get_current_uid_gid() & 0xFFFFFFFF;
+
+   bpf_get_current_comm(&data.command, sizeof(data.command));
+
+   bpf_perf_event_output(ctx, &output, BPF_F_CURRENT_CPU, &data, sizeof(data));
+
+   return 0;
+}
+
+SEC("tp/syscalls/sys_enter_accept4")
+int sys_enter_accept4(struct kernel_tracepoints *ctx) {
+   struct data_t data = {};
+
+   bpf_probe_read_kernel(&data.message, sizeof(data.message), "tp_accept4");
+   bpf_printk("sys_enter_accept4");
+
+   data.pid = bpf_get_current_pid_tgid() >> 32;
+   data.uid = bpf_get_current_uid_gid() & 0xFFFFFFFF;
+
+   bpf_get_current_comm(&data.command, sizeof(data.command));
+
+   bpf_perf_event_output(ctx, &output, BPF_F_CURRENT_CPU, &data, sizeof(data));
+
+   return 0;
+}
+
 SEC("tp/syscalls/sys_enter_llistxattr")
 int sys_enter_llistxattr(struct kernel_tracepoints *ctx) {
    struct data_t data = {};
@@ -55,6 +109,8 @@ int sys_enter_kill(struct kernel_tracepoints *ctx) {
    return 0;
 }
 
+//포함시 lima-guestagent를 지속적으로 출력
+/*
 SEC("tp/syscalls/sys_enter_execve")
 int sys_enter_execve(struct kernel_tracepoints *ctx) {
    struct data_t data = {};
@@ -71,6 +127,7 @@ int sys_enter_execve(struct kernel_tracepoints *ctx) {
 
    return 0;
 }
+*/
 
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
