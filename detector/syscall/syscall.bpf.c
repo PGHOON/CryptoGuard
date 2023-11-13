@@ -45,6 +45,7 @@ sys_enter_ppoll
 sys_enter_rt_sigaction
 sys_enter_getpid
 sys_enter_read
+sys_enter_futex
 */
 
 SEC("tp/syscalls/sys_enter_llistxattr")
@@ -423,8 +424,10 @@ SEC("tp/syscalls/sys_enter_ftruncate")
 TRACE_SYSCALL(sys_enter_ftruncate, "tp_ftruncate")
 SEC("tp/syscalls/sys_enter_ptrace")
 TRACE_SYSCALL(sys_enter_ptrace, "tp_ptrace")
+/*
 SEC("tp/syscalls/sys_enter_futex")
 TRACE_SYSCALL(sys_enter_futex, "tp_futex")
+*/
 SEC("tp/syscalls/sys_enter_pwrite64")
 TRACE_SYSCALL(sys_enter_pwrite64, "tp_pwrite64")
 SEC("tp/syscalls/sys_enter_get_mempolicy")

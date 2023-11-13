@@ -13,5 +13,5 @@ TRACE_SYSCALL({syscall}, "{tp_name}")\n"""
             output_file.write(formatted_string)
 
 input_file_path = 'enter_text.txt'
-output_file_path = 'SEC_enter_Autogen.txt'
+output_file_path = 'SEC_exit_Autogen.txt'
 save_formatted_code_with_trace_syscall(input_file_path, output_file_path)
