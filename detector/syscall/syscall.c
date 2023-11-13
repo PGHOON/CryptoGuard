@@ -6,6 +6,8 @@
 #include "syscall.h"
 #include "syscall.skel.h"
 
+static FILE *csv_file;
+
 static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va_list args)
 {
 	if (level >= LIBBPF_DEBUG)
@@ -17,8 +19,10 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
-	if(m->uid == 501)
+	if(m->uid == 501){
+		fprintf(csv_file, "%s ", m->message);
 		printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->message);
+	}
 }
 
 void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
@@ -49,15 +53,6 @@ int main()
 	}
 
 	err = syscall_bpf__load(skel);
-
-	/* VERIFIER log
-	for (int i=0; i < sizeof(log_buf); i++) {
-		if (log_buf[i] == 0 && log_buf[i+1] == 0) {
-			break;
-		}
-		printf("%c", log_buf[i]);
-	}
-	*/
 	
 	if (err) {
 		printf("Failed to load BPF object\n");
@@ -81,6 +76,12 @@ int main()
         return 1;
 	}
 
+	csv_file = fopen("DATASET.csv", "w");
+    if (!csv_file) {
+        perror("Error opening file");
+        return 1;
+    }
+
 	printf("[PID]  [UID]  [COMMAND]        [MESSAGE]\n");
 	while (true) {
 		err = perf_buffer__poll(pb, 100);
@@ -94,6 +95,7 @@ int main()
 		}
 	}
 
+	fclose(csv_file);
 	perf_buffer__free(pb);
 	syscall_bpf__destroy(skel);
 	return -err;
