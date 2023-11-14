@@ -20,7 +20,7 @@ void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
 	if(m->uid == 501){
-		fprintf(csv_file, "%s ", m->message);
+		fprintf(csv_file, "%s\n", m->message);
 		printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->message);
 	}
 }
@@ -81,6 +81,7 @@ int main()
         perror("Error opening file");
         return 1;
     }
+	fprintf(csv_file, "SYSTEM_CALL\n");
 
 	printf("[PID]  [UID]  [COMMAND]        [MESSAGE]\n");
 	while (true) {
