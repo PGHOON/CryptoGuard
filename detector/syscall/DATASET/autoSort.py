@@ -3,7 +3,7 @@ import sys
 
 def main():
     syscall_csv = 'syscall.csv'
-    target_csv = 'target.csv'
+    target_csv = 'DATASET.csv'
 
     headers_df = pd.read_csv(syscall_csv)
     system_call_headers = headers_df.columns.tolist()[1:]
