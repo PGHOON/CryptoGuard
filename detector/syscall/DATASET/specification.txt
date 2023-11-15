@@ -1,15 +1,9 @@
 DATASET Collection Method,
 
-Normal00_userO : user active state
-Normal00_userX : inactive state without running any process
-Normal01_userO : ./game(obstacle game) playing game
-Normal01_userX : ./game(obstacle game) just execute game
-Normal02_userO : ./game(maze game) playing game
-Normal02_userX : ./game(maze game) just execute game
+Benign
+
 
 /////////////
-
-Malware01_cpuminer_userO : ./game(obstacle game) playing malware game
-Malware01_cpuminer_userX : ./game(obstacle game) just execute malware game
-
-Malware02_xmrig_userX : ./xmrig just execute Xmrig miner
+Malware
+00001 : cpuminer-based malware(obstacle game) without user input
+00002 : cpuminer-based malware(obstacle game) with user control
