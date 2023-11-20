@@ -22,3 +22,5 @@ Malware
 00003 : ./xmrig just execute Xmrig miner
 00004 : ./xmrig type xmrig command
 00005 : ./minerd just execute cpuminer miner t=1
+00006 : ./xmrig monitoring in the middle of execution
+00007 : ./xmrig pause and resume at 10 seconds interval, monitoring in the middle of execution
