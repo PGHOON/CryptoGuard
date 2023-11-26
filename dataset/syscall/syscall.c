@@ -20,7 +20,7 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
-	if(m->uid == 1000){
+	if(m->uid != 0){
 	fprintf(csv_file, "%s\n", m->message);
 	printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->message);
 	}
