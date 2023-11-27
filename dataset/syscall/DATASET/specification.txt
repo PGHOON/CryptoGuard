@@ -130,4 +130,11 @@ Malware
 00030 : 3a6b7ee9503a90c5c5735c2867586b0dfc38e1e148d7f6d902f13e298362fc45_unpacked_6ed86acdada24aa3b902a69cb9467b91e934a241776f78049348c90c16ea1496.bin
 	"sysrv"
 	//Сканирование..., zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
+	
+00031 : 3d2e8bd1f02486b305d01fcc54091c84500409c454a048dad650f1605df6fd9a.bin
+	"xmrig"
+	//immediately start mining, no internet disruption during run, no resurrection after kill.
 
+00032 : 3ea2df69b99f78fc0768ecf8190293f2b277b6de6e7b8e668f40b8a4910df17c.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
