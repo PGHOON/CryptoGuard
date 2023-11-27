@@ -2,7 +2,7 @@ import pandas as pd
 import sys
 
 def main():
-    syscall_csv = 'syscall.csv'
+    syscall_csv = './DATASET/syscall.csv'
     target_csv = 'DATASET.csv'
 
     headers_df = pd.read_csv(syscall_csv)

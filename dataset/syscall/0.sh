@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 /DATASET/autoSort.py 0
+python3 ./DATASET/autoSort.py 0
