@@ -52,7 +52,7 @@ Malware
 	
 00011 : 163ef20a1c69bcb29f436ebf1e8a8a2b6ab6887fc48bfacd843a77b7144948b9.bin
 	"sysrv"
-	//Сканирование..., zombie malware.
+	//Сканирование..., zombie malware, didn't check if it runs after a reboot.
 
 00012 : 163ef20a1c69bcb29f436ebf1e8a8a2b6ab6887fc48bfacd843a77b7144948b9_unpacked_ba518af59262e878d31c71020ebfcbd50dfadf1e7c47a340003c80284681794b.bin
 	"sysrv"
@@ -60,4 +60,10 @@ Malware
 
 00013 : 18a877f11f2ba2d7ae05ee8644a5cbd687282df4010dd0cb7680aec2e00d98ce.bin
 	"sysrv"
-	//no internet disruption during run, pid disturbance.
+	//pid disturbance, not running after reboot.
+
+00014 : 18a877f11f2ba2d7ae05ee8644a5cbd687282df4010dd0cb7680aec2e00d98ce_unpacked_f640c11ebbedb71a03e94fbdde8d8944206f15a9641bcdad1f13ba8dfe507a2c.bin
+	"sysrv"
+	//pid disturbance
+	
+
