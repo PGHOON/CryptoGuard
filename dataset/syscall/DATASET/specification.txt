@@ -109,7 +109,15 @@ Malware
 	
 00025 : 296d3d3ed5feeda7f6d99adc9da2566cb6c460194066acccac941a7b09bedfc3.bin
 	"sysrv"
-	//pid disturbance
+	//pid disturbance, did not revive after reboot.
+	
+00026 : 296d3d3ed5feeda7f6d99adc9da2566cb6c460194066acccac941a7b09bedfc3_unpacked_d93afaecbf25e4fa25d345afa408f1fa6e329bfbcd566b662916328fdd155fd4.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+
+00027 : 2fa5832e8b73a6f585f937f396d7b430d35d23ea607d10649a40989068c6c923.bin
+	"sysrv"
+	//Сканирование..., zombie malware,
 
 
 	
