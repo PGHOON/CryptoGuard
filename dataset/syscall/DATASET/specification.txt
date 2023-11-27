@@ -12,3 +12,5 @@ Malware
 //Crypto malware runs automatically when rebooting, zombie malware.
 00002 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb_unpacked_f8472088ed5f5d2ce5be330dac60aec446173fc84a565ff7831e6b07060c55c0.bin
 //resurrected only once after kill.
+00003 : 0b6037eadb03feed5eb6c67ef4a68e80c64cf619670c6e3187ba076a017c4c85.bin
+
