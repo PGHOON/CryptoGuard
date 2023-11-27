@@ -54,6 +54,10 @@ Malware
 	"sysrv"
 	//Сканирование..., zombie malware.
 
+00012 : 163ef20a1c69bcb29f436ebf1e8a8a2b6ab6887fc48bfacd843a77b7144948b9_unpacked_ba518af59262e878d31c71020ebfcbd50dfadf1e7c47a340003c80284681794b.bin
+	"sysrv"
+	//Сканирование..., zombie malware.
+
 
 	
 
