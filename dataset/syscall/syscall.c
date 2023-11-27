@@ -5,6 +5,7 @@
 #include <bpf/libbpf.h>
 #include "syscall.h"
 #include "syscall.skel.h"
+#include "time.h"
 
 static FILE *csv_file;
 
@@ -32,6 +33,9 @@ void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
 
 int main()
 {
+	time_t start_time, current_time = 0;
+	time(&start_time);
+
     struct syscall_bpf *skel;
 	// struct bpf_object_open_opts *o;
     int err;
@@ -92,6 +96,11 @@ int main()
 		}
 		if (err < 0) {
 			printf("Error polling perf buffer: %d\n", err);
+			break;
+		}
+		time(&current_time);
+		if (difftime(current_time, start_time) >= 5){
+			err = 0;
 			break;
 		}
 	}
