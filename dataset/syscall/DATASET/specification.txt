@@ -73,7 +73,10 @@ Malware
 00016 : 1a63f7a38c7f5a5cc770246c958aea70ea95bcafac1bad92d2d524f4fe24c1ca_unpacked_62ba664a95b3ca00e7a71fe6aa4a979c5a50f16a62cf72830af13bec7edb1da4.bin
 	"sysrv"
 	//running tcp scan worker exists, seems fine after kill.
-	
+
+00017 : 1b2909eda77c14b559b06a68a794868989b7e38c9ca185a3180c63e5c38622b5.bin
+	"sysrv"
+	//
 
 
 	
