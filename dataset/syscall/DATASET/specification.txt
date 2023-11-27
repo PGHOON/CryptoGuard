@@ -324,4 +324,10 @@ Malware
 	//zombie malware, crypto malware runs automatically when rebooting.
 
 00079 : 945cd9e2d05e525417d48c3b18f8b2b953f468ff2f26ddeec4f456812719922a_unpacked_8c8ee06a38dab2265181923e4bd4d71017030a0bc8e2ad5e3a0da64a789af14f.bin
+	"sysrv"
+	//zombie malware, crypto malware runs automatically when rebooting.
+	
+00080 : 95f9faf8a4ef5db4a3e60d577287e18fbbe32336a3b98c256da601645b674c74.bin
+	"sysrv"
+	//zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
 	
