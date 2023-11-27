@@ -126,4 +126,8 @@ Malware
 00029 : 3a6b7ee9503a90c5c5735c2867586b0dfc38e1e148d7f6d902f13e298362fc45.bin
 	"sysrv"
 	//Сканирование..., zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
+	
+00030 : 3a6b7ee9503a90c5c5735c2867586b0dfc38e1e148d7f6d902f13e298362fc45_unpacked_6ed86acdada24aa3b902a69cb9467b91e934a241776f78049348c90c16ea1496.bin
+	"sysrv"
+	//Сканирование..., zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
 
