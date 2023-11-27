@@ -12,7 +12,7 @@ Malware
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
 	"sysrv"
-	//Crypto malware runs automatically when rebooting, zombie malware.
+	//Crypto malware runs automatically when rebooting, zombie malware, pid disturbance.
 	
 00002 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb_unpacked_f8472088ed5f5d2ce5be330dac60aec446173fc84a565ff7831e6b07060c55c0.bin
 	"sysrv"
@@ -56,10 +56,8 @@ Malware
 
 00012 : 163ef20a1c69bcb29f436ebf1e8a8a2b6ab6887fc48bfacd843a77b7144948b9_unpacked_ba518af59262e878d31c71020ebfcbd50dfadf1e7c47a340003c80284681794b.bin
 	"sysrv"
-	//Сканирование..., zombie malware.
+	//Сканирование..., resurrected twice.
 
-
-	
-
-
-	
+00013 : 18a877f11f2ba2d7ae05ee8644a5cbd687282df4010dd0cb7680aec2e00d98ce.bin
+	"sysrv"
+	//no internet disruption during run, pid disturbance.
