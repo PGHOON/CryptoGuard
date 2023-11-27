@@ -39,6 +39,12 @@ int trace_##syscall_name(struct kernel_tracepoints *ctx) { \
 
 /*
 Disabled:
+sys_enter_rt_sigprocmask
+sys_enter_rt_sigaction
+sys_enter_ppoll
+sys_enter_read
+sys_enter_write
+sys_enter_getpid
 
 */
 
