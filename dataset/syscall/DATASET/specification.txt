@@ -256,5 +256,9 @@ Malware
 
 00062 : 798d1292b97eddc2b92a017f2599cf3f3e26e0695e2c2a27b897a483b32d9753.bin
 	"sysrv"
-	//seems fine after kill.
+	//seems fine after kill, zombie malware, crypto malware runs automatically when rebooting.
+	
+00063 : 798d1292b97eddc2b92a017f2599cf3f3e26e0695e2c2a27b897a483b32d9753_unpacked_1ebfd0b7857696b057c0f62a71c1d73956200ed70a741e8cd9f957ef6b29bfd6.bin
+	"sysrv"
+	//seems fine after kill, zombie malware, crypto malware runs automatically when rebooting.
 
