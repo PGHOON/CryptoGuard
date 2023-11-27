@@ -97,7 +97,21 @@ Malware
 
 00022 : 1dd2c66843fcf5512b4dda518c2d5010edf06ab701f0380777b1b305ce9c98b0_unpacked_47183b14ed24978643de4697abe917847831b1560256ddd76e44e918a6181fd8.bin
 	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00023 : 22ef90a2b3c23d3c890358fff4ec1210e4ceaaf46d8bef525294151b0e88ce15.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+
+00024 : 22ef90a2b3c23d3c890358fff4ec1210e4ceaaf46d8bef525294151b0e88ce15_unpacked_feb38d0bc7b6d676337241f74ffdad97d9d03736c2f6b12a8047d9a93a924f9b.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00025 : 296d3d3ed5feeda7f6d99adc9da2566cb6c460194066acccac941a7b09bedfc3.bin
+	"sysrv"
 	//pid disturbance
+
+
 	
 
 	
