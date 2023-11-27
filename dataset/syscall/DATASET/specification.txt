@@ -343,4 +343,21 @@ Malware
 	"sysrv"
 	//zombie malware, crypto malware runs automatically when rebooting.
 	
+00084 : 9b2023a0e22f22860a7a46a67c9eba2c4831db66244603fd961fbb5c38b55272.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00085 : 9b2023a0e22f22860a7a46a67c9eba2c4831db66244603fd961fbb5c38b55272_unpacked_6eaabf75f284438f371dae340e4c4215a7f18f681f7602fbc0d857fa7b6783e3.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00086 : 9c9b7da616239290db831a9305e1a46d45c112c761deaea5ed4c36aea7433891.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00087 : 9c9b7da616239290db831a9305e1a46d45c112c761deaea5ed4c36aea7433891_unpacked_59737717f797d8c238142573bc0c9bfff7b92d069ea3d6be308e8dc7a9bd000f.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
 
+	
