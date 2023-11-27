@@ -315,4 +315,6 @@ Malware
 	"sysrv"
 	//zombie malware, crypto malware runs automatically when rebooting.
 	
-	
+00077 : 89bc80a0bca059535741063ea882c1602cb369af7deea0e45e982b33faa10a68_unpacked_427ccf76c6aa249521f0d8fcea9f3a20cff499abd5a2048d03574acc2f6a13dd.bin
+	"sysrv"
+	//zombie malware, crypto malware runs automatically when rebooting.
