@@ -169,6 +169,23 @@ Malware
 
 00040 : 5208cda8463eee0ac2cf0273dcd4036aa1e2be0de2c45b4ffd71e4c92bac3f2b.bin
 	"sysrv"
-	//pid disturbance, 
+	//pid disturbance, resurrected once after reboot.
+	
+00041 : 5208cda8463eee0ac2cf0273dcd4036aa1e2be0de2c45b4ffd71e4c92bac3f2b_unpacked_77a9f3d4f498c8a84e09c89fd75d98eea31954cc17d948b876c00c638c95a7b6.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00042 : 544d20fc286d0803dee86a9c34b4c348333e320a4e33fd2730079701cb6e108f.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00043 : 544d20fc286d0803dee86a9c34b4c348333e320a4e33fd2730079701cb6e108f_unpacked_d50864f13378b333784f7469df98ef2ea438489ccf0649622897a7712a9c18f8.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00044 : 5f1d1141da3fe3261edf03c6be1625fe8c8443bdb5381252658100b4f296df6e.bin
+	"sysrv"
+	//Сканирование..., zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
+
 
 
