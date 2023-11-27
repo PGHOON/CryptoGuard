@@ -7,6 +7,7 @@ Benign
 
 /////////////
 Malware
+/*Internet connection failure occurs on all connected devices during malware operation*/
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
 //Crypto malware runs automatically when rebooting, zombie malware.
