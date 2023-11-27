@@ -9,8 +9,9 @@ Benign
 Malware
 /*Internet connection failure occurs on all connected devices during malware operation*/
 /*Some malwares start mining when internet connection is lost*/
-/*kinsing, omelette, mexalz not workin*/
-/*Malware that seems not work: 00007, 00045*/
+/*kinsing, mexalz segmentation fault*/
+/*omelette seems not malicious*/
+/*Malware that seems not work: 00007, 00045, 00070*/
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
 	"sysrv"
@@ -38,7 +39,7 @@ Malware
 	
 00007 : 0eaa4688afa2ee8c83dd22631450b42fff75a84c28faaa8ea28019a96c9f54fb.bin
 	"omelette"
-	//***NOT WORKING*** malicious motion not detected so far.
+	//seems not workin.
 	
 00008 : 1384790107a5f200cab9593a39d1c80136762b58d22d9b3f081c91d99e5d0376.bin
 	"sysrv"
@@ -280,4 +281,38 @@ Malware
 	
 00068 : 81e5beaf5683b92b1a238a909805bd02298830dc90d383facdebdb170230ec34.bin
 	"sysrv"
-	//malware forced disconnecting the internet connection, zombie malware
+	//lost internet connection, zombie malware, crypto malware runs automatically when rebooting.
+
+00069 : 81e5beaf5683b92b1a238a909805bd02298830dc90d383facdebdb170230ec34_unpacked_0cca26dc3b4e09ce7d9c9939d9c56128d611ba280729a98735abb5e66a27af58.bin
+	"sysrv"
+	//zombie malware, crypto malware runs automatically when rebooting.
+	
+00070 : 8223164dd8e2c7d6b2f0da63639186564335ba6a1bfc11cf31493d5c48f3abaf.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot, seems not workin.
+	
+00071 : 8223164dd8e2c7d6b2f0da63639186564335ba6a1bfc11cf31493d5c48f3abaf_unpacked_3bcbd2c4f510f41890d74787b71661cb7d002394e474282f94639e9e78ec0d6a.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+
+00072 : 8353823b0dc71e1feec1a2ba5e509966d5dae7f5105489c1e628baa73b314d76.bin
+	"sysrv"
+	//TCP scan 8080, 03:53 remaining, found=1, seems fine after kill.
+
+00073 : 8353823b0dc71e1feec1a2ba5e509966d5dae7f5105489c1e628baa73b314d76_unpacked_5f80945354ea8e28fa8191a37d37235ce5c5448bffb336e8db5b01719a69128f.bin
+	"sysrv"
+	//TCP scan 3306, 03:55 remaining, found=0, seems fine after kill.
+	
+00074 : 848ed7e90c767e7ab2b1a93f9b8ca9c41eb02c3c76bf8b7dfd806fe26c1f431e.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+
+00075 : 848ed7e90c767e7ab2b1a93f9b8ca9c41eb02c3c76bf8b7dfd806fe26c1f431e_unpacked_875f0740540275a62b311fd232f4144f99e3423ca55381599e4badd40d47dba3.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00076 : 89bc80a0bca059535741063ea882c1602cb369af7deea0e45e982b33faa10a68.bin
+	"sysrv"
+	//zombie malware, crypto malware runs automatically when rebooting.
+	
+	
