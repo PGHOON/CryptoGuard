@@ -49,7 +49,7 @@ Malware
 	
 00010 : 1489c404a110149b66476e0f41317770f0291da64a0d4b39f28900ccaf4d30f2.bin
 	"xmrig"
-	//immediately start mining, no internet disruption during run, no resurrection after kill.
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
 	
 00011 : 163ef20a1c69bcb29f436ebf1e8a8a2b6ab6887fc48bfacd843a77b7144948b9.bin
 	"sysrv"
@@ -133,8 +133,36 @@ Malware
 	
 00031 : 3d2e8bd1f02486b305d01fcc54091c84500409c454a048dad650f1605df6fd9a.bin
 	"xmrig"
-	//immediately start mining, no internet disruption during run, no resurrection after kill.
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
 
 00032 : 3ea2df69b99f78fc0768ecf8190293f2b277b6de6e7b8e668f40b8a4910df17c.bin
 	"sysrv"
 	//pid disturbance, did not revive after reboot.
+	
+00033 : 3ea2df69b99f78fc0768ecf8190293f2b277b6de6e7b8e668f40b8a4910df17c_unpacked_d3196b0b4767e86bf7e9e47722a5f733129c16f81f0ccbe5f822bdcfd778ca16.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00034 : 428340a0695393a0cec55513e700a479e252d9b034f27f80a29da3ac99afa459.bin
+	"xmrig"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+
+00035 : 4484abf66bca5df43285dfa9980bf4d81725af66c0b8ed3129d3a58fe1db5043.bin
+	"xmrig"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00036 : 4d6e5c861f04ed4a14195e29e60f6efba03c05bc213c3a6cffe0f0116a013e5b.bin
+	"sysrv"
+	//seems fine after kill, didn't check if it restarts the malware after reboot.
+	
+00037 : 4d6e5c861f04ed4a14195e29e60f6efba03c05bc213c3a6cffe0f0116a013e5b_unpacked_2d9c1446cd174feb3733fc4595d326424555a40b2e6e2f56e7bee1c5a7c9a22d.bin
+	"sysrv"
+	//seems fine after kill, didn't check if it restarts the malware after reboot.
+
+00038 : 4fd37fa6ccf027e11409e3ca3b8109b2830cb3d7842303e67e6d0c087ae1b419.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+
+
+
+
