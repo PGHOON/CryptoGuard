@@ -9,7 +9,7 @@ Benign
 Malware
 /*Internet connection failure occurs on all connected devices during malware operation*/
 /*Some malwares start mining when internet connection is lost*/
-/*kinsing, omelette not workin*/
+/*kinsing, omelette, mexalz not workin*/
 /*Malware that seems not work: 00007, 00045*/
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
@@ -261,4 +261,23 @@ Malware
 00063 : 798d1292b97eddc2b92a017f2599cf3f3e26e0695e2c2a27b897a483b32d9753_unpacked_1ebfd0b7857696b057c0f62a71c1d73956200ed70a741e8cd9f957ef6b29bfd6.bin
 	"sysrv"
 	//seems fine after kill, zombie malware, crypto malware runs automatically when rebooting.
+	
+00064 : 7a546057a47ee02f6436e51d6d61f1b63c525307f9b5076a8edfe2cf4ae68769.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00065 : 7a546057a47ee02f6436e51d6d61f1b63c525307f9b5076a8edfe2cf4ae68769_unpacked_21f579ba681fb0f6c6ce5f816d60a8267943b87d451a50e04443dfaadbc3bdce.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00066 : 7ff5f2b3145d1e54a84f5bcc13ae6838baac2d6c20951d19608166833753d96f.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
 
+00067 : 7ff5f2b3145d1e54a84f5bcc13ae6838baac2d6c20951d19608166833753d96f_unpacked_658bd41a38234362e635f0b7497d84a13ab38a8a383924803cc0fa0c931c2193.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00068 : 81e5beaf5683b92b1a238a909805bd02298830dc90d383facdebdb170230ec34.bin
+	"sysrv"
+	//malware forced disconnecting the internet connection, zombie malware
