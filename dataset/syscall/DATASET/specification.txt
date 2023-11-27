@@ -117,12 +117,13 @@ Malware
 
 00027 : 2fa5832e8b73a6f585f937f396d7b430d35d23ea607d10649a40989068c6c923.bin
 	"sysrv"
-	//Сканирование..., zombie malware, [kthreaddi], did not revive after reboot.
+	//Сканирование..., zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
 
 00028 : 2fa5832e8b73a6f585f937f396d7b430d35d23ea607d10649a40989068c6c923_unpacked_1a7bed94e83967740294bd5a4d67c2d2650343162869f27fb7dbcc2654848a52.bin
 	"sysrv"
-	//Сканирование..., zombie malware, [kthreaddi], did not revive after reboot.
+	//Сканирование..., zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
 	
-
-	
+00029 : 3a6b7ee9503a90c5c5735c2867586b0dfc38e1e148d7f6d902f13e298362fc45.bin
+	"sysrv"
+	//Сканирование..., zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
 
