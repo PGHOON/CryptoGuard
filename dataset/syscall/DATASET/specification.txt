@@ -8,7 +8,8 @@ Benign
 /////////////
 Malware
 /*Internet connection failure occurs on all connected devices during malware operation*/
-/*When the internet connection is lost, they start mining*/
+/*Some malwares start mining when internet connection is lost*/
+/*kinsing, omelette not workin*/
 /*Malware that seems not work: 00007, 00045*/
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
@@ -202,4 +203,58 @@ Malware
 00048 : 5fc4c90fae41a53ef41cac0ef2c0c7f4076d8ac3e49bf71daaebe584eb03ea91.bin
 	"sysrv"
 	//Сканирование..., zombie malware, didn't check if it runs after a reboot.
+
+00049 : 5fc4c90fae41a53ef41cac0ef2c0c7f4076d8ac3e49bf71daaebe584eb03ea91_unpacked_0bca38101bc4014e0946f789a12ee4b4da69e5bfb1756262dd1c30e759a42322.bin
+	//Сканирование..., zombie malware, did not revive after reboot.
+
+00050 : 65296e0307167af398fec4ac4282832cf7096c1b85cb4cf5d75fdda63ad438ca.bin
+	"xmrig"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00051 : 6750e584ad0c21588e0add09c6ebe0cc9affe1673ac848b1761359170cf08bb7.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00052 : 67f03f3065ec012cd8853e9d1b11cb441741910a24cb23ea652fb63d7219ebaa.bin
+	"sysrv"
+	//starting tcp scanner, seems fine after kill.
+
+00053 : 67f03f3065ec012cd8853e9d1b11cb441741910a24cb23ea652fb63d7219ebaa_unpacked_18bc08cccf7ba713c7cc734547dca9776fcee9459c0b4e9549bb8b9923d21732.bin
+	"sysrv"
+	//starting tcp scanner, seems fine after kill.
+	
+00054 : 6abdd9effedb3ecc70326493f3676d3c6bbd0d3cc0d8d172885b344a3fa07e27.bin
+	"xmrig"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00055 : 6f2825856a5ae87face1c68ccb7f56f726073b8639a0897de77da25c8ecbeb19.bin
+	"watchdog"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00056 : 720341984c842070dcc925cb47127aba35e16971cf7d532cc2efb24b98d56c93.bin
+	"sysrv"
+	//TCP scan 8080, 224s remaining, found=0, seems fine after kill.
+	
+00057 : 720341984c842070dcc925cb47127aba35e16971cf7d532cc2efb24b98d56c93_unpacked_7e765c12a391308879f1e6b57bf6ae87c0fd0e8d6e0207954cc3a41fd387fda9.bin
+	//TCP scan 80, 235s remaining, found=0, seems fine after kill.
+
+00058 : 72483800c412e2204731b12c9d8fff1bc84f7af8f0b258299bb4f091a57ab23a.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00059 : 75253aa48ff1db29e291d6acfe5da2832a4e6e0481950a6d17cea7e92d8a2336.bin
+	"xmrig"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00060 : 7579f96024d9ad50f490b017def89a825358eabb85f55959091e26eb863ec19b.bin
+	"xmrig"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00061 : 78f92857e18107872526feb1ae834edb9b7189df4a2129a4125a3dd8917f9983.bin
+	"teamtnt"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+
+00062 : 798d1292b97eddc2b92a017f2599cf3f3e26e0695e2c2a27b897a483b32d9753.bin
+	"sysrv"
+	//seems fine after kill.
 
