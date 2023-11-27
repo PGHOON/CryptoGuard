@@ -8,6 +8,7 @@ Benign
 /////////////
 Malware
 /*Internet connection failure occurs on all connected devices during malware operation*/
+/*When the internet connection is lost, they start mining*/
 /*Malware that does not work: 00007, */
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
@@ -76,7 +77,17 @@ Malware
 
 00017 : 1b2909eda77c14b559b06a68a794868989b7e38c9ca185a3180c63e5c38622b5.bin
 	"sysrv"
-	//
+	//resurrected once, didn't check if it runs after reboot.
+	
+00018 : 1b2909eda77c14b559b06a68a794868989b7e38c9ca185a3180c63e5c38622b5_unpacked_f425fa120bc1b3926ed92ed5cec74898f1d40c3059ae443f816a9e10a2699f80.bin
+	"sysrv"
+	//seems fine after kill.
+	
+00019 : 1c91ed47c3c0baa74fa15c9b02330701dd02fc1e9b44963e1fe9a650ef7b78ef.bin
+	"sysrv"
+	//it turns on and off the internet connection, resurrected multiple times, didn't check if it revives after reboot.
+	
+
 
 
 	
