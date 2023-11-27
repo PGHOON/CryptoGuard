@@ -60,10 +60,21 @@ Malware
 
 00013 : 18a877f11f2ba2d7ae05ee8644a5cbd687282df4010dd0cb7680aec2e00d98ce.bin
 	"sysrv"
-	//pid disturbance, not running after reboot.
+	//pid disturbance, not resurrected after reboot, no internet disruption during run.
 
 00014 : 18a877f11f2ba2d7ae05ee8644a5cbd687282df4010dd0cb7680aec2e00d98ce_unpacked_f640c11ebbedb71a03e94fbdde8d8944206f15a9641bcdad1f13ba8dfe507a2c.bin
 	"sysrv"
-	//pid disturbance
+	//pid disturbance, not resurrected after reboot, no internet disruption during run.
+	
+00015 : 1a63f7a38c7f5a5cc770246c958aea70ea95bcafac1bad92d2d524f4fe24c1ca.bin
+	"sysrv"
+	//running tcp scan starting network01 worker started, seems fine after kill.
+
+00016 : 1a63f7a38c7f5a5cc770246c958aea70ea95bcafac1bad92d2d524f4fe24c1ca_unpacked_62ba664a95b3ca00e7a71fe6aa4a979c5a50f16a62cf72830af13bec7edb1da4.bin
+	"sysrv"
+	//running tcp scan worker exists, seems fine after kill.
+	
+
+
 	
 
