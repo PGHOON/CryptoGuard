@@ -8,6 +8,7 @@ Benign
 /////////////
 Malware
 /*Internet connection failure occurs on all connected devices during malware operation*/
+/*Malware that does not work: 00007, */
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
 	"sysrv"
@@ -35,4 +36,26 @@ Malware
 	
 00007 : 0eaa4688afa2ee8c83dd22631450b42fff75a84c28faaa8ea28019a96c9f54fb.bin
 	"omelette"
+	//***NOT WORKING*** malicious motion not detected so far.
+	
+00008 : 1384790107a5f200cab9593a39d1c80136762b58d22d9b3f081c91d99e5d0376.bin
+	"sysrv"
+	//pcap.OpenLive TCP scan 8080, 03:55 remaining, found=1, no internet disruption after kill.
+	
+00009 : 1384790107a5f200cab9593a39d1c80136762b58d22d9b3f081c91d99e5d0376_unpacked_afb6ec634639a68624c052d083bbe28a0076cd3ab3d9a276c4b90cb4163b8317.bin
+	"sysrv"
+	//pcap.OpenLive TCP scan 8080, 03:55 remaining, found=1, no internet disruption after kill.
+	
+00010 : 1489c404a110149b66476e0f41317770f0291da64a0d4b39f28900ccaf4d30f2.bin
+	"xmrig"
+	//immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00011 : 163ef20a1c69bcb29f436ebf1e8a8a2b6ab6887fc48bfacd843a77b7144948b9.bin
+	"sysrv"
+	//Сканирование..., zombie malware.
+
+
+	
+
+
 	
