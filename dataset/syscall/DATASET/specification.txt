@@ -161,8 +161,14 @@ Malware
 
 00038 : 4fd37fa6ccf027e11409e3ca3b8109b2830cb3d7842303e67e6d0c087ae1b419.bin
 	"sysrv"
-	//pid disturbance, did not revive after reboot.
+	//pid disturbance, resurrected once after reboot.
+	
+00039 : 4fd37fa6ccf027e11409e3ca3b8109b2830cb3d7842303e67e6d0c087ae1b419_unpacked_61e358f338d9fcb41f6fcebced95279614309f80c8ec2e70e5bc991f185f4d6f.bin
+	"sysrv"
+	//pid disturbance, resurrected once after reboot.
 
-
+00040 : 5208cda8463eee0ac2cf0273dcd4036aa1e2be0de2c45b4ffd71e4c92bac3f2b.bin
+	"sysrv"
+	//pid disturbance, 
 
 
