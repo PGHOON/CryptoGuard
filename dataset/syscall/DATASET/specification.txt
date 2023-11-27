@@ -9,7 +9,7 @@ Benign
 Malware
 /*Internet connection failure occurs on all connected devices during malware operation*/
 /*When the internet connection is lost, they start mining*/
-/*Malware that does not work: 00007, */
+/*Malware that seems not work: 00007, */
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
 	"sysrv"
@@ -117,9 +117,11 @@ Malware
 
 00027 : 2fa5832e8b73a6f585f937f396d7b430d35d23ea607d10649a40989068c6c923.bin
 	"sysrv"
-	//Сканирование..., zombie malware,
+	//Сканирование..., zombie malware, [kthreaddi], did not revive after reboot.
 
-
+00028 : 2fa5832e8b73a6f585f937f396d7b430d35d23ea607d10649a40989068c6c923_unpacked_1a7bed94e83967740294bd5a4d67c2d2650343162869f27fb7dbcc2654848a52.bin
+	"sysrv"
+	//Сканирование..., zombie malware, [kthreaddi], did not revive after reboot.
 	
 
 	
