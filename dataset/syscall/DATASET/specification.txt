@@ -9,7 +9,7 @@ Benign
 Malware
 /*Internet connection failure occurs on all connected devices during malware operation*/
 /*When the internet connection is lost, they start mining*/
-/*Malware that seems not work: 00007, */
+/*Malware that seems not work: 00007, 00045*/
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
 	"sysrv"
@@ -187,5 +187,19 @@ Malware
 	"sysrv"
 	//Сканирование..., zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
 
+00045 : 5f1d1141da3fe3261edf03c6be1625fe8c8443bdb5381252658100b4f296df6e_unpacked_0d3b0dc5ea6643d36d745fcaa177eba88200b2b16596111e140f59092070594f.bin
+	"sysrv"
+	//goroutine 1249 [select]: net.(*netFD).connect.func2(0x814de0, 0xc42125d620, 0xc420126c00, 0xc421283da0, 0xc421283d40) /usr/local/go/src/net/fd_unix.go:129 +0xde created by net.(*netFD).connect /usr/local/go/src/net/fd_unix.go:128 +0x286, seems not workin.
 
+00046 : 5f5d599d4d0f9149440a6f813c6db3759d4fdbf7abe991c3af3aa59dc8c4027f.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00047 : 5f5d599d4d0f9149440a6f813c6db3759d4fdbf7abe991c3af3aa59dc8c4027f_unpacked_c42e5fae2abfdf02ea08676d2321f139c21e5ac27a49a8bfe55c2e4304d0278e.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00048 : 5fc4c90fae41a53ef41cac0ef2c0c7f4076d8ac3e49bf71daaebe584eb03ea91.bin
+	"sysrv"
+	//Сканирование..., zombie malware, didn't check if it runs after a reboot.
 
