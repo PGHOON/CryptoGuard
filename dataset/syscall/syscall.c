@@ -99,7 +99,7 @@ int main()
 			break;
 		}
 		time(&current_time);
-		if (difftime(current_time, start_time) >= 5){
+		if (difftime(current_time, start_time) >= 60){
 			err = 0;
 			break;
 		}
