@@ -85,8 +85,12 @@ Malware
 	
 00019 : 1c91ed47c3c0baa74fa15c9b02330701dd02fc1e9b44963e1fe9a650ef7b78ef.bin
 	"sysrv"
-	//it turns on and off the internet connection, resurrected multiple times, didn't check if it revives after reboot.
-	
+	//it turns on and off the internet connection, resurrected multiple times, crypto malware runs automatically when rebooting, zombie malware.
+
+00020 : 1c91ed47c3c0baa74fa15c9b02330701dd02fc1e9b44963e1fe9a650ef7b78ef_unpacked_9df43de4920699bd51d4964b681bd2ce8315b189b812f92084f7c3e423610b2f.bin
+	"sysrv"
+	//pid disturbance
+
 
 
 
