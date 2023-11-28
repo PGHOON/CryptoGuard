@@ -446,3 +446,24 @@ Malware
 00109 : d42090b274d285e759de296239bd7b8e5d97270b2d2ae189aed80e68ba82b591.bin
 	"sysrv"
 	//pid disturbance, did not revive after reboot.
+	
+00110 : d42090b274d285e759de296239bd7b8e5d97270b2d2ae189aed80e68ba82b591_unpacked_2d5de0dfa05c2a2649a4537b3f935f3ab2c029eeb3a07ab33592611388c845aa.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+
+00111 : d54157bb703b360bb911363d9bb483a2ee00ee619d566d033a8c316f06cf26cc.bin
+	"watchdog"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00112 : dd31b774397c6e22375d4f2fe26e38e82ae164bc73cf58314b18b8eed26802f0.bin
+	"sysrv"
+	//pcap.OpenLive TCP scan 7001, 03:50 remaining, found=1, seems fine after kill.
+	
+00113 : dd31b774397c6e22375d4f2fe26e38e82ae164bc73cf58314b18b8eed26802f0_unpacked_d5ce80121f274fea8066b4f3e99f93fc0767783aa6c658252b7bbaea7648d196.bin
+	"sysrv"
+	//pcap.OpenLive TCP scan 3306, 03:45 remaining, found=1, seems fine after kill.
+	
+
+
+
+	
