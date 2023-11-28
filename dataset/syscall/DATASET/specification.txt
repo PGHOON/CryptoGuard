@@ -463,7 +463,29 @@ Malware
 	"sysrv"
 	//pcap.OpenLive TCP scan 3306, 03:45 remaining, found=1, seems fine after kill.
 	
-
-
-
+00114 : dd5b4de5a1c68aad5a2efb08db55cb3e09f8ddffc19c95c1ecf9d06c6edf2d40.bin
+	"sysrv"
+	//TCP scan 80, 03:52 remaining, found=0, seems fine after kill.
 	
+00115 : dd5b4de5a1c68aad5a2efb08db55cb3e09f8ddffc19c95c1ecf9d06c6edf2d40_unpacked_40d2a9f883bf3809fd4fd59e56be4a90d53879ec4145bebf1d7b8ac9c0b7c2ca.bin
+	"sysrv"
+	//TCP scan 3306, 03:57 remaining, found=1, seems fine after kill.
+
+00116 : dd803990ea400619668840343c25672b4a2c5c0e0622958e2cdf8be95b6baaab.bin
+	"teamtnt"
+	//almost immediately start mining, seems fine after kill.
+	
+00117 : dd803990ea400619668840343c25672b4a2c5c0e0622958e2cdf8be95b6baaab_unpacked_d58704dd815acaba68c9f903d758272e351db016eb5b678a76e6c6c1d1299f32.bin
+	"teamtnt"
+	//almost immediately start mining, seems fine after kill.
+	
+00118 : dec628d38b1cece3a980e56813cc3000bdc4d92a08bdf7892961655f1e2e91dd.bin
+	"sysrv"
+	//zombie malware, no resurrection after reboot.
+	
+00119 : dec628d38b1cece3a980e56813cc3000bdc4d92a08bdf7892961655f1e2e91dd_unpacked_352136aeeec4616618a1982cf5b7cb736ac96249196952e6625021da007bb409.bin
+	"sysrv"
+	////zombie malware, no resurrection after reboot.
+	
+00120 : 
+
