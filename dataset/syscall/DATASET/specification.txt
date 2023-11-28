@@ -10,7 +10,7 @@ Malware
 /*Internet connection failure occurs on all connected devices during malware operation*/
 /*Some malwares start mining when internet connection is lost*/
 /*kinsing, mexalz segmentation fault*/
-/*omelette seems not malicious*/
+/*omelette seems not working*/
 /*Malware that seems not work: 00007, 00045, 00070*/
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
@@ -397,5 +397,37 @@ Malware
 	
 00097 : b1a5a0ea66245ba5f3c323cf411960079568d2c2891e680e8e0abcffb8f651a1.bin
 	"xmrig"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
 	
+00098 : b2e51777c7993ce58f5e1afd3d33efbaae19222099be745f229b44028766dabc.bin
+	"xmrig"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00099 : bcb02047374196acdf0285a656a8d378cecd6115c403d0bc9f743b4e3ffd6fed.bin
+	"sysrv"
+	//pcap.OpenLive TCP scan 8081, 03:55 remaining, found=0, seems fine after kill.
+	
+00100 : bcb02047374196acdf0285a656a8d378cecd6115c403d0bc9f743b4e3ffd6fed_unpacked_17fbc8e10dea69b29093fcf2aa018be4d58fe5462c5a0363a0adde60f448fb26.bin
+	"sysrv"
+	//pcap.OpenLive TCP scan 3306, 03:43 remaining, found=1, seems fine after kill.
+	
+00101 : beaa0639a67f7fc7937a100f01a550ecb8c8b608251f4d02a97d9a0a15de1304.bin
+	"sysrv"
+	//TCP scan 3306, 03:52 remaining, found=0, seems fine after kill.
+	
+00102 : beaa0639a67f7fc7937a100f01a550ecb8c8b608251f4d02a97d9a0a15de1304_unpacked_322ccf40134f3b229858817e0fe3b7b9e40cc9f94fabd71b1eeb1b173b6b5955.bin
+	"sysrv"
+	//TCP scan 8983, 03:43 remaining, found=0, seems fine after kill
+	
+00103 : bf2c450d4d3519de51fbd31def04a0e6786e13a568ddefcaa62d812cc72ffc4c.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00104 : bf2c450d4d3519de51fbd31def04a0e6786e13a568ddefcaa62d812cc72ffc4c_unpacked_3e66b5216159e06d4ff1e94662d34c5bce4bf4f61bb40dfba11c6cec9b29d742.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00105 : c55706ddbfdcecf77f225e711463f50d7da127818ee93a6be10836e4c1662393.bin
+	"sysrv"
+	//zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
 
