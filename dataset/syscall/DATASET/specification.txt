@@ -206,7 +206,7 @@ Malware
 	//Сканирование..., zombie malware, didn't check if it runs after a reboot.
 
 00049 : 5fc4c90fae41a53ef41cac0ef2c0c7f4076d8ac3e49bf71daaebe584eb03ea91_unpacked_0bca38101bc4014e0946f789a12ee4b4da69e5bfb1756262dd1c30e759a42322.bin
-	//Сканирование..., zombie malware, did not revive after reboot.
+	//Сканирование..., zombie malware, kthreaddk, did not revive after reboot.
 
 00050 : 65296e0307167af398fec4ac4282832cf7096c1b85cb4cf5d75fdda63ad438ca.bin
 	"xmrig"
@@ -359,5 +359,43 @@ Malware
 	"sysrv"
 	//pid disturbance, did not revive after reboot.
 	
+00088 : 9d85b4e7202521d435a871b7de5f8affd30603687cf6e6f39f1420e9223b2bea.bin
+	"sysrv"
+	//TCP scan 5432, 03:55 remaining, found=0, seems fine after kill.
 
+00089 : 9d85b4e7202521d435a871b7de5f8affd30603687cf6e6f39f1420e9223b2bea_unpacked_8bc38b6764e6d6ebab4a93a2c22485a75dfb2f7dcf74c7b7b420e6c7dfadc7bd.bin
+	"sysrv"
+	//TCP scan 3306, 03:56 remaining, found=0, seems fine after kill.
+
+00090 : a22c2a6c2fdc5f5b962d2534aaae10d4de0379c9872f07aa10c77210ca652fa9.bin
+	"teamtnt"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
 	
+00091 : a34ae92c904b60ed7c1dc437493d1b086a828d25c52e5409d2c7b79b880db42f.bin
+	"xmrig"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00092 : a999d7f95af4084b1e4276ee329e9b466c4d88a14cfc87007587d18a4a6c9f8a.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00093 : a999d7f95af4084b1e4276ee329e9b466c4d88a14cfc87007587d18a4a6c9f8a_unpacked_8f921a59fd92e455d518ec3f6dbde6d72d60426f1b2147e07285d30fccf0745a.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+
+00094 : acbb4f3f9a13845de0c1c23f06dcb554817e610318e57718e63ce6a57af4911c.bin
+	"teamtnt"
+	//almost immediately start mining, no internet disruption during run, no resurrection after kill.
+	
+00095 : af7c5617a89c40aac9eb2e573a37a2d496a5bcaa9f702fa919f86485e857cb74.bin
+	"sysrv"
+	//Сканирование..., zombie malware, kthreaddk, did not revive after reboot.
+	
+00096 : af7c5617a89c40aac9eb2e573a37a2d496a5bcaa9f702fa919f86485e857cb74_unpacked_896fde201defea3e0a832026e5a015fe3ced0aa6ce11cfbb541bf3a423d37201.bin
+	"sysrv"
+	//zombie malware, kthreaddk, revive multiple times after reboot.
+	
+00097 : b1a5a0ea66245ba5f3c323cf411960079568d2c2891e680e8e0abcffb8f651a1.bin
+	"xmrig"
+	
+
