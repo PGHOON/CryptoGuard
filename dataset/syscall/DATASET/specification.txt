@@ -439,6 +439,8 @@ Malware
 	"sysrv"
 	//zombie malware, crypto malware runs automatically when rebooting.
 	
-00108 : c55706ddbfdcecf77f225e711463f50d7da127818ee93a6be10836e4c1662393_unpacked_46276eddb4054209096af4f115965aeef466494ea34a624e4eae6c9d130962b7.bin
+00108 : c7e136001338f2921fc6bbd67e1de8d4a5098b02eab55a47aa3bff2fa7ad8b77_unpacked_dfeafb94f29f4e5f0f98a945f0d7ca352ea5b8b05628c634a5a3114a0bb164b2.bin
 	"sysrv"
-	//zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
+	//zombie malware, crypto malware runs automatically when rebooting.
+	
+00109 : 
