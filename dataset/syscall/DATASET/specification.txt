@@ -10,7 +10,7 @@ Malware
 /*Internet connection failure occurs on all connected devices during malware operation*/
 /*Some malwares start mining when internet connection is lost*/
 /*kinsing, mexalz segmentation fault*/
-/*omelette seems not working*/
+/*omelette seems not working, sometimes xmrig and sysrv also not workin*/
 /*Malware that seems not work: 00007, 00045, 00070*/
 
 00001 : 04c1fe3bf04ebf65d38987f3d1a728684970e88503fa075e2d0b8bbbe98a14cb.bin
@@ -437,10 +437,12 @@ Malware
 	
 00107 : c7e136001338f2921fc6bbd67e1de8d4a5098b02eab55a47aa3bff2fa7ad8b77.bin
 	"sysrv"
-	//zombie malware, crypto malware runs automatically when rebooting.
+	//zombie malware, no resurrection after reboot.
 	
 00108 : c7e136001338f2921fc6bbd67e1de8d4a5098b02eab55a47aa3bff2fa7ad8b77_unpacked_dfeafb94f29f4e5f0f98a945f0d7ca352ea5b8b05628c634a5a3114a0bb164b2.bin
 	"sysrv"
-	//zombie malware, crypto malware runs automatically when rebooting.
+	//zombie malware, no resurrection after rebbot.
 	
-00109 : 
+00109 : d42090b274d285e759de296239bd7b8e5d97270b2d2ae189aed80e68ba82b591.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
