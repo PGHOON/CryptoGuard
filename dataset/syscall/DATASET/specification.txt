@@ -37,9 +37,9 @@ Malware
 	"sysrv"
 	//TCP scan 7001, 03:55 remaining, found=0, everything seems fine after kill so far.
 	
-00007 : 0eaa4688afa2ee8c83dd22631450b42fff75a84c28faaa8ea28019a96c9f54fb.bin
-	"omelette"
-	//seems not workin.
+00007 : e627aff93c1e095786b5a5248425ec62c1ea8b049d487cfa6e9cfdf2a0ddbd7b.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
 	
 00008 : 1384790107a5f200cab9593a39d1c80136762b58d22d9b3f081c91d99e5d0376.bin
 	"sysrv"
@@ -486,6 +486,28 @@ Malware
 00119 : dec628d38b1cece3a980e56813cc3000bdc4d92a08bdf7892961655f1e2e91dd_unpacked_352136aeeec4616618a1982cf5b7cb736ac96249196952e6625021da007bb409.bin
 	"sysrv"
 	////zombie malware, no resurrection after reboot.
+
+00120 : eb1081f1a300516bd134b229141e9b9c31d4bc53e6cd4ba0def6135f9b15179b.bin
+	"xmrig"
+	//almost immediately start mining, seems fine after kill.
 	
-00120 : 
+00121 : ed1e49cb05c375cc1149c349880ed077b6ee75cb7e5c6cae9cbd4bd086950c93.bin
+	"watchdog"
+	//almost immediately start mining, seems fine after kill.
+	
+00122 : ee4a196838ecd12aec77832973b52ead73d751a25da50e96e3146c0b373bb610.bin
+	"xmrig"
+	//almost immediately start mining, seems fine after kill.
+	
+00123 : ef11c120fab2129fce6dddb8b007102ef98281e11864386ff09c179c58d1dfe0.bin
+	"xmrig"
+	//almost immediately start mining, seems fine after kill.
+
+00124 : f487b23309808e468889baf10c852284b7833b8ac06fd405d1b19abafc8e17fb.bin
+	"sysrv"
+	//pid disturbance, did not revive after reboot.
+	
+00125 : f72babf978d8b86a75e3b34f59d4fc6464dc988720d1574a781347896c2989c7.bin
+	"xmrig"
+	//almost immediately start mining, seems fine after kill.
 
