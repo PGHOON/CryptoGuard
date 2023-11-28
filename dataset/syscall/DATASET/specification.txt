@@ -434,3 +434,9 @@ Malware
 00106 : c55706ddbfdcecf77f225e711463f50d7da127818ee93a6be10836e4c1662393_unpacked_46276eddb4054209096af4f115965aeef466494ea34a624e4eae6c9d130962b7.bin
 	"sysrv"
 	//zombie malware, [kthreaddi], crypto malware runs automatically when rebooting.
+	
+00107 : c7e136001338f2921fc6bbd67e1de8d4a5098b02eab55a47aa3bff2fa7ad8b77.bin
+	"sysrv"
+	//zombie malware, crypto malware runs automatically when rebooting.
+	
+
