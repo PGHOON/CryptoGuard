@@ -2,7 +2,7 @@ DATASET Collection Method,
 Benign
 
 00001 : default state without running any process
-
+00002 : Chrome, watching video
 
 
 /////////////
