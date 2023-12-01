@@ -45,7 +45,9 @@ sys_enter_ppoll
 sys_enter_read
 sys_enter_write
 sys_enter_getpid
-
+sys_enter_ioctl
+sys_enter_recvmsg
+sys_enter_sendmsg
 */
 
 SEC("tp/syscalls/sys_enter_llistxattr")
@@ -472,8 +474,8 @@ SEC("tp/syscalls/sys_enter_recvmmsg")
 TRACE_SYSCALL(sys_enter_recvmmsg, "sys_enter_recvmmsg")
 SEC("tp/syscalls/sys_enter_getpgid")
 TRACE_SYSCALL(sys_enter_getpgid, "sys_enter_getpgid")
-SEC("tp/syscalls/sys_enter_recvmsg")
-TRACE_SYSCALL(sys_enter_recvmsg, "sys_enter_recvmsg")
+//SEC("tp/syscalls/sys_enter_recvmsg")
+//TRACE_SYSCALL(sys_enter_recvmsg, "sys_enter_recvmsg")
 //SEC("tp/syscalls/sys_enter_getpid")
 //TRACE_SYSCALL(sys_enter_getpid, "sys_enter_getpid")
 SEC("tp/syscalls/sys_enter_remap_file_pages")
@@ -586,8 +588,8 @@ SEC("tp/syscalls/sys_enter_io_uring_setup")
 TRACE_SYSCALL(sys_enter_io_uring_setup, "sys_enter_io_uring_setup")
 SEC("tp/syscalls/sys_enter_seccomp")
 TRACE_SYSCALL(sys_enter_seccomp, "sys_enter_seccomp")
-SEC("tp/syscalls/sys_enter_ioctl")
-TRACE_SYSCALL(sys_enter_ioctl, "sys_enter_ioctl")
+//SEC("tp/syscalls/sys_enter_ioctl")
+//TRACE_SYSCALL(sys_enter_ioctl, "sys_enter_ioctl")
 SEC("tp/syscalls/sys_enter_semctl")
 TRACE_SYSCALL(sys_enter_semctl, "sys_enter_semctl")
 SEC("tp/syscalls/sys_enter_ioprio_get")
@@ -612,8 +614,8 @@ SEC("tp/syscalls/sys_enter_sendmmsg")
 TRACE_SYSCALL(sys_enter_sendmmsg, "sys_enter_sendmmsg")
 SEC("tp/syscalls/sys_enter_keyctl")
 TRACE_SYSCALL(sys_enter_keyctl, "sys_enter_keyctl")
-SEC("tp/syscalls/sys_enter_sendmsg")
-TRACE_SYSCALL(sys_enter_sendmsg, "sys_enter_sendmsg")
+//SEC("tp/syscalls/sys_enter_sendmsg")
+//TRACE_SYSCALL(sys_enter_sendmsg, "sys_enter_sendmsg")
 SEC("tp/syscalls/sys_enter_kill")
 TRACE_SYSCALL(sys_enter_kill, "sys_enter_kill")
 SEC("tp/syscalls/sys_enter_sendto")

@@ -21,7 +21,7 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
-	if(strcmp(m->command, "f487b23309808e4") == 0){
+	if(strncmp(m->command, "chrome", 6) == 0){
 	fprintf(csv_file, "%s\n", m->message);
 	printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->message);
 	}
