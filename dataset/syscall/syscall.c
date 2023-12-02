@@ -104,7 +104,7 @@ int main()
 			fprintf(csv_file, "TIMESTAMP\n");
 			time_stamp = current_time;
 		}
-		if (difftime(current_time, start_time) >= 60){
+		if (difftime(current_time, start_time) >= 120){
 			err = 0;
 			break;
 		}
