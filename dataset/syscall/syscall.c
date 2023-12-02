@@ -21,7 +21,7 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
-	if(strncmp(m->command, "acbb4f", 6) == 0){
+	if(strncmp(m->command, "9b2023", 6) == 0){
 	fprintf(csv_file, "%s\n", m->message);
 	printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->message);
 	}
@@ -81,7 +81,7 @@ int main()
         return 1;
 	}
 
-	csv_file = fopen("DATASET.csv", "w");
+	csv_file = fopen("DATASET/Malware/DATASET.csv", "w");
     if (!csv_file) {
         perror("Error opening file");
         return 1;
