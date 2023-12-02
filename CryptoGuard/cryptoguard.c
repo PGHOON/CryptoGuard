@@ -67,7 +67,7 @@ int main()
 	time_t start_time, current_time = 0;
 	time(&start_time);
 
-    struct syscall_bpf *skel;
+    struct cryptoguard_bpf *skel;
 	// struct bpf_object_open_opts *o;
     int err;
 	struct perf_buffer *pb = NULL;
@@ -81,25 +81,25 @@ int main()
 		.kernel_log_level = 1,
 	);
 	
-	skel = syscall_bpf__open_opts(&opts);
+	skel = cryptoguard_bpf__open_opts(&opts);
 	if (!skel) {
 		printf("Failed to open BPF object\n");
 		return 1;
 	}
 
-	err = syscall_bpf__load(skel);
+	err = cryptoguard_bpf__load(skel);
 	
 	if (err) {
 		printf("Failed to load BPF object\n");
-		syscall_bpf__destroy(skel);
+		cryptoguard_bpf__destroy(skel);
 		return 1;
 	}
 
 	// Attach the progams to the events
-	err = syscall_bpf__attach(skel);
+	err = cryptoguard_bpf__attach(skel);
 	if (err) {
 		fprintf(stderr, "Failed to attach BPF skeleton: %d\n", err);
-		syscall_bpf__destroy(skel);
+		cryptoguard_bpf__destroy(skel);
         return 1;
 	}
 
@@ -107,7 +107,7 @@ int main()
 	if (!pb) {
 		err = -1;
 		fprintf(stderr, "Failed to create ring buffer\n");
-		syscall_bpf__destroy(skel);
+		cryptoguard_bpf__destroy(skel);
         return 1;
 	}
 
@@ -142,6 +142,6 @@ int main()
         }
     }
 	perf_buffer__free(pb);
-	syscall_bpf__destroy(skel);
+	cryptoguard_bpf__destroy(skel);
 	return -err;
 }
