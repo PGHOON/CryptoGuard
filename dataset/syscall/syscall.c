@@ -100,8 +100,8 @@ int main()
 			break;
 		}
 		time(&current_time);
-		if (difftime(current_time, time_stamp) >= 10) {
-			fprintf(csv_file, "10SECOND\n");
+		if (difftime(current_time, time_stamp) >= 5) {
+			fprintf(csv_file, "TIMESTAMP\n");
 			time_stamp = current_time;
 		}
 		if (difftime(current_time, start_time) >= 60){
