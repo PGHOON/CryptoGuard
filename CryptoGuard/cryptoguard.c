@@ -3,8 +3,8 @@
 #include <errno.h>
 #include <string.h>
 #include <bpf/libbpf.h>
-#include "syscall.h"
-#include "syscall.skel.h"
+#include "cryptoguard.h"
+#include "cryptoguard.skel.h"
 #include "time.h"
 #include "string.h"
 #include <limits.h>
