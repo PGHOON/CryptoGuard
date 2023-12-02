@@ -34,7 +34,7 @@ void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
 
 int main()
 {
-	time_t start_time, current_time = 0;
+	time_t start_time, current_time, time_stamp = 0;
 	time(&start_time);
 
     struct syscall_bpf *skel;
@@ -100,6 +100,10 @@ int main()
 			break;
 		}
 		time(&current_time);
+		if (difftime(current_time, time_stamp) >= 10) {
+			fprintf(csv_file, "10SECOND\n");
+			time_stamp = current_time;
+		}
 		if (difftime(current_time, start_time) >= 60){
 			err = 0;
 			break;
