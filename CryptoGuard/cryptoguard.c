@@ -111,13 +111,6 @@ int main()
         return 1;
 	}
 
-	csv_file = fopen("DATASET.csv", "w");
-    if (!csv_file) {
-        perror("Error opening file");
-        return 1;
-    }
-	fprintf(csv_file, "SYSTEM_CALL\n");
-
 	printf("[PID]  [UID]  [COMMAND]        [SYSCALL]\n");
 	while (true) {
 		err = perf_buffer__poll(pb, 100);
