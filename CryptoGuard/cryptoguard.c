@@ -7,8 +7,14 @@
 #include "syscall.skel.h"
 #include "time.h"
 #include "string.h"
+#include <limits.h>
 
-static FILE *csv_file;
+#define COMMAND_LEN 8
+#define MAX_FILES 256
+
+static FILE *csv_files[MAX_FILES];
+static char csv_file_names[MAX_FILES][PATH_MAX];
+static int file_count = 0;
 
 static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va_list args)
 {
@@ -20,11 +26,35 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
-	struct data_t *m = data;
-	if(strncmp(m->command, "eb1081", 6) == 0){
-	fprintf(csv_file, "%s\n", m->syscall);
-	printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->syscall);
-	}
+    struct data_t *m = data;
+    char file_name[COMMAND_LEN + 4 + 1];
+    snprintf(file_name, sizeof(file_name), "%.8s.csv", m->command);
+
+    FILE *csv_file = NULL;
+    for (int i = 0; i < file_count; ++i) {
+        if (strcmp(csv_file_names[i], file_name) == 0) {
+            csv_file = csv_files[i];
+            break;
+        }
+    }
+
+    if (!csv_file) {
+        if (file_count >= MAX_FILES) {
+            fprintf(stderr, "Maximum number of files reached\n");
+            return;
+        }
+        csv_file = fopen(file_name, "w");
+        if (!csv_file) {
+            fprintf(stderr, "Failed to open file: %s\n", file_name);
+            return;
+        }
+        strcpy(csv_file_names[file_count], file_name);
+        csv_files[file_count++] = csv_file;
+        fprintf(csv_file, "SYSTEM_CALL\n");
+    }
+
+    fprintf(csv_file, "%s\n", m->syscall);
+    printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->syscall);
 }
 
 void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
@@ -106,7 +136,11 @@ int main()
 		}
 	}
 
-	fclose(csv_file);
+    for (int i = 0; i < file_count; ++i) {
+        if (csv_files[i]) {
+            fclose(csv_files[i]);
+        }
+    }
 	perf_buffer__free(pb);
 	syscall_bpf__destroy(skel);
 	return -err;
