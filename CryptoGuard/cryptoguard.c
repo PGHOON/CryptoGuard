@@ -55,15 +55,9 @@ void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
     }
 
     fprintf(csv_file, "%s\n", m->syscall);
-    /* Use this for debug. Yet CPU overhead occurs.
-	printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->syscall);
-	*/
 }
 
-void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
-{
-	//printf("lost event\n");
-}
+void lost_event(void *ctx, int cpu, long long unsigned int data_sz){}
 
 int main()
 {
@@ -120,10 +114,6 @@ int main()
         return 1;
 	}
 
-	/*Use this for Debug with handle_event() print part.
-	Yet the CPU overhead occurs.
-	printf("[PID]  [UID]  [COMMAND]        [SYSCALL]\n");
-	*/
 	while (true) {
 		err = perf_buffer__poll(pb, 100);
 		if (err == -EINTR) {
