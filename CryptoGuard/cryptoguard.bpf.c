@@ -36,7 +36,7 @@ int trace_##syscall_name(struct kernel_tracepoints *ctx) { \
 /*
 Monitoring 255 syscalls
 */
-SEC("tp/syscalls/sys_enter_llistxattr")
-TRACE_SYSCALL(sys_enter_llistxattr, "sys_enter_llistxattr")
+SEC("tp/syscalls/sys_enter_read")
+TRACE_SYSCALL(sys_enter_read, "sys_enter_read")
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";

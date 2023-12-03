@@ -8,8 +8,9 @@
 #include "time.h"
 #include "string.h"
 #include <limits.h>
+#include <stdlib.h>
 
-#define COMMAND_LEN 8
+#define COMMAND_LEN 256
 #define MAX_FILES 256
 
 static FILE *csv_files[MAX_FILES];
@@ -28,7 +29,7 @@ void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
     struct data_t *m = data;
     char file_name[COMMAND_LEN + 4 + 1];
-    snprintf(file_name, sizeof(file_name), "%.8s.csv", m->command);
+    snprintf(file_name, sizeof(file_name), "%.256s.csv", m->command);
 
     FILE *csv_file = NULL;
     for (int i = 0; i < file_count; ++i) {
@@ -54,16 +55,24 @@ void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
     }
 
     fprintf(csv_file, "%s\n", m->syscall);
-    printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->syscall);
+    /* Use this for debug. Yet CPU overhead occurs.
+	printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->syscall);
+	*/
 }
 
 void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
 {
-	printf("lost event\n");
+	//printf("lost event\n");
 }
 
 int main()
 {
+	int init = system("rm -f *.csv");
+	if (init != 0) {
+		printf("Fail to initialize CSV files\n");
+		return 1;
+	}
+
 	time_t start_time, current_time = 0;
 	time(&start_time);
 
@@ -111,7 +120,10 @@ int main()
         return 1;
 	}
 
+	/*Use this for Debug with handle_event() print part.
+	Yet the CPU overhead occurs.
 	printf("[PID]  [UID]  [COMMAND]        [SYSCALL]\n");
+	*/
 	while (true) {
 		err = perf_buffer__poll(pb, 100);
 		if (err == -EINTR) {
@@ -123,7 +135,7 @@ int main()
 			break;
 		}
 		time(&current_time);
-		if (difftime(current_time, start_time) >= 60){
+		if (difftime(current_time, start_time) >= 10){
 			err = 0;
 			break;
 		}
