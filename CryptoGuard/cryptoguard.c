@@ -61,7 +61,7 @@ void lost_event(void *ctx, int cpu, long long unsigned int data_sz){}
 
 int main()
 {
-	int init = system("rm -f *.csv");
+	int init = system("rm -f buf_1/*.csv buf_2/*.csv");
 	if (init != 0) {
 		printf("Fail to initialize CSV files\n");
 		return 1;
@@ -117,6 +117,7 @@ int main()
 	while (true) {
 		err = perf_buffer__poll(pb, 100);
 		if (err == -EINTR) {
+			printf("Receive SIGINT: *Detection Cancled\n");
 			err = 0;
 			break;
 		}
