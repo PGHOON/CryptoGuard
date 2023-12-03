@@ -28,8 +28,8 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
     struct data_t *m = data;
-    char file_name[COMMAND_LEN + 4 + 1];
-    snprintf(file_name, sizeof(file_name), "%.256s.csv", m->command);
+    char file_name[6 + COMMAND_LEN + 4 + 1];
+    snprintf(file_name, sizeof(file_name), "buf_1/%.256s.csv", m->command);
 
     FILE *csv_file = NULL;
     for (int i = 0; i < file_count; ++i) {
