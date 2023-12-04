@@ -67,7 +67,7 @@ int main()
 		return 1;
 	}
 
-	time_t start_time, current_time, time_stamp = 0;
+	time_t start_time, current_time = 0;
 	time(&start_time);
 
     struct cryptoguard_bpf *skel;
@@ -126,11 +126,7 @@ int main()
 			break;
 		}
 		time(&current_time);
-		if (difftime(current_time, time_stamp) >= 5) {
-			fprintf(csv_file, "TIMESTAMP\n");
-			time_stamp = current_time;
-		}
-		if (difftime(current_time, start_time) >= 120){
+		if (difftime(current_time, start_time) >= 30){
 			err = 0;
 			break;
 		}
