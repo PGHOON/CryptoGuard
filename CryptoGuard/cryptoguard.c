@@ -139,5 +139,8 @@ int main()
     }
 	perf_buffer__free(pb);
 	cryptoguard_bpf__destroy(skel);
+
+	system("python3 judge.py");
+
 	return -err;
 }
