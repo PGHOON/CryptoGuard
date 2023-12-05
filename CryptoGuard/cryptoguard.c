@@ -85,10 +85,6 @@ int main()
 	);
 	
 	skel = cryptoguard_bpf__open_opts(&opts);
-	if (!skel) {
-		printf("Failed to open BPF object\n");
-		return 1;
-	}
 
 	err = cryptoguard_bpf__load(skel);
 	
