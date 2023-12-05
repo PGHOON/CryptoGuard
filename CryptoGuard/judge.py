@@ -272,7 +272,7 @@ label_encoder.fit(syscalls)
 
 def csvToimage(file_path):
     data = pd.read_csv(file_path)
-    data_encoded = label_encoder.fit_transform(data['SYSTEM_CALL'])
+    data_encoded = label_encoder.transform(data['SYSTEM_CALL'])
     image = np.zeros(SHAPE, dtype=np.uint8)
     syscall_nums = min(len(data_encoded), SIZE)
     image.flat[:syscall_nums] = data_encoded[:syscall_nums]
