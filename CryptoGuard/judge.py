@@ -281,6 +281,7 @@ def csvToimage(file_path):
 def load_data(dataset_dir):
     x = []
     y = []
+    process_names = []
 
     csv_files = [f for f in os.listdir(dataset_dir) if f.endswith('.csv')]
 
@@ -289,13 +290,14 @@ def load_data(dataset_dir):
         image = csvToimage(file_path)
         x.append(image)
         y.append(None)
+        process_names.append(file_name)
 
     x = np.array(x).reshape(-1, WIDTH, HEIGHT, 1)
     y = np.array(y)
     
-    return x, y
+    return x, y, process_names
 
-X, y = load_data(DATASET_DIR)
+X, y, process_names = load_data(DATASET_DIR)
 X = X / 255.0
 
 policy = load_model('policy.h5')
@@ -303,5 +305,5 @@ policy = load_model('policy.h5')
 
 pred = policy.predict(X)
 
-sentence = pd.DataFrame(pred)
+sentence = pd.DataFrame({'Process': process_names, 'Benign': pred[:, 0], 'Malware': pred[:, 1]})
 sentence.to_csv('SENTENCE.csv', index=False)
