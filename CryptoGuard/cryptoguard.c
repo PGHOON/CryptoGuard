@@ -13,6 +13,15 @@
 #define COMMAND_LEN 256
 #define MAX_FILES 256
 
+/*
+TEST CODE
+*/
+typedef struct {
+    char processName[256];
+    float benign;
+    float malware;
+} ProcessRecord;
+
 static FILE *csv_files[MAX_FILES];
 static char csv_file_names[MAX_FILES][PATH_MAX];
 static int file_count = 0;
@@ -46,7 +55,7 @@ void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
         }
         csv_file = fopen(file_name, "w");
         if (!csv_file) {
-            fprintf(stderr, "Failed to open file: %s\n", file_name);
+            //fprintf(stderr, "Failed to open file: %s\n", file_name);
             return;
         }
         strcpy(csv_file_names[file_count], file_name);
@@ -61,6 +70,7 @@ void lost_event(void *ctx, int cpu, long long unsigned int data_sz){}
 
 int main()
 {
+	printf("Collecting system calls...\n");
 	int init = system("rm -f buf_1/*.csv buf_2/*.csv");
 	if (init != 0) {
 		printf("Fail to initialize CSV files\n");
@@ -137,6 +147,38 @@ int main()
 	cryptoguard_bpf__destroy(skel);
 
 	system("python3 judge.py");
+
+	/*
+	TEST CODE
+	*/
+	FILE *st = fopen("SENTENCE.csv", "r");
+    if (!st) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    char line[1024];
+    int isFirstLine = 1;
+	int isMalware = 0;
+    
+    while (fgets(line, 1024, st)) {
+        if (isFirstLine) {
+            isFirstLine = 0;
+            continue;
+        }
+
+        ProcessRecord record;
+        sscanf(line, "%[^,],%f,%f", record.processName, &record.benign, &record.malware);
+        
+        if (record.malware > 0.5) {
+            printf("Suspicious Cryptojacker: %s\n", record.processName);
+			isMalware = 1;
+        }
+    }
+    fclose(st);
+	if (!isMalware) {
+		printf("YourPC is safe from Cryptojacking!\n");
+	}
 
 	return -err;
 }
