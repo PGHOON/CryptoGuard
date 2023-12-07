@@ -1,3 +1,2 @@
 SYSTEM_CALL
-sys_enter_clock_gettime
 sys_enter_futex
