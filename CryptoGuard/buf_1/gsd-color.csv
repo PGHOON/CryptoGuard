@@ -1,6 +1,0 @@
-SYSTEM_CALL
-sys_enter_newfstatat
-sys_enter_newfstatat
-sys_enter_timerfd_create
-sys_enter_timerfd_settime
-sys_enter_close
