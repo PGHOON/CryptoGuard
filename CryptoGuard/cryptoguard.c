@@ -10,14 +10,14 @@
 #include <limits.h>
 #include <stdlib.h>
 
-#define COMMAND_LEN 256
+#define COMMAND_LEN 16
 #define MAX_FILES 256
 
 /*
 TEST CODE
 */
 typedef struct {
-    char processName[256];
+    char processName[16];
     float benign;
     float malware;
 } ProcessRecord;
