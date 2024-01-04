@@ -1,0 +1,816 @@
+cryptoguard@ThinkPad-T440s:~/vmware-cryptominer/bin$ strace ./f72babf978d8b86a75e3b34f59d4fc6464dc988720d1574a781347896c2989c7.bin
+execve("./f72babf978d8b86a75e3b34f59d4fc6464dc988720d1574a781347896c2989c7.bin", ["./f72babf978d8b86a75e3b34f59d4fc"...], 0x7ffe9b2566f0 /* 54 vars */) = 0
+brk(NULL)                               = 0x2590000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe6190af60) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fba5fcc6000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=61631, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 61631, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fba5fcb6000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=21448, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 16424, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fba5fcb1000
+mmap(0x7fba5fcb2000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fba5fcb2000
+mmap(0x7fba5fcb3000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fba5fcb3000
+mmap(0x7fba5fcb4000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fba5fcb4000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/librt.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=14664, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 16440, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fba5fcac000
+mmap(0x7fba5fcad000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fba5fcad000
+mmap(0x7fba5fcae000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fba5fcae000
+mmap(0x7fba5fcaf000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fba5fcaf000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=14432, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 16424, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fba5fca7000
+mmap(0x7fba5fca8000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fba5fca8000
+mmap(0x7fba5fca9000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fba5fca9000
+mmap(0x7fba5fcaa000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fba5fcaa000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=940560, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 942344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fba5fbc0000
+mmap(0x7fba5fbce000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7fba5fbce000
+mmap(0x7fba5fc4a000, 372736, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8a000) = 0x7fba5fc4a000
+mmap(0x7fba5fca5000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe4000) = 0x7fba5fca5000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0 =\340\2563\265?\356\25x\261\27\313A#\350"..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fba5f800000
+mmap(0x7fba5f828000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fba5f828000
+mmap(0x7fba5f9bd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fba5f9bd000
+mmap(0x7fba5fa15000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fba5fa15000
+mmap(0x7fba5fa1b000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fba5fa1b000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fba5fbbe000
+arch_prctl(ARCH_SET_FS, 0x7fba5fbbf4c0) = 0
+set_tid_address(0x7fba5fbbf790)         = 261053
+set_robust_list(0x7fba5fbbf7a0, 24)     = 0
+rseq(0x7fba5fbbfe60, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fba5fa15000, 16384, PROT_READ) = 0
+mprotect(0x7fba5fca5000, 4096, PROT_READ) = 0
+mprotect(0x7fba5fcaa000, 4096, PROT_READ) = 0
+mprotect(0x7fba5fcaf000, 4096, PROT_READ) = 0
+mprotect(0x7fba5fcb4000, 4096, PROT_READ) = 0
+mprotect(0xd62000, 212992, PROT_READ)   = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fba5fbbc000
+mprotect(0x7fba5fd00000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fba5fcb6000, 61631)           = 0
+getrandom("\xe5\x4f\xf1\xbb\x0a\x64\x81\xba", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x2590000
+brk(0x25b1000)                          = 0x25b1000
+mmap(NULL, 131072, PROT_READ|PROT_WRITE|PROT_EXEC, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fba5fb9c000
+mprotect(0x7fba5fb9c000, 131072, PROT_READ|PROT_EXEC) = 0
+futex(0xe3f3ec, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xe3f3f8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 3
+read(3, "0-3\n", 1024)                  = 4
+close(3)                                = 0
+faccessat2(-1, "/sys/bus/cpu/devices", R_OK|X_OK, 0) = 0
+faccessat2(-1, "/sys/bus/cpu/devices/cpu0/topology/package_cpus", R_OK, 0) = 0
+faccessat2(-1, "/sys/bus/node/devices", R_OK|X_OK, 0) = 0
+faccessat2(-1, "/sys/bus/node/devices/node0/cpumap", R_OK, 0) = 0
+uname({sysname="Linux", nodename="ThinkPad-T440s", ...}) = 0
+openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 3
+read(3, "0-3\n", 1024)                  = 4
+close(3)                                = 0
+openat(-1, "/proc/cpuinfo", O_RDONLY)   = 3
+fcntl(3, F_GETFL)                       = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+read(3, "processor\t: 0\nvendor_id\t: Genuin"..., 1024) = 1024
+read(3, "wn\nbogomips\t: 4988.23\nclflush si"..., 1024) = 1024
+read(3, "pts md_clear flush_l1d\nbugs\t\t: c"..., 1024) = 1024
+read(3, "ult epb invpcid_single pti ssbd "..., 1024) = 1024
+read(3, "3 sdbg fma cx16 xtpr pdcm pcid s"..., 1024) = 520
+read(3, "", 1024)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/proc/mounts", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+read(3, "sysfs /sys sysfs rw,nosuid,nodev"..., 1024) = 1024
+openat(-1, "/sys/fs/cgroup/cgroup.controllers", O_RDONLY) = 4
+read(4, "cpuset cpu io memory hugetlb pid"..., 1023) = 44
+close(4)                                = 0
+close(3)                                = 0
+openat(-1, "/proc/self/cpuset", O_RDONLY) = 3
+read(3, "/\n", 127)                     = 2
+close(3)                                = 0
+openat(-1, "/sys/fs/cgroup//cpuset.cpus.effective", O_RDONLY) = 3
+read(3, "0-3\n", 4097)                  = 4
+close(3)                                = 0
+openat(-1, "/sys/fs/cgroup//cpuset.mems.effective", O_RDONLY) = 3
+read(3, "0\n", 4097)                    = 2
+close(3)                                = 0
+openat(-1, "/sys/devices/system/cpu/online", O_RDONLY) = 3
+read(3, "0-3\n", 4097)                  = 4
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices", O_RDONLY|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=0, ...}, AT_EMPTY_PATH) = 0
+fcntl(3, F_GETFL)                       = 0x18000 (flags O_RDONLY|O_LARGEFILE|O_DIRECTORY)
+fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
+getdents64(3, 0x259c6b0 /* 6 entries */, 32768) = 144
+faccessat2(-1, "/sys/bus/cpu/devices/cpu3/topology", X_OK, 0) = 0
+faccessat2(-1, "/sys/bus/cpu/devices/cpu1/topology", X_OK, 0) = 0
+faccessat2(-1, "/sys/bus/cpu/devices/cpu2/topology", X_OK, 0) = 0
+faccessat2(-1, "/sys/bus/cpu/devices/cpu0/topology", X_OK, 0) = 0
+getdents64(3, 0x259c6b0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/topology/core_cpus", O_RDONLY) = 3
+read(3, "03\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/topology/core_id", O_RDONLY) = 3
+read(3, "0\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/topology/die_cpus", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/topology/package_cpus", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/topology/physical_package_id", O_RDONLY) = 3
+read(3, "0\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index0/shared_cpu_map", O_RDONLY) = 3
+read(3, "03\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index0/level", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index0/type", O_RDONLY) = 3
+read(3, "Data\n", 19)                   = 5
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index0/size", O_RDONLY) = 3
+read(3, "32K\n", 10)                    = 4
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index0/coherency_line_size", O_RDONLY) = 3
+read(3, "64\n", 10)                     = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index0/number_of_sets", O_RDONLY) = 3
+read(3, "64\n", 10)                     = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index0/physical_line_partition", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index1/shared_cpu_map", O_RDONLY) = 3
+read(3, "03\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index1/level", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index1/type", O_RDONLY) = 3
+read(3, "Instruction\n", 19)            = 12
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index2/shared_cpu_map", O_RDONLY) = 3
+read(3, "03\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index2/level", O_RDONLY) = 3
+read(3, "2\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index2/type", O_RDONLY) = 3
+read(3, "Unified\n", 19)                = 8
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index2/size", O_RDONLY) = 3
+read(3, "256K\n", 10)                   = 5
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index2/coherency_line_size", O_RDONLY) = 3
+read(3, "64\n", 10)                     = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index2/number_of_sets", O_RDONLY) = 3
+read(3, "512\n", 10)                    = 4
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index2/physical_line_partition", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index3/shared_cpu_map", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index3/level", O_RDONLY) = 3
+read(3, "3\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index3/type", O_RDONLY) = 3
+read(3, "Unified\n", 19)                = 8
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index3/size", O_RDONLY) = 3
+read(3, "3072K\n", 10)                  = 6
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index3/coherency_line_size", O_RDONLY) = 3
+read(3, "64\n", 10)                     = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index3/number_of_sets", O_RDONLY) = 3
+read(3, "4096\n", 10)                   = 5
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index3/physical_line_partition", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index4/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index5/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index6/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index7/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index8/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu0/cache/index9/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu1/topology/core_cpus", O_RDONLY) = 3
+read(3, "03\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu1/topology/package_cpus", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index0/shared_cpu_map", O_RDONLY) = 3
+read(3, "03\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index1/shared_cpu_map", O_RDONLY) = 3
+read(3, "03\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index2/shared_cpu_map", O_RDONLY) = 3
+read(3, "03\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index3/shared_cpu_map", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index4/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index5/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index6/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index7/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index8/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu1/cache/index9/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu2/topology/core_cpus", O_RDONLY) = 3
+read(3, "0c\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/topology/core_id", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/topology/die_cpus", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index0/shared_cpu_map", O_RDONLY) = 3
+read(3, "0c\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index0/level", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index0/type", O_RDONLY) = 3
+read(3, "Data\n", 19)                   = 5
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index0/size", O_RDONLY) = 3
+read(3, "32K\n", 10)                    = 4
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index0/coherency_line_size", O_RDONLY) = 3
+read(3, "64\n", 10)                     = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index0/number_of_sets", O_RDONLY) = 3
+read(3, "64\n", 10)                     = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index0/physical_line_partition", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index1/shared_cpu_map", O_RDONLY) = 3
+read(3, "0c\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index1/level", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index1/type", O_RDONLY) = 3
+read(3, "Instruction\n", 19)            = 12
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index2/shared_cpu_map", O_RDONLY) = 3
+read(3, "0c\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index2/level", O_RDONLY) = 3
+read(3, "2\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index2/type", O_RDONLY) = 3
+read(3, "Unified\n", 19)                = 8
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index2/size", O_RDONLY) = 3
+read(3, "256K\n", 10)                   = 5
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index2/coherency_line_size", O_RDONLY) = 3
+read(3, "64\n", 10)                     = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index2/number_of_sets", O_RDONLY) = 3
+read(3, "512\n", 10)                    = 4
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index2/physical_line_partition", O_RDONLY) = 3
+read(3, "1\n", 10)                      = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index3/shared_cpu_map", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index4/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index5/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index6/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index7/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index8/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu2/cache/index9/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu3/topology/core_cpus", O_RDONLY) = 3
+read(3, "0c\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu3/topology/package_cpus", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index0/shared_cpu_map", O_RDONLY) = 3
+read(3, "0c\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index1/shared_cpu_map", O_RDONLY) = 3
+read(3, "0c\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index2/shared_cpu_map", O_RDONLY) = 3
+read(3, "0c\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index3/shared_cpu_map", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index4/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index5/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index6/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index7/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index8/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu3/cache/index9/shared_cpu_map", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu0/cpufreq/cpuinfo_max_freq", O_RDONLY) = 3
+read(3, "2900000\n", 10)                = 8
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu0/cpufreq/base_frequency", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu1/cpufreq/cpuinfo_max_freq", O_RDONLY) = 3
+read(3, "2900000\n", 10)                = 8
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu1/cpufreq/base_frequency", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu2/cpufreq/cpuinfo_max_freq", O_RDONLY) = 3
+read(3, "2900000\n", 10)                = 8
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu2/cpufreq/base_frequency", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/cpu/devices/cpu3/cpufreq/cpuinfo_max_freq", O_RDONLY) = 3
+read(3, "2900000\n", 10)                = 8
+close(3)                                = 0
+openat(-1, "/sys/bus/cpu/devices/cpu3/cpufreq/base_frequency", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/devices/system/cpu/types", O_RDONLY|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+newfstatat(-1, "/sys/kernel/mm/hugepages", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+openat(-1, "/proc/meminfo", O_RDONLY)   = 3
+read(3, "MemTotal:        7998436 kB\nMemF"..., 4095) = 1503
+close(3)                                = 0
+openat(-1, "/sys/kernel/mm/hugepages", O_RDONLY|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=0, ...}, AT_EMPTY_PATH) = 0
+fcntl(3, F_GETFL)                       = 0x18000 (flags O_RDONLY|O_LARGEFILE|O_DIRECTORY)
+fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
+getdents64(3, 0x259c6b0 /* 4 entries */, 32768) = 128
+openat(-1, "/sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages", O_RDONLY) = 4
+read(4, "0\n", 63)                      = 2
+close(4)                                = 0
+openat(-1, "/sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages", O_RDONLY) = 4
+read(4, "0\n", 63)                      = 2
+close(4)                                = 0
+getdents64(3, 0x259c6b0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(-1, "/sys/devices/system/node/online", O_RDONLY) = 3
+read(3, "0\n", 4097)                    = 2
+close(3)                                = 0
+openat(-1, "/sys/bus/node/devices/node0/cpumap", O_RDONLY) = 3
+read(3, "0f\n", 4097)                   = 3
+close(3)                                = 0
+newfstatat(-1, "/sys/bus/node/devices/node0/hugepages", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+openat(-1, "/sys/bus/node/devices/node0/meminfo", O_RDONLY) = 3
+read(3, "Node 0 MemTotal:        7998436 "..., 4095) = 1243
+close(3)                                = 0
+openat(-1, "/sys/bus/node/devices/node0/hugepages", O_RDONLY|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=0, ...}, AT_EMPTY_PATH) = 0
+fcntl(3, F_GETFL)                       = 0x18000 (flags O_RDONLY|O_LARGEFILE|O_DIRECTORY)
+fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
+getdents64(3, 0x259c6b0 /* 4 entries */, 32768) = 128
+openat(-1, "/sys/bus/node/devices/node0/hugepages/hugepages-2048kB/nr_hugepages", O_RDONLY) = 4
+read(4, "0\n", 63)                      = 2
+close(4)                                = 0
+openat(-1, "/sys/bus/node/devices/node0/hugepages/hugepages-1048576kB/nr_hugepages", O_RDONLY) = 4
+read(4, "0\n", 63)                      = 2
+close(4)                                = 0
+getdents64(3, 0x259c6b0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(-1, "/proc/driver/nvidia/gpus", O_RDONLY|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/dax/devices/", O_RDONLY|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=0, ...}, AT_EMPTY_PATH) = 0
+fcntl(3, F_GETFL)                       = 0x18000 (flags O_RDONLY|O_LARGEFILE|O_DIRECTORY)
+fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
+getdents64(3, 0x259c6b0 /* 2 entries */, 32768) = 48
+openat(-1, "/sys/bus/dax/devices/./target_node", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/dax/devices/../target_node", O_RDONLY) = -1 ENOENT (No such file or directory)
+getdents64(3, 0x259c6b0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(-1, "/sys/bus/node/devices/node0/access1/initiators", O_RDONLY|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/node/devices/node0/access0/initiators", O_RDONLY|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+faccessat2(-1, "/sys/bus/node/devices/node0/access1/initiators", X_OK, 0) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/node/devices/node0/access0/initiators/read_bandwidth", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/bus/node/devices/node0/access0/initiators/read_latency", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(-1, "/sys/devices/virtual/dmi/id", O_RDONLY|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=0, ...}, AT_EMPTY_PATH) = 0
+fcntl(3, F_GETFL)                       = 0x18000 (flags O_RDONLY|O_LARGEFILE|O_DIRECTORY)
+fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/product_name", O_RDONLY) = 3
+read(3, "20ARS14S26\n", 63)             = 11
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/product_version", O_RDONLY) = 3
+read(3, "ThinkPad T440s\n", 63)         = 15
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/product_serial", O_RDONLY) = -1 EACCES (Permission denied)
+openat(-1, "/sys/devices/virtual/dmi/id/product_uuid", O_RDONLY) = -1 EACCES (Permission denied)
+openat(-1, "/sys/devices/virtual/dmi/id/board_vendor", O_RDONLY) = 3
+read(3, "LENOVO\n", 63)                 = 7
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/board_name", O_RDONLY) = 3
+read(3, "20ARS14S26\n", 63)             = 11
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/board_version", O_RDONLY) = 3
+read(3, "Not Defined\n", 63)            = 12
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/board_serial", O_RDONLY) = -1 EACCES (Permission denied)
+openat(-1, "/sys/devices/virtual/dmi/id/board_asset_tag", O_RDONLY) = 3
+read(3, "Not Available\n", 63)          = 14
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/chassis_vendor", O_RDONLY) = 3
+read(3, "LENOVO\n", 63)                 = 7
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/chassis_type", O_RDONLY) = 3
+read(3, "10\n", 63)                     = 3
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/chassis_version", O_RDONLY) = 3
+read(3, "Not Available\n", 63)          = 14
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/chassis_serial", O_RDONLY) = -1 EACCES (Permission denied)
+openat(-1, "/sys/devices/virtual/dmi/id/chassis_asset_tag", O_RDONLY) = 3
+read(3, "625728\n", 63)                 = 7
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/bios_vendor", O_RDONLY) = 3
+read(3, "LENOVO\n", 63)                 = 7
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/bios_version", O_RDONLY) = 3
+read(3, "GJET98WW (2.48 )\n", 63)       = 17
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/bios_date", O_RDONLY) = 3
+read(3, "03/20/2018\n", 63)             = 11
+close(3)                                = 0
+openat(-1, "/sys/devices/virtual/dmi/id/sys_vendor", O_RDONLY) = 3
+read(3, "LENOVO\n", 63)                 = 7
+close(3)                                = 0
+openat(AT_FDCWD, "/sys/devices/system/cpu", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=0, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x259c6b0 /* 22 entries */, 32768) = 656
+getdents64(3, 0x259c6b0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(-1, "/sys/devices/system/cpu/possible", O_RDONLY) = 3
+read(3, "0-7\n", 4097)                  = 4
+close(3)                                = 0
+sched_getaffinity(0, 8, [0, 1, 2, 3])   = 8
+sched_getaffinity(0, 8, [0, 1, 2, 3])   = 8
+sched_setaffinity(0, 8, [0])            = 0
+sched_setaffinity(0, 8, [1])            = 0
+sched_setaffinity(0, 8, [2])            = 0
+sched_setaffinity(0, 8, [3])            = 0
+sched_setaffinity(0, 8, [0, 1, 2, 3])   = 0
+brk(0x25d3000)                          = 0x25d3000
+readlink("/proc/self/exe", "/home/cryptoguard/vmware-cryptom"..., 519) = 109
+openat(AT_FDCWD, "/home/cryptoguard/vmware-cryptominer/bin/config.json", O_RDONLY) = 3
+read(3, "{\n    \"api\": {\n        \"id\": nul"..., 8191) = 2701
+read(3, "", 8191)                       = 0
+close(3)                                = 0
+rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fba5f842520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+epoll_create1(EPOLL_CLOEXEC)            = 3
+pipe2([4, 5], O_CLOEXEC)                = 0
+write(5, "*", 1)                        = 1
+futex(0xdbc988, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+pipe2([6, 7], O_NONBLOCK|O_CLOEXEC)     = 0
+eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK)   = 8
+rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+read(4, "*", 1)                         = 1
+rt_sigaction(SIGHUP, {sa_handler=0x8d2130, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fba5f842520}, NULL, 8) = 0
+write(5, "*", 1)                        = 1
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+read(4, "*", 1)                         = 1
+rt_sigaction(SIGINT, {sa_handler=0x8d2130, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fba5f842520}, NULL, 8) = 0
+write(5, "*", 1)                        = 1
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+read(4, "*", 1)                         = 1
+rt_sigaction(SIGTERM, {sa_handler=0x8d2130, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fba5f842520}, NULL, 8) = 0
+write(5, "*", 1)                        = 1
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+read(4, "*", 1)                         = 1
+rt_sigaction(SIGUSR1, {sa_handler=0x8d2130, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fba5f842520}, NULL, 8) = 0
+write(5, "*", 1)                        = 1
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+socket(AF_NETLINK, SOCK_RAW|SOCK_CLOEXEC, NETLINK_ROUTE) = 9
+bind(9, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
+getsockname(9, {sa_family=AF_NETLINK, nl_pid=261053, nl_groups=00000000}, [12]) = 0
+sendto(9, [{nlmsg_len=20, nlmsg_type=RTM_GETLINK, nlmsg_flags=NLM_F_REQUEST|NLM_F_DUMP, nlmsg_seq=1704380841, nlmsg_pid=0}, {ifi_family=AF_UNSPEC, ...}], 20, 0, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 20
+recvmsg(9, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[[{nlmsg_len=1404, nlmsg_type=RTM_NEWLINK, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1704380841, nlmsg_pid=261053}, {ifi_family=AF_UNSPEC, ifi_type=ARPHRD_LOOPBACK, ifi_index=if_nametoindex("lo"), ifi_flags=IFF_UP|IFF_LOOPBACK|IFF_RUNNING|IFF_LOWER_UP, ifi_change=0}, [[{nla_len=7, nla_type=IFLA_IFNAME}, "lo"], [{nla_len=8, nla_type=IFLA_TXQLEN}, 1000], [{nla_len=5, nla_type=IFLA_OPERSTATE}, 0], [{nla_len=5, nla_type=IFLA_LINKMODE}, 0], [{nla_len=8, nla_type=IFLA_MTU}, 65536], [{nla_len=8, nla_type=IFLA_MIN_MTU}, 0], [{nla_len=8, nla_type=IFLA_MAX_MTU}, 0], [{nla_len=8, nla_type=IFLA_GROUP}, 0], [{nla_len=8, nla_type=IFLA_PROMISCUITY}, 0], [{nla_len=8, nla_type=0x3d /* IFLA_??? */}, "\x00\x00\x00\x00"], [{nla_len=8, nla_type=IFLA_NUM_TX_QUEUES}, 1], [{nla_len=8, nla_type=IFLA_GSO_MAX_SEGS}, 65535], [{nla_len=8, nla_type=IFLA_GSO_MAX_SIZE}, 65536], [{nla_len=8, nla_type=0x3a /* IFLA_??? */}, "\x00\x00\x01\x00"], [{nla_len=8, nla_type=0x3b /* IFLA_??? */}, "\xf8\xff\x07\x00"], [{nla_len=8, nla_type=0x3c /* IFLA_??? */}, "\xff\xff\x00\x00"], [{nla_len=8, nla_type=IFLA_NUM_RX_QUEUES}, 1], [{nla_len=5, nla_type=IFLA_CARRIER}, 1], [{nla_len=12, nla_type=IFLA_QDISC}, "noqueue"], [{nla_len=8, nla_type=IFLA_CARRIER_CHANGES}, 0], [{nla_len=8, nla_type=IFLA_CARRIER_UP_COUNT}, 0], [{nla_len=8, nla_type=IFLA_CARRIER_DOWN_COUNT}, 0], [{nla_len=5, nla_type=IFLA_PROTO_DOWN}, 0], [{nla_len=36, nla_type=IFLA_MAP}, {mem_start=0, mem_end=0, base_addr=0, irq=0, dma=0, port=0}], [{nla_len=10, nla_type=IFLA_ADDRESS}, 00:00:00:00:00:00], [{nla_len=10, nla_type=IFLA_BROADCAST}, 00:00:00:00:00:00], [{nla_len=204, nla_type=IFLA_STATS64}, {rx_packets=1488, tx_packets=1488, rx_bytes=142334, tx_bytes=142334, rx_errors=0, tx_errors=0, rx_dropped=0, tx_dropped=0, multicast=0, collisions=0, rx_length_errors=0, rx_over_errors=0, rx_crc_errors=0, rx_frame_errors=0, rx_fifo_errors=0, rx_missed_errors=0, tx_aborted_errors=0, tx_carrier_errors=0, tx_fifo_errors=0, tx_heartbeat_errors=0, tx_window_errors=0, rx_compressed=0, tx_compressed=0, rx_nohandler=0}], [{nla_len=100, nla_type=IFLA_STATS}, {rx_packets=1488, tx_packets=1488, rx_bytes=142334, tx_bytes=142334, rx_errors=0, tx_errors=0, rx_dropped=0, tx_dropped=0, multicast=0, collisions=0, rx_length_errors=0, rx_over_errors=0, rx_crc_errors=0, rx_frame_errors=0, rx_fifo_errors=0, rx_missed_errors=0, tx_aborted_errors=0, tx_carrier_errors=0, tx_fifo_errors=0, tx_heartbeat_errors=0, tx_window_errors=0, rx_compressed=0, tx_compressed=0, rx_nohandler=0}], [{nla_len=12, nla_type=IFLA_XDP}, [{nla_len=5, nla_type=IFLA_XDP_ATTACHED}, XDP_ATTACHED_NONE]], [{nla_len=804, nla_type=IFLA_AF_SPEC}, [[{nla_len=12, nla_type=AF_MCTP}, [{nla_len=8, nla_type=IFLA_MCTP_NET}, 1]], [{nla_len=140, nla_type=AF_INET}, [{nla_len=136, nla_type=IFLA_INET_CONF}, [[IPV4_DEVCONF_FORWARDING-1] = 0, [IPV4_DEVCONF_MC_FORWARDING-1] = 0, [IPV4_DEVCONF_PROXY_ARP-1] = 0, [IPV4_DEVCONF_ACCEPT_REDIRECTS-1] = 1, [IPV4_DEVCONF_SECURE_REDIRECTS-1] = 1, [IPV4_DEVCONF_SEND_REDIRECTS-1] = 1, [IPV4_DEVCONF_SHARED_MEDIA-1] = 1, [IPV4_DEVCONF_RP_FILTER-1] = 2, [IPV4_DEVCONF_ACCEPT_SOURCE_ROUTE-1] = 0, [IPV4_DEVCONF_BOOTP_RELAY-1] = 0, [IPV4_DEVCONF_LOG_MARTIANS-1] = 0, [IPV4_DEVCONF_TAG-1] = 0, [IPV4_DEVCONF_ARPFILTER-1] = 0, [IPV4_DEVCONF_MEDIUM_ID-1] = 0, [IPV4_DEVCONF_NOXFRM-1] = 1, [IPV4_DEVCONF_NOPOLICY-1] = 1, [IPV4_DEVCONF_FORCE_IGMP_VERSION-1] = 0, [IPV4_DEVCONF_ARP_ANNOUNCE-1] = 0, [IPV4_DEVCONF_ARP_IGNORE-1] = 0, [IPV4_DEVCONF_PROMOTE_SECONDARIES-1] = 1, [IPV4_DEVCONF_ARP_ACCEPT-1] = 0, [IPV4_DEVCONF_ARP_NOTIFY-1] = 0, [IPV4_DEVCONF_ACCEPT_LOCAL-1] = 0, [IPV4_DEVCONF_SRC_VMARK-1] = 0, [IPV4_DEVCONF_PROXY_ARP_PVLAN-1] = 0, [IPV4_DEVCONF_ROUTE_LOCALNET-1] = 0, [IPV4_DEVCONF_IGMPV2_UNSOLICITED_REPORT_INTERVAL-1] = 10000, [IPV4_DEVCONF_IGMPV3_UNSOLICITED_REPORT_INTERVAL-1] = 1000, [IPV4_DEVCONF_IGNORE_ROUTES_WITH_LINKDOWN-1] = 0, [IPV4_DEVCONF_DROP_UNICAST_IN_L2_MULTICAST-1] = 0, [IPV4_DEVCONF_DROP_GRATUITOUS_ARP-1] = 0, [IPV4_DEVCONF_BC_FORWARDING-1] = 0, ...]]], [{nla_len=648, nla_type=AF_INET6}, [[{nla_len=8, nla_type=IFLA_INET6_FLAGS}, IF_READY], [{nla_len=20, nla_type=IFLA_INET6_CACHEINFO}, {max_reasm_len=65535, tstamp=284, reachable_time=15216, retrans_time=1000}], [{nla_len=236, nla_type=IFLA_INET6_CONF}, [[DEVCONF_FORWARDING] = 0, [DEVCONF_HOPLIMIT] = 64, [DEVCONF_MTU6] = 65536, [DEVCONF_ACCEPT_RA] = 1, [DEVCONF_ACCEPT_REDIRECTS] = 1, [DEVCONF_AUTOCONF] = 1, [DEVCONF_DAD_TRANSMITS] = 1, [DEVCONF_RTR_SOLICITS] = -1, [DEVCONF_RTR_SOLICIT_INTERVAL] = 4000, [DEVCONF_RTR_SOLICIT_DELAY] = 1000, [DEVCONF_USE_TEMPADDR] = -1, [DEVCONF_TEMP_VALID_LFT] = 604800, [DEVCONF_TEMP_PREFERED_LFT] = 86400, [DEVCONF_REGEN_MAX_RETRY] = 3, [DEVCONF_MAX_DESYNC_FACTOR] = 600, [DEVCONF_MAX_ADDRESSES] = 16, [DEVCONF_FORCE_MLD_VERSION] = 0, [DEVCONF_ACCEPT_RA_DEFRTR] = 1, [DEVCONF_ACCEPT_RA_PINFO] = 1, [DEVCONF_ACCEPT_RA_RTR_PREF] = 1, [DEVCONF_RTR_PROBE_INTERVAL] = 60000, [DEVCONF_ACCEPT_RA_RT_INFO_MAX_PLEN] = 0, [DEVCONF_PROXY_NDP] = 0, [DEVCONF_OPTIMISTIC_DAD] = 0, [DEVCONF_ACCEPT_SOURCE_ROUTE] = 0, [DEVCONF_MC_FORWARDING] = 0, [DEVCONF_DISABLE_IPV6] = 0, [DEVCONF_ACCEPT_DAD] = -1, [DEVCONF_FORCE_TLLAO] = 0, [DEVCONF_NDISC_NOTIFY] = 0, [DEVCONF_MLDV1_UNSOLICITED_REPORT_INTERVAL] = 10000, [DEVCONF_MLDV2_UNSOLICITED_REPORT_INTERVAL] = 1000, ...]], [{nla_len=300, nla_type=IFLA_INET6_STATS}, [[IPSTATS_MIB_NUM] = 37, [IPSTATS_MIB_INPKTS] = 4, [IPSTATS_MIB_INOCTETS] = 292, [IPSTATS_MIB_INDELIVERS] = 4, [IPSTATS_MIB_OUTFORWDATAGRAMS] = 0, [IPSTATS_MIB_OUTPKTS] = 4, [IPSTATS_MIB_OUTOCTETS] = 292, [IPSTATS_MIB_INHDRERRORS] = 0, [IPSTATS_MIB_INTOOBIGERRORS] = 0, [IPSTATS_MIB_INNOROUTES] = 0, [IPSTATS_MIB_INADDRERRORS] = 0, [IPSTATS_MIB_INUNKNOWNPROTOS] = 0, [IPSTATS_MIB_INTRUNCATEDPKTS] = 0, [IPSTATS_MIB_INDISCARDS] = 0, [IPSTATS_MIB_OUTDISCARDS] = 0, [IPSTATS_MIB_OUTNOROUTES] = 0, [IPSTATS_MIB_REASMTIMEOUT] = 0, [IPSTATS_MIB_REASMREQDS] = 0, [IPSTATS_MIB_REASMOKS] = 0, [IPSTATS_MIB_REASMFAILS] = 0, [IPSTATS_MIB_FRAGOKS] = 0, [IPSTATS_MIB_FRAGFAILS] = 0, [IPSTATS_MIB_FRAGCREATES] = 0, [IPSTATS_MIB_INMCASTPKTS] = 0, [IPSTATS_MIB_OUTMCASTPKTS] = 2, [IPSTATS_MIB_INBCASTPKTS] = 0, [IPSTATS_MIB_OUTBCASTPKTS] = 0, [IPSTATS_MIB_INMCASTOCTETS] = 0, [IPSTATS_MIB_OUTMCASTOCTETS] = 152, [IPSTATS_MIB_INBCASTOCTETS] = 0, [IPSTATS_MIB_OUTBCASTOCTETS] = 0, [IPSTATS_MIB_CSUMERRORS] = 0, ...]], [{nla_len=52, nla_type=IFLA_INET6_ICMP6STATS}, [[ICMP6_MIB_NUM] = 6, [ICMP6_MIB_INMSGS] = 2, [ICMP6_MIB_INERRORS] = 0, [ICMP6_MIB_OUTMSGS] = 2, [ICMP6_MIB_OUTERRORS] = 0, [ICMP6_MIB_CSUMERRORS] = 0]], [{nla_len=20, nla_type=IFLA_INET6_TOKEN}, inet_pton(AF_INET6, "::")], [{nla_len=5, nla_type=IFLA_INET6_ADDR_GEN_MODE}, IN6_ADDR_GEN_MODE_EUI64]]]]], {nla_len=4, nla_type=NLA_F_NESTED|0x3e /* IFLA_??? */}]], [{nlmsg_len=1440, nlmsg_type=RTM_NEWLINK, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1704380841, nlmsg_pid=261053}, {ifi_family=AF_UNSPEC, ifi_type=ARPHRD_ETHER, ifi_index=if_nametoindex("enp0s25"), ifi_flags=IFF_UP|IFF_BROADCAST|IFF_RUNNING|IFF_MULTICAST|IFF_LOWER_UP, ifi_change=0}, [[{nla_len=12, nla_type=IFLA_IFNAME}, "enp0s25"], [{nla_len=8, nla_type=IFLA_TXQLEN}, 1000], [{nla_len=5, nla_type=IFLA_OPERSTATE}, 6], [{nla_len=5, nla_type=IFLA_LINKMODE}, 0], [{nla_len=8, nla_type=IFLA_MTU}, 1500], [{nla_len=8, nla_type=IFLA_MIN_MTU}, 68], [{nla_len=8, nla_type=IFLA_MAX_MTU}, 9000], [{nla_len=8, nla_type=IFLA_GROUP}, 0], [{nla_len=8, nla_type=IFLA_PROMISCUITY}, 0], [{nla_len=8, nla_type=0x3d /* IFLA_??? */}, "\x00\x00\x00\x00"], [{nla_len=8, nla_type=IFLA_NUM_TX_QUEUES}, 1], [{nla_len=8, nla_type=IFLA_GSO_MAX_SEGS}, 65535], [{nla_len=8, nla_type=IFLA_GSO_MAX_SIZE}, 65536], [{nla_len=8, nla_type=0x3a /* IFLA_??? */}, "\x00\x00\x01\x00"], [{nla_len=8, nla_type=0x3b /* IFLA_??? */}, "\x00\x00\x01\x00"], [{nla_len=8, nla_type=0x3c /* IFLA_??? */}, "\xff\xff\x00\x00"], [{nla_len=8, nla_type=IFLA_NUM_RX_QUEUES}, 1], [{nla_len=5, nla_type=IFLA_CARRIER}, 1], [{nla_len=13, nla_type=IFLA_QDISC}, "fq_codel"], [{nla_len=8, nla_type=IFLA_CARRIER_CHANGES}, 8], [{nla_len=8, nla_type=IFLA_CARRIER_UP_COUNT}, 4], [{nla_len=8, nla_type=IFLA_CARRIER_DOWN_COUNT}, 4], [{nla_len=5, nla_type=IFLA_PROTO_DOWN}, 0], [{nla_len=36, nla_type=IFLA_MAP}, {mem_start=0xf0600000, mem_end=0xf0620000, base_addr=0, irq=20, dma=0, port=0}], [{nla_len=10, nla_type=IFLA_ADDRESS}, 68:f7:28:3b:dc:2e], [{nla_len=10, nla_type=IFLA_BROADCAST}, ff:ff:ff:ff:ff:ff], [{nla_len=204, nla_type=IFLA_STATS64}, {rx_packets=64241, tx_packets=162123, rx_bytes=89007203, tx_bytes=15852832, rx_errors=0, tx_errors=0, rx_dropped=2050, tx_dropped=0, multicast=1250, collisions=0, rx_length_errors=0, rx_over_errors=0, rx_crc_errors=0, rx_frame_errors=0, rx_fifo_errors=0, rx_missed_errors=0, tx_aborted_errors=0, tx_carrier_errors=0, tx_fifo_errors=0, tx_heartbeat_errors=0, tx_window_errors=0, rx_compressed=0, tx_compressed=0, rx_nohandler=0}], [{nla_len=100, nla_type=IFLA_STATS}, {rx_packets=64241, tx_packets=162123, rx_bytes=89007203, tx_bytes=15852832, rx_errors=0, tx_errors=0, rx_dropped=2050, tx_dropped=0, multicast=1250, collisions=0, rx_length_errors=0, rx_over_errors=0, rx_crc_errors=0, rx_frame_errors=0, rx_fifo_errors=0, rx_missed_errors=0, tx_aborted_errors=0, tx_carrier_errors=0, tx_fifo_errors=0, tx_heartbeat_errors=0, tx_window_errors=0, rx_compressed=0, tx_compressed=0, rx_nohandler=0}], [{nla_len=12, nla_type=IFLA_XDP}, [{nla_len=5, nla_type=IFLA_XDP_ATTACHED}, XDP_ATTACHED_NONE]], [{nla_len=10, nla_type=IFLA_PERM_ADDRESS}, 68:f7:28:3b:dc:2e], [{nla_len=792, nla_type=IFLA_AF_SPEC}, [[{nla_len=140, nla_type=AF_INET}, [{nla_len=136, nla_type=IFLA_INET_CONF}, [[IPV4_DEVCONF_FORWARDING-1] = 0, [IPV4_DEVCONF_MC_FORWARDING-1] = 0, [IPV4_DEVCONF_PROXY_ARP-1] = 0, [IPV4_DEVCONF_ACCEPT_REDIRECTS-1] = 1, [IPV4_DEVCONF_SECURE_REDIRECTS-1] = 1, [IPV4_DEVCONF_SEND_REDIRECTS-1] = 1, [IPV4_DEVCONF_SHARED_MEDIA-1] = 1, [IPV4_DEVCONF_RP_FILTER-1] = 2, [IPV4_DEVCONF_ACCEPT_SOURCE_ROUTE-1] = 0, [IPV4_DEVCONF_BOOTP_RELAY-1] = 0, [IPV4_DEVCONF_LOG_MARTIANS-1] = 0, [IPV4_DEVCONF_TAG-1] = 0, [IPV4_DEVCONF_ARPFILTER-1] = 0, [IPV4_DEVCONF_MEDIUM_ID-1] = 0, [IPV4_DEVCONF_NOXFRM-1] = 0, [IPV4_DEVCONF_NOPOLICY-1] = 0, [IPV4_DEVCONF_FORCE_IGMP_VERSION-1] = 0, [IPV4_DEVCONF_ARP_ANNOUNCE-1] = 0, [IPV4_DEVCONF_ARP_IGNORE-1] = 0, [IPV4_DEVCONF_PROMOTE_SECONDARIES-1] = 1, [IPV4_DEVCONF_ARP_ACCEPT-1] = 0, [IPV4_DEVCONF_ARP_NOTIFY-1] = 0, [IPV4_DEVCONF_ACCEPT_LOCAL-1] = 0, [IPV4_DEVCONF_SRC_VMARK-1] = 0, [IPV4_DEVCONF_PROXY_ARP_PVLAN-1] = 0, [IPV4_DEVCONF_ROUTE_LOCALNET-1] = 0, [IPV4_DEVCONF_IGMPV2_UNSOLICITED_REPORT_INTERVAL-1] = 10000, [IPV4_DEVCONF_IGMPV3_UNSOLICITED_REPORT_INTERVAL-1] = 1000, [IPV4_DEVCONF_IGNORE_ROUTES_WITH_LINKDOWN-1] = 0, [IPV4_DEVCONF_DROP_UNICAST_IN_L2_MULTICAST-1] = 0, [IPV4_DEVCONF_DROP_GRATUITOUS_ARP-1] = 0, [IPV4_DEVCONF_BC_FORWARDING-1] = 0, ...]]], [{nla_len=648, nla_type=AF_INET6}, [[{nla_len=8, nla_type=IFLA_INET6_FLAGS}, IF_READY], [{nla_len=20, nla_type=IFLA_INET6_CACHEINFO}, {max_reasm_len=65535, tstamp=967930, reachable_time=29072, retrans_time=1000}], [{nla_len=236, nla_type=IFLA_INET6_CONF}, [[DEVCONF_FORWARDING] = 0, [DEVCONF_HOPLIMIT] = 64, [DEVCONF_MTU6] = 1500, [DEVCONF_ACCEPT_RA] = 0, [DEVCONF_ACCEPT_REDIRECTS] = 1, [DEVCONF_AUTOCONF] = 1, [DEVCONF_DAD_TRANSMITS] = 1, [DEVCONF_RTR_SOLICITS] = -1, [DEVCONF_RTR_SOLICIT_INTERVAL] = 4000, [DEVCONF_RTR_SOLICIT_DELAY] = 1000, [DEVCONF_USE_TEMPADDR] = 2, [DEVCONF_TEMP_VALID_LFT] = 604800, [DEVCONF_TEMP_PREFERED_LFT] = 86400, [DEVCONF_REGEN_MAX_RETRY] = 3, [DEVCONF_MAX_DESYNC_FACTOR] = 600, [DEVCONF_MAX_ADDRESSES] = 16, [DEVCONF_FORCE_MLD_VERSION] = 0, [DEVCONF_ACCEPT_RA_DEFRTR] = 1, [DEVCONF_ACCEPT_RA_PINFO] = 1, [DEVCONF_ACCEPT_RA_RTR_PREF] = 1, [DEVCONF_RTR_PROBE_INTERVAL] = 60000, [DEVCONF_ACCEPT_RA_RT_INFO_MAX_PLEN] = 0, [DEVCONF_PROXY_NDP] = 0, [DEVCONF_OPTIMISTIC_DAD] = 0, [DEVCONF_ACCEPT_SOURCE_ROUTE] = 0, [DEVCONF_MC_FORWARDING] = 0, [DEVCONF_DISABLE_IPV6] = 0, [DEVCONF_ACCEPT_DAD] = 1, [DEVCONF_FORCE_TLLAO] = 0, [DEVCONF_NDISC_NOTIFY] = 0, [DEVCONF_MLDV1_UNSOLICITED_REPORT_INTERVAL] = 10000, [DEVCONF_MLDV2_UNSOLICITED_REPORT_INTERVAL] = 1000, ...]], [{nla_len=300, nla_type=IFLA_INET6_STATS}, [[IPSTATS_MIB_NUM] = 37, [IPSTATS_MIB_INPKTS] = 285, [IPSTATS_MIB_INOCTETS] = 99118, [IPSTATS_MIB_INDELIVERS] = 285, [IPSTATS_MIB_OUTFORWDATAGRAMS] = 0, [IPSTATS_MIB_OUTPKTS] = 133, [IPSTATS_MIB_OUTOCTETS] = 12358, [IPSTATS_MIB_INHDRERRORS] = 0, [IPSTATS_MIB_INTOOBIGERRORS] = 0, [IPSTATS_MIB_INNOROUTES] = 0, [IPSTATS_MIB_INADDRERRORS] = 0, [IPSTATS_MIB_INUNKNOWNPROTOS] = 0, [IPSTATS_MIB_INTRUNCATEDPKTS] = 0, [IPSTATS_MIB_INDISCARDS] = 0, [IPSTATS_MIB_OUTDISCARDS] = 2, [IPSTATS_MIB_OUTNOROUTES] = 0, [IPSTATS_MIB_REASMTIMEOUT] = 0, [IPSTATS_MIB_REASMREQDS] = 0, [IPSTATS_MIB_REASMOKS] = 0, [IPSTATS_MIB_REASMFAILS] = 0, [IPSTATS_MIB_FRAGOKS] = 0, [IPSTATS_MIB_FRAGFAILS] = 0, [IPSTATS_MIB_FRAGCREATES] = 0, [IPSTATS_MIB_INMCASTPKTS] = 285, [IPSTATS_MIB_OUTMCASTPKTS] = 133, [IPSTATS_MIB_INBCASTPKTS] = 0, [IPSTATS_MIB_OUTBCASTPKTS] = 0, [IPSTATS_MIB_INMCASTOCTETS] = 99118, [IPSTATS_MIB_OUTMCASTOCTETS] = 12358, [IPSTATS_MIB_INBCASTOCTETS] = 0, [IPSTATS_MIB_OUTBCASTOCTETS] = 0, [IPSTATS_MIB_CSUMERRORS] = 0, ...]], [{nla_len=52, nla_type=IFLA_INET6_ICMP6STATS}, [[ICMP6_MIB_NUM] = 6, [ICMP6_MIB_INMSGS] = 0, [ICMP6_MIB_INERRORS] = 0, [ICMP6_MIB_OUTMSGS] = 89, [ICMP6_MIB_OUTERRORS] = 0, [ICMP6_MIB_CSUMERRORS] = 0]], [{nla_len=20, nla_type=IFLA_INET6_TOKEN}, inet_pton(AF_INET6, "::")], [{nla_len=5, nla_type=IFLA_INET6_ADDR_GEN_MODE}, IN6_ADDR_GEN_MODE_NONE]]]]], [{nla_len=17, nla_type=IFLA_PARENT_DEV_NAME}, "0000:00:19.0"], ...]]], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 2844
+recvmsg(9, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[{nlmsg_len=1436, nlmsg_type=RTM_NEWLINK, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1704380841, nlmsg_pid=261053}, {ifi_family=AF_UNSPEC, ifi_type=ARPHRD_ETHER, ifi_index=if_nametoindex("wlp3s0"), ifi_flags=IFF_BROADCAST|IFF_MULTICAST, ifi_change=0}, [[{nla_len=11, nla_type=IFLA_IFNAME}, "wlp3s0"], [{nla_len=8, nla_type=IFLA_TXQLEN}, 1000], [{nla_len=5, nla_type=IFLA_OPERSTATE}, 2], [{nla_len=5, nla_type=IFLA_LINKMODE}, 0], [{nla_len=8, nla_type=IFLA_MTU}, 1500], [{nla_len=8, nla_type=IFLA_MIN_MTU}, 256], [{nla_len=8, nla_type=IFLA_MAX_MTU}, 2304], [{nla_len=8, nla_type=IFLA_GROUP}, 0], [{nla_len=8, nla_type=IFLA_PROMISCUITY}, 0], [{nla_len=8, nla_type=0x3d /* IFLA_??? */}, "\x00\x00\x00\x00"], [{nla_len=8, nla_type=IFLA_NUM_TX_QUEUES}, 1], [{nla_len=8, nla_type=IFLA_GSO_MAX_SEGS}, 65535], [{nla_len=8, nla_type=IFLA_GSO_MAX_SIZE}, 65536], [{nla_len=8, nla_type=0x3a /* IFLA_??? */}, "\x00\x00\x01\x00"], [{nla_len=8, nla_type=0x3b /* IFLA_??? */}, "\x00\x00\x01\x00"], [{nla_len=8, nla_type=0x3c /* IFLA_??? */}, "\xff\xff\x00\x00"], [{nla_len=8, nla_type=IFLA_NUM_RX_QUEUES}, 1], [{nla_len=5, nla_type=IFLA_CARRIER}, 0], [{nla_len=12, nla_type=IFLA_QDISC}, "noqueue"], [{nla_len=8, nla_type=IFLA_CARRIER_CHANGES}, 3], [{nla_len=8, nla_type=IFLA_CARRIER_UP_COUNT}, 1], [{nla_len=8, nla_type=IFLA_CARRIER_DOWN_COUNT}, 2], [{nla_len=5, nla_type=IFLA_PROTO_DOWN}, 0], [{nla_len=36, nla_type=IFLA_MAP}, {mem_start=0, mem_end=0, base_addr=0, irq=0, dma=0, port=0}], [{nla_len=10, nla_type=IFLA_ADDRESS}, 5c:c5:d4:43:6b:5b], [{nla_len=10, nla_type=IFLA_BROADCAST}, ff:ff:ff:ff:ff:ff], [{nla_len=204, nla_type=IFLA_STATS64}, {rx_packets=349, tx_packets=1082, rx_bytes=34132, tx_bytes=1519918, rx_errors=0, tx_errors=0, rx_dropped=0, tx_dropped=0, multicast=0, collisions=0, rx_length_errors=0, rx_over_errors=0, rx_crc_errors=0, rx_frame_errors=0, rx_fifo_errors=0, rx_missed_errors=0, tx_aborted_errors=0, tx_carrier_errors=0, tx_fifo_errors=0, tx_heartbeat_errors=0, tx_window_errors=0, rx_compressed=0, tx_compressed=0, rx_nohandler=0}], [{nla_len=100, nla_type=IFLA_STATS}, {rx_packets=349, tx_packets=1082, rx_bytes=34132, tx_bytes=1519918, rx_errors=0, tx_errors=0, rx_dropped=0, tx_dropped=0, multicast=0, collisions=0, rx_length_errors=0, rx_over_errors=0, rx_crc_errors=0, rx_frame_errors=0, rx_fifo_errors=0, rx_missed_errors=0, tx_aborted_errors=0, tx_carrier_errors=0, tx_fifo_errors=0, tx_heartbeat_errors=0, tx_window_errors=0, rx_compressed=0, tx_compressed=0, rx_nohandler=0}], [{nla_len=12, nla_type=IFLA_XDP}, [{nla_len=5, nla_type=IFLA_XDP_ATTACHED}, XDP_ATTACHED_NONE]], [{nla_len=10, nla_type=IFLA_PERM_ADDRESS}, 5c:c5:d4:43:6b:5b], [{nla_len=792, nla_type=IFLA_AF_SPEC}, [[{nla_len=140, nla_type=AF_INET}, [{nla_len=136, nla_type=IFLA_INET_CONF}, [[IPV4_DEVCONF_FORWARDING-1] = 0, [IPV4_DEVCONF_MC_FORWARDING-1] = 0, [IPV4_DEVCONF_PROXY_ARP-1] = 0, [IPV4_DEVCONF_ACCEPT_REDIRECTS-1] = 1, [IPV4_DEVCONF_SECURE_REDIRECTS-1] = 1, [IPV4_DEVCONF_SEND_REDIRECTS-1] = 1, [IPV4_DEVCONF_SHARED_MEDIA-1] = 1, [IPV4_DEVCONF_RP_FILTER-1] = 2, [IPV4_DEVCONF_ACCEPT_SOURCE_ROUTE-1] = 0, [IPV4_DEVCONF_BOOTP_RELAY-1] = 0, [IPV4_DEVCONF_LOG_MARTIANS-1] = 0, [IPV4_DEVCONF_TAG-1] = 0, [IPV4_DEVCONF_ARPFILTER-1] = 0, [IPV4_DEVCONF_MEDIUM_ID-1] = 0, [IPV4_DEVCONF_NOXFRM-1] = 0, [IPV4_DEVCONF_NOPOLICY-1] = 0, [IPV4_DEVCONF_FORCE_IGMP_VERSION-1] = 0, [IPV4_DEVCONF_ARP_ANNOUNCE-1] = 0, [IPV4_DEVCONF_ARP_IGNORE-1] = 0, [IPV4_DEVCONF_PROMOTE_SECONDARIES-1] = 1, [IPV4_DEVCONF_ARP_ACCEPT-1] = 0, [IPV4_DEVCONF_ARP_NOTIFY-1] = 0, [IPV4_DEVCONF_ACCEPT_LOCAL-1] = 0, [IPV4_DEVCONF_SRC_VMARK-1] = 0, [IPV4_DEVCONF_PROXY_ARP_PVLAN-1] = 0, [IPV4_DEVCONF_ROUTE_LOCALNET-1] = 0, [IPV4_DEVCONF_IGMPV2_UNSOLICITED_REPORT_INTERVAL-1] = 10000, [IPV4_DEVCONF_IGMPV3_UNSOLICITED_REPORT_INTERVAL-1] = 1000, [IPV4_DEVCONF_IGNORE_ROUTES_WITH_LINKDOWN-1] = 0, [IPV4_DEVCONF_DROP_UNICAST_IN_L2_MULTICAST-1] = 0, [IPV4_DEVCONF_DROP_GRATUITOUS_ARP-1] = 0, [IPV4_DEVCONF_BC_FORWARDING-1] = 0, ...]]], [{nla_len=648, nla_type=AF_INET6}, [[{nla_len=8, nla_type=IFLA_INET6_FLAGS}, 0], [{nla_len=20, nla_type=IFLA_INET6_CACHEINFO}, {max_reasm_len=65535, tstamp=889551, reachable_time=40144, retrans_time=1000}], [{nla_len=236, nla_type=IFLA_INET6_CONF}, [[DEVCONF_FORWARDING] = 0, [DEVCONF_HOPLIMIT] = 64, [DEVCONF_MTU6] = 1500, [DEVCONF_ACCEPT_RA] = 0, [DEVCONF_ACCEPT_REDIRECTS] = 1, [DEVCONF_AUTOCONF] = 1, [DEVCONF_DAD_TRANSMITS] = 1, [DEVCONF_RTR_SOLICITS] = -1, [DEVCONF_RTR_SOLICIT_INTERVAL] = 4000, [DEVCONF_RTR_SOLICIT_DELAY] = 1000, [DEVCONF_USE_TEMPADDR] = 0, [DEVCONF_TEMP_VALID_LFT] = 604800, [DEVCONF_TEMP_PREFERED_LFT] = 86400, [DEVCONF_REGEN_MAX_RETRY] = 3, [DEVCONF_MAX_DESYNC_FACTOR] = 600, [DEVCONF_MAX_ADDRESSES] = 16, [DEVCONF_FORCE_MLD_VERSION] = 0, [DEVCONF_ACCEPT_RA_DEFRTR] = 1, [DEVCONF_ACCEPT_RA_PINFO] = 1, [DEVCONF_ACCEPT_RA_RTR_PREF] = 1, [DEVCONF_RTR_PROBE_INTERVAL] = 60000, [DEVCONF_ACCEPT_RA_RT_INFO_MAX_PLEN] = 0, [DEVCONF_PROXY_NDP] = 0, [DEVCONF_OPTIMISTIC_DAD] = 0, [DEVCONF_ACCEPT_SOURCE_ROUTE] = 0, [DEVCONF_MC_FORWARDING] = 0, [DEVCONF_DISABLE_IPV6] = 0, [DEVCONF_ACCEPT_DAD] = 1, [DEVCONF_FORCE_TLLAO] = 0, [DEVCONF_NDISC_NOTIFY] = 0, [DEVCONF_MLDV1_UNSOLICITED_REPORT_INTERVAL] = 10000, [DEVCONF_MLDV2_UNSOLICITED_REPORT_INTERVAL] = 1000, ...]], [{nla_len=300, nla_type=IFLA_INET6_STATS}, [[IPSTATS_MIB_NUM] = 37, [IPSTATS_MIB_INPKTS] = 6, [IPSTATS_MIB_INOCTETS] = 1272, [IPSTATS_MIB_INDELIVERS] = 6, [IPSTATS_MIB_OUTFORWDATAGRAMS] = 0, [IPSTATS_MIB_OUTPKTS] = 19, [IPSTATS_MIB_OUTOCTETS] = 1883, [IPSTATS_MIB_INHDRERRORS] = 0, [IPSTATS_MIB_INTOOBIGERRORS] = 0, [IPSTATS_MIB_INNOROUTES] = 0, [IPSTATS_MIB_INADDRERRORS] = 0, [IPSTATS_MIB_INUNKNOWNPROTOS] = 0, [IPSTATS_MIB_INTRUNCATEDPKTS] = 0, [IPSTATS_MIB_INDISCARDS] = 0, [IPSTATS_MIB_OUTDISCARDS] = 2, [IPSTATS_MIB_OUTNOROUTES] = 0, [IPSTATS_MIB_REASMTIMEOUT] = 0, [IPSTATS_MIB_REASMREQDS] = 0, [IPSTATS_MIB_REASMOKS] = 0, [IPSTATS_MIB_REASMFAILS] = 0, [IPSTATS_MIB_FRAGOKS] = 0, [IPSTATS_MIB_FRAGFAILS] = 0, [IPSTATS_MIB_FRAGCREATES] = 0, [IPSTATS_MIB_INMCASTPKTS] = 6, [IPSTATS_MIB_OUTMCASTPKTS] = 19, [IPSTATS_MIB_INBCASTPKTS] = 0, [IPSTATS_MIB_OUTBCASTPKTS] = 0, [IPSTATS_MIB_INMCASTOCTETS] = 1272, [IPSTATS_MIB_OUTMCASTOCTETS] = 1883, [IPSTATS_MIB_INBCASTOCTETS] = 0, [IPSTATS_MIB_OUTBCASTOCTETS] = 0, [IPSTATS_MIB_CSUMERRORS] = 0, ...]], [{nla_len=52, nla_type=IFLA_INET6_ICMP6STATS}, [[ICMP6_MIB_NUM] = 6, [ICMP6_MIB_INMSGS] = 0, [ICMP6_MIB_INERRORS] = 0, [ICMP6_MIB_OUTMSGS] = 12, [ICMP6_MIB_OUTERRORS] = 0, [ICMP6_MIB_CSUMERRORS] = 0]], [{nla_len=20, nla_type=IFLA_INET6_TOKEN}, inet_pton(AF_INET6, "::")], [{nla_len=5, nla_type=IFLA_INET6_ADDR_GEN_MODE}, IN6_ADDR_GEN_MODE_NONE]]]]], [{nla_len=17, nla_type=IFLA_PARENT_DEV_NAME}, "0000:03:00.0"], ...]], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 1436
+recvmsg(9, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[{nlmsg_len=20, nlmsg_type=NLMSG_DONE, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1704380841, nlmsg_pid=261053}, 0], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 20
+sendto(9, [{nlmsg_len=20, nlmsg_type=RTM_GETADDR, nlmsg_flags=NLM_F_REQUEST|NLM_F_DUMP, nlmsg_seq=1704380842, nlmsg_pid=0}, {ifa_family=AF_UNSPEC, ...}], 20, 0, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 20
+recvmsg(9, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[[{nlmsg_len=76, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1704380842, nlmsg_pid=261053}, {ifa_family=AF_INET, ifa_prefixlen=8, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_HOST, ifa_index=if_nametoindex("lo")}, [[{nla_len=8, nla_type=IFA_ADDRESS}, inet_addr("127.0.0.1")], [{nla_len=8, nla_type=IFA_LOCAL}, inet_addr("127.0.0.1")], [{nla_len=7, nla_type=IFA_LABEL}, "lo"], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=284, tstamp=284}]]], [{nlmsg_len=88, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1704380842, nlmsg_pid=261053}, {ifa_family=AF_INET, ifa_prefixlen=24, ifa_flags=0, ifa_scope=RT_SCOPE_UNIVERSE, ifa_index=if_nametoindex("enp0s25")}, [[{nla_len=8, nla_type=IFA_ADDRESS}, inet_addr("192.168.0.24")], [{nla_len=8, nla_type=IFA_LOCAL}, inet_addr("192.168.0.24")], [{nla_len=8, nla_type=IFA_BROADCAST}, inet_addr("192.168.0.255")], [{nla_len=12, nla_type=IFA_LABEL}, "enp0s25"], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_NOPREFIXROUTE], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=7187, ifa_valid=7187, cstamp=967932, tstamp=967978}]]]], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 164
+recvmsg(9, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[[{nlmsg_len=72, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1704380842, nlmsg_pid=261053}, {ifa_family=AF_INET6, ifa_prefixlen=128, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_HOST, ifa_index=if_nametoindex("lo")}, [[{nla_len=20, nla_type=IFA_ADDRESS}, inet_pton(AF_INET6, "::1")], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=284, tstamp=284}], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT]]], [{nlmsg_len=72, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1704380842, nlmsg_pid=261053}, {ifa_family=AF_INET6, ifa_prefixlen=64, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_LINK, ifa_index=if_nametoindex("enp0s25")}, [[{nla_len=20, nla_type=IFA_ADDRESS}, inet_pton(AF_INET6, "fe80::c83:1bac:defa:812d")], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=967930, tstamp=967978}], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT|IFA_F_NOPREFIXROUTE]]]], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 144
+recvmsg(9, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[{nlmsg_len=20, nlmsg_type=NLMSG_DONE, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1704380842, nlmsg_pid=261053}, 0], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 20
+close(9)                                = 0
+futex(0xdbac78, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbac6c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbac64, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbad18, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbac50, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbac48, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbac1c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdb8174, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbab24, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbaafc, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbaaf0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbac5c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbac14, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbac0c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+openat(AT_FDCWD, "/usr/local/ssl/openssl.cnf", O_RDONLY) = -1 ENOENT (No such file or directory)
+futex(0xdbac40, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+sysinfo({uptime=9694, loads=[20736, 36320, 39296], totalram=8190398464, freeram=3912769536, sharedram=277753856, bufferram=82104320, totalswap=2147479552, freeswap=2147479552, procs=618, totalhigh=0, freehigh=0, mem_unit=1}) = 0
+futex(0xdb80a4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+brk(0x25f4000)                          = 0x25f4000
+futex(0xdb809c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+fcntl(1, F_GETFL)                       = 0x80002 (flags O_RDWR|O_CLOEXEC)
+ioctl(1, TIOCGPTN, 0x7ffe6190ad9c)      = -1 ENOTTY (Inappropriate ioctl for device)
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x3), ...}, AT_EMPTY_PATH) = 0
+readlink("/proc/self/fd/1", "/dev/pts/3", 255) = 10
+newfstatat(AT_FDCWD, "/dev/pts/3", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x3), ...}, 0) = 0
+openat(AT_FDCWD, "/dev/pts/3", O_RDWR|O_NOCTTY|O_CLOEXEC) = 9
+dup3(9, 1, O_CLOEXEC)                   = 1
+openat(AT_FDCWD, "/dev/null", O_RDONLY|O_CLOEXEC) = 10
+ioctl(9, FIONBIO, [1])                  = 0
+eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK)   = 11
+epoll_ctl(3, EPOLL_CTL_ADD, 11, {events=EPOLLIN, data={u32=4294967295, u64=4294967295}}) = 0
+epoll_ctl(3, EPOLL_CTL_DEL, 11, 0x7ffe6190ae30) = 0
+ioctl(11, FIONBIO, [1])                 = 0
+epoll_ctl(3, EPOLL_CTL_DEL, 11, 0x7ffe6190ae30) = -1 ENOENT (No such file or directory)
+ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+fcntl(0, F_GETFL)                       = 0x80002 (flags O_RDWR|O_CLOEXEC)
+ioctl(0, TIOCGPTN, 0x7ffe6190adfc)      = -1 ENOTTY (Inappropriate ioctl for device)
+ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x3), ...}, AT_EMPTY_PATH) = 0
+readlink("/proc/self/fd/0", "/dev/pts/3", 255) = 10
+newfstatat(AT_FDCWD, "/dev/pts/3", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x3), ...}, 0) = 0
+openat(AT_FDCWD, "/dev/pts/3", O_RDWR|O_NOCTTY|O_CLOEXEC) = 12
+dup3(12, 0, O_CLOEXEC)                  = 0
+ioctl(12, FIONBIO, [1])                 = 0
+ioctl(12, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(12, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(12, SNDCTL_TMR_STOP or TCSETSW, {B38400 opost -isig -icanon -echo ...}) = 0
+ioctl(12, TCGETS, {B38400 opost -isig -icanon -echo ...}) = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x3), ...}, AT_EMPTY_PATH) = 0
+write(1, "\33[1;32m * \33[0m\33[1;37mABOUT      "..., 87 * ABOUT        XMRig/6.15.1 gcc/5.4.0
+) = 87
+write(1, "\33[1;32m * \33[0m\33[1;37mLIBS       "..., 82 * LIBS         libuv/1.42.0 OpenSSL/1.1.1l hwloc/2.5.0
+) = 82
+write(1, "\33[1;32m * \33[0m\33[1;37mHUGE PAGES "..., 63 * HUGE PAGES   supported
+) = 63
+write(1, "\33[1;32m * \33[0m\33[1;37m1GB PAGES  "..., 62 * 1GB PAGES    disabled
+) = 62
+write(1, "\33[1;32m * \33[0m\33[1;37mCPU        "..., 116 * CPU          Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz (1) 64-bit AES
+) = 116
+write(1, "\33[1;37m                \33[0m\33[1;3"..., 163                L2:0.5 MB L3:3.0 MB 2C/4T NUMA:1
+) = 163
+openat(AT_FDCWD, "/proc/meminfo", O_RDONLY|O_CLOEXEC) = 13
+read(13, "MemTotal:        7998436 kB\nMemF"..., 4095) = 1503
+close(13)                               = 0
+openat(AT_FDCWD, "/proc/meminfo", O_RDONLY|O_CLOEXEC) = 13
+read(13, "MemTotal:        7998436 kB\nMemF"..., 4095) = 1503
+close(13)                               = 0
+write(1, "\33[1;32m * \33[0m\33[1;37mMEMORY     "..., 92 * MEMORY       4.0/7.6 GB (52%)
+) = 92
+openat(AT_FDCWD, "/sys/firmware/dmi/tables/smbios_entry_point", O_RDONLY) = -1 EACCES (Permission denied)
+openat(AT_FDCWD, "/sys/firmware/efi/systab", O_RDONLY) = -1 EACCES (Permission denied)
+openat(AT_FDCWD, "/proc/efi/systab", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/dev/mem", O_RDONLY)  = -1 EACCES (Permission denied)
+write(1, "\33[1;32m * \33[0m\33[1;37mDONATE     "..., 56 * DONATE       1%
+) = 56
+write(1, "\33[1;32m * \33[0m\33[1;37mASSEMBLY   "..., 64 * ASSEMBLY     auto:intel
+) = 64
+write(1, "\33[1;32m * \33[0m\33[1;37mPOOL #1    "..., 104 * POOL #1      gulf.moneroocean.stream:10128 algo auto
+) = 104
+write(1, "\33[1;32m * \33[0m\33[1;37mCOMMANDS   "..., 213 * COMMANDS     hashrate, pause, resume, results, connection
+) = 213
+uname({sysname="Linux", nodename="ThinkPad-T440s", ...}) = 0
+inotify_init1(IN_NONBLOCK|IN_CLOEXEC)   = 13
+inotify_add_watch(13, "/home/cryptoguard/vmware-cryptominer/bin/config.json", IN_MODIFY|IN_ATTRIB|IN_MOVED_FROM|IN_MOVED_TO|IN_CREATE|IN_DELETE|IN_DELETE_SELF|IN_MOVE_SELF) = 1
+eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK)   = 14
+epoll_ctl(3, EPOLL_CTL_ADD, 14, {events=EPOLLIN, data={u32=4294967295, u64=4294967295}}) = 0
+epoll_ctl(3, EPOLL_CTL_DEL, 14, 0x7ffe6190ad90) = 0
+ioctl(14, FIONBIO, [1])                 = 0
+epoll_ctl(3, EPOLL_CTL_DEL, 14, 0x7ffe6190ad90) = -1 ENOENT (No such file or directory)
+rt_sigaction(SIGRT_1, {sa_handler=0x7fba5f891870, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7fba5f842520}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fba5efff000
+mprotect(0x7fba5f000000, 8388608, PROT_READ|PROT_WRITE) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fba5f7ff910, parent_tid=0x7fba5f7ff910, exit_signal=0, stack=0x7fba5efff000, stack_size=0x7fff00, tls=0x7fba5f7ff640} => {parent_tid=[261054]}, 88) = 261054
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+write(1, "\33[1;32m * \33[0m\33[1;37mOPENCL     "..., 62 * OPENCL       disabled
+) = 62
+write(1, "\33[1;32m * \33[0m\33[1;37mCUDA       "..., 62 * CUDA         disabled
+) = 62
+futex(0xdbc990, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fba5e7fe000
+mprotect(0x7fba5e7ff000, 8388608, PROT_READ|PROT_WRITE) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fba5effe910, parent_tid=0x7fba5effe910, exit_signal=0, stack=0x7fba5e7fe000, stack_size=0x7fff00, tls=0x7fba5effe640} => {parent_tid=[261055]}, 88) = 261055
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fba5dffd000
+mprotect(0x7fba5dffe000, 8388608, PROT_READ|PROT_WRITE) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fba5e7fd910, parent_tid=0x7fba5e7fd910, exit_signal=0, stack=0x7fba5dffd000, stack_size=0x7fff00, tls=0x7fba5e7fd640} => {parent_tid=[261056]}, 88) = 261056
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fba5d7fc000
+mprotect(0x7fba5d7fd000, 8388608, PROT_READ|PROT_WRITE) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fba5dffc910, parent_tid=0x7fba5dffc910, exit_signal=0, stack=0x7fba5d7fc000, stack_size=0x7fff00, tls=0x7fba5dffc640} => {parent_tid=[261057]}, 88) = 261057
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fba5cffb000
+mprotect(0x7fba5cffc000, 8388608, PROT_READ|PROT_WRITE) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fba5d7fb910, parent_tid=0x7fba5d7fb910, exit_signal=0, stack=0x7fba5cffb000, stack_size=0x7fff00, tls=0x7fba5d7fb640} => {parent_tid=[261058]}, 88) = 261058
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+futex(0xdbc5d0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0xdbc5c8, FUTEX_WAKE_PRIVATE, 1)  = 1
+futex(0xdbc560, FUTEX_WAKE_PRIVATE, 1)  = 1
+epoll_ctl(3, EPOLL_CTL_ADD, 6, {events=EPOLLIN, data={u32=6, u64=6}}) = 0
+epoll_ctl(3, EPOLL_CTL_ADD, 8, {events=EPOLLIN, data={u32=8, u64=8}}) = 0
+epoll_ctl(3, EPOLL_CTL_ADD, 11, {events=EPOLLIN, data={u32=11, u64=11}}) = 0
+epoll_ctl(3, EPOLL_CTL_ADD, 12, {events=EPOLLIN, data={u32=12, u64=12}}) = 0
+epoll_ctl(3, EPOLL_CTL_ADD, 13, {events=EPOLLIN, data={u32=13, u64=13}}) = 0
+epoll_ctl(3, EPOLL_CTL_ADD, 14, {events=EPOLLIN, data={u32=14, u64=14}}) = 0
+epoll_wait(3, [{events=EPOLLIN, data={u32=8, u64=8}}], 1024, 990) = 1
+read(8, "\1\0\0\0\0\0\0\0", 1024)       = 8
+socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 15
+setsockopt(15, SOL_TCP, TCP_NODELAY, [1], 4) = 0
+setsockopt(15, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
+setsockopt(15, SOL_TCP, TCP_KEEPIDLE, [60], 4) = 0
+setsockopt(15, SOL_TCP, TCP_KEEPINTVL, [1], 4) = 0
+setsockopt(15, SOL_TCP, TCP_KEEPCNT, [10], 4) = 0
+connect(15, {sa_family=AF_INET, sin_port=htons(10128), sin_addr=inet_addr("54.250.156.221")}, 16) = -1 EINPROGRESS (Operation now in progress)
+epoll_ctl(3, EPOLL_CTL_ADD, 15, {events=EPOLLOUT, data={u32=15, u64=15}}) = 0
+epoll_wait(3, [{events=EPOLLOUT, data={u32=15, u64=15}}], 1024, 871) = 1
+getsockopt(15, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+write(15, "{\"id\":1,\"jsonrpc\":\"2.0\",\"method\""..., 543) = 543
+epoll_ctl(3, EPOLL_CTL_ADD, 15, {events=EPOLLIN, data={u32=15, u64=15}}) = -1 EEXIST (File exists)
+epoll_ctl(3, EPOLL_CTL_MOD, 15, {events=EPOLLIN, data={u32=15, u64=15}}) = 0
+epoll_wait(3, [{events=EPOLLIN, data={u32=15, u64=15}}], 1024, 835) = 1
+mmap(NULL, 266240, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fba5fb55000
+read(15, "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":"..., 65536) = 654
+brk(0x261a000)                          = 0x261a000
+openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 16
+newfstatat(16, "", {st_mode=S_IFREG|0644, st_size=617, ...}, AT_EMPTY_PATH) = 0
+newfstatat(16, "", {st_mode=S_IFREG|0644, st_size=617, ...}, AT_EMPTY_PATH) = 0
+read(16, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 4096) = 617
+lseek(16, -370, SEEK_CUR)               = 247
+read(16, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 4096) = 370
+close(16)                               = 0
+write(1, "[2024-01-05 00:07:21\33[1;30m.741\33"..., 168[2024-01-05 00:07:21.741]  net      use pool gulf.moneroocean.stream:10128  54.250.156.221
+) = 168
+write(1, "[2024-01-05 00:07:21\33[1;30m.742\33"..., 202[2024-01-05 00:07:21.742]  net      new job from gulf.moneroocean.stream:10128 diff 71107 algo rx/0 height 156694
+) = 202
+write(1, "[2024-01-05 00:07:21\33[1;30m.743\33"..., 118[2024-01-05 00:07:21.743]  cpu      use argon2 implementation AVX2
+) = 118
+rt_sigaction(SIGSEGV, {sa_handler=0x748f50, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7fba5f842520}, NULL, 8) = 0
+rt_sigaction(SIGILL, {sa_handler=0x748f50, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7fba5f842520}, NULL, 8) = 0
+futex(0x259acb8, FUTEX_WAKE_PRIVATE, 1) = 1
+brk(0x260a000)                          = 0x260a000
+[2024-01-05 00:07:21.744]  randomx  init dataset algo rx/0 (4 threads) seed b317551ad95ced32...
+epoll_wait(3, [2024-01-05 00:07:21.744]  randomx  allocated 2336 MB (2080+256) huge pages 0% 0/1168 +JIT (0 ms)
+[], 1024, 796)            = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [], 1024, 1000)           = 0
+epoll_wait(3, [2024-01-05 00:07:32.705]  randomx  dataset ready (10960 ms)
+[{events=EPOLLIN, data={u32=14, u64=14}}], 1024, 1000) = 1
+read(14, "\1\0\0\0\0\0\0\0", 8)         = 8
+read(14, 0xda3370, 8)                   = -1 EAGAIN (Resource temporarily unavailable)
+write(1, "[2024-01-05 00:07:32\33[1;30m.705\33"..., 173[2024-01-05 00:07:32.705]  cpu      use profile  rx  (4 threads) scratchpad 2048 KB
+) = 173
+brk(0x2632000)                          = 0x2632000
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fba56ffd910, parent_tid=0x7fba56ffd910, exit_signal=0, stack=0x7fba567fd000, stack_size=0x7fff00, tls=0x7fba56ffd640} => {parent_tid=[261065]}, 88) = 261065
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fba577fe910, parent_tid=0x7fba577fe910, exit_signal=0, stack=0x7fba56ffe000, stack_size=0x7fff00, tls=0x7fba577fe640} => {parent_tid=[261066]}, 88) = 261066
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fba57fff910, parent_tid=0x7fba57fff910, exit_signal=0, stack=0x7fba577ff000, stack_size=0x7fff00, tls=0x7fba57fff640} => {parent_tid=[261067]}, 88) = 261067
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fba5cffa910, parent_tid=0x7fba5cffa910, exit_signal=0, stack=0x7fba5c7fa000, stack_size=0x7fff00, tls=0x7fba5cffa640} => {parent_tid=[261068]}, 88) = 261068
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+epoll_wait(3, [2024-01-05 00:07:32.708]  cpu      READY threads 4/4 (4) huge pages 0% 0/4 memory 8192 KB (2 ms)
+[], 1024, 499)            = 0
+epoll_wait(3, [], 1024, 344)            = 0
+epoll_wait(3, [], 1024, 156)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 343)            = 0
+epoll_wait(3, [], 1024, 156)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 343)            = 0
+epoll_wait(3, [], 1024, 157)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 342)            = 0
+epoll_wait(3, [], 1024, 157)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 342)            = 0
+epoll_wait(3, [], 1024, 158)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 341)            = 0
+epoll_wait(3, [], 1024, 158)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 341)            = 0
+epoll_wait(3, [], 1024, 159)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 340)            = 0
+epoll_wait(3, [], 1024, 159)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 340)            = 0
+epoll_wait(3, [], 1024, 160)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 339)            = 0
+epoll_wait(3, [], 1024, 160)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 339)            = 0
+epoll_wait(3, [], 1024, 161)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 337)            = 0
+epoll_wait(3, [], 1024, 163)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 336)            = 0
+epoll_wait(3, [], 1024, 163)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 336)            = 0
+epoll_wait(3, [], 1024, 164)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 335)            = 0
+epoll_wait(3, [], 1024, 164)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 334)            = 0
+epoll_wait(3, [], 1024, 166)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 333)            = 0
+epoll_wait(3, [], 1024, 167)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 331)            = 0
+epoll_wait(3, [], 1024, 169)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 330)            = 0
+epoll_wait(3, [], 1024, 170)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 329)            = 0
+epoll_wait(3, [], 1024, 170)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 329)            = 0
+epoll_wait(3, [], 1024, 171)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 328)            = 0
+epoll_wait(3, [], 1024, 171)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 328)            = 0
+epoll_wait(3, [], 1024, 172)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 326)            = 0
+epoll_wait(3, [], 1024, 174)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 325)            = 0
+epoll_wait(3, [], 1024, 175)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 324)            = 0
+epoll_wait(3, [], 1024, 175)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 324)            = 0
+epoll_wait(3, [], 1024, 176)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3, [], 1024, 323)            = 0
+epoll_wait(3, [], 1024, 172)            = 0
+epoll_wait(3, [], 1024, 500)            = 0
+epoll_wait(3,  <unfinished ...>)        = ?
++++ killed by SIGKILL +++
+Killed
