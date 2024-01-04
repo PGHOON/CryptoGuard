@@ -23,7 +23,6 @@ void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 	struct data_t *m = data;
 	if(strncmp(m->command, "f72bab", 6) == 0){
 	fprintf(csv_file, "%s\n", m->message);
-	//printf("%-6d %-6d %-16s %s\n", m->pid, m->uid, m->command, m->message);
 	}
 }
 
@@ -100,7 +99,7 @@ int main()
 			break;
 		}
 		time(&current_time);
-		if (difftime(current_time, time_stamp) >= 5) {
+		if (difftime(current_time, time_stamp) >= 30) {
 			fprintf(csv_file, "TIMESTAMP\n");
 			time_stamp = current_time;
 		}
