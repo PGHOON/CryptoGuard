@@ -21,7 +21,7 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
-	if(strncmp(m->command, "dec6", 4) == 0){
+	if(strncmp(m->command, "c7e1", 4) == 0){
 	fprintf(csv_file, "%s\n", m->message);
 	}
 }
@@ -103,7 +103,7 @@ int main()
 			fprintf(csv_file, "TIMESTAMP\n");
 			time_stamp = current_time;
 		}
-		if (difftime(current_time, start_time) >= 120){
+		if (difftime(current_time, start_time) >= 300){
 			err = 0;
 			break;
 		}
