@@ -22,7 +22,7 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
-	if(strncmp(m->command, "1b29", 4) == 0){
+	if(strncmp(m->command, "04c1", 4) == 0){
 	fprintf(csv_file1, "%s\n", m->message);
 	} /*else if(strncmp(m->command, "[kth", 4) == 0){
 	fprintf(csv_file2, "%s\n", m->message);
