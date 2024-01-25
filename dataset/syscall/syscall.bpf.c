@@ -33,53 +33,6 @@ int trace_##syscall_name(struct kernel_tracepoints *ctx) { \
     return 0; \
 }
 
-/*
-45 Disabled:
-sys_enter_rt_sigprocmask
-sys_enter_rt_sigaction
-sys_enter_ppoll
-sys_enter_read
-sys_enter_write
-sys_enter_getpid
-sys_enter_ioctl
-sys_enter_recvmsg
-sys_enter_sendmsg
-sys_enter_io_cancel
-sys_enter_io_destroy
-sys_enter_io_getevents
-sys_enter_io_pgetevents
-sys_enter_io_setup
-sys_enter_io_submit
-sys_enter_io_uring_enter
-sys_enter_io_uring_register
-sys_enter_io_uring_setup
-sys_enter_kexec_file_load
-sys_enter_kexec_load
-sys_enter_landlock_add_rule
-sys_enter_landlock_create_ruleset
-sys_enter_landlock_restrict_self
-sys_enter_lgetxattr
-sys_enter_llistxattr
-sys_enter_lremovexattr
-sys_enter_lsetxattr
-sys_enter_migrate_pages
-sys_enter_mlock2
-sys_enter_mount_setattr
-sys_enter_move_mount
-sys_enter_name_to_handle_at
-sys_enter_open_by_handle_at
-sys_enter_open_tree
-sys_enter_perf_event_open
-sys_enter_pidfd_getfd
-sys_enter_pidfd_open
-sys_enter_pidfd_send_signal
-sys_enter_pivot_root
-sys_enter_process_madvise
-sys_enter_process_mrelease
-sys_enter_process_vm_readv
-sys_enter_process_vm_writev
-sys_enter_userfaultfd
-*/
 
 SEC("tp/syscalls/sys_enter_llistxattr")
 TRACE_SYSCALL(sys_enter_llistxattr, "sys_enter_llistxattr")
