@@ -1,3 +1,0 @@
-SYSTEM_CALL
-sys_enter_nanosleep
-sys_enter_futex
