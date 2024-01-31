@@ -1,5 +1,4 @@
 SYSTEM_CALL
-TIMESTAMP
 sys_enter_brk
 sys_enter_mmap
 sys_enter_openat
@@ -10889,4 +10888,3 @@ sys_enter_sched_yield
 sys_enter_sched_yield
 sys_enter_sched_yield
 sys_enter_sched_yield
-TIMESTAMP
