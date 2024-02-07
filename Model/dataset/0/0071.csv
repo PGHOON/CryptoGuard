@@ -1,0 +1,10 @@
+SYSTEM_CALL
+sys_enter_recvmsg
+sys_enter_openat
+sys_enter_newfstatat
+sys_enter_read
+sys_enter_ioctl
+sys_enter_read
+sys_enter_close
+sys_enter_gettid
+sys_enter_timerfd_settime

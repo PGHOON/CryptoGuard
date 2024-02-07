@@ -1,0 +1,8 @@
+SYSTEM_CALL
+sys_enter_read
+sys_enter_epoll_ctl
+sys_enter_gettid
+sys_enter_timerfd_settime
+sys_enter_sendto
+sys_enter_epoll_ctl
+sys_enter_gettid

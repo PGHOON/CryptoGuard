@@ -1,0 +1,10 @@
+SYSTEM_CALL
+sys_enter_rt_sigprocmask
+sys_enter_clone3
+sys_enter_rt_sigprocmask
+sys_enter_futex
+sys_enter_futex
+sys_enter_rseq
+sys_enter_set_robust_list
+sys_enter_rt_sigprocmask
+sys_enter_prctl

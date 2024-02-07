@@ -1,0 +1,5 @@
+SYSTEM_CALL
+sys_enter_futex
+sys_enter_futex
+sys_enter_futex
+sys_enter_futex
