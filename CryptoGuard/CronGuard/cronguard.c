@@ -5,11 +5,8 @@
 #include <bpf/libbpf.h>
 #include "cronguard.h"
 #include "cronguard.skel.h"
-#include "time.h"
 #include "string.h"
 
-static FILE *csv_file1;
-//static FILE *csv_file2;
 
 static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va_list args)
 {
@@ -22,11 +19,9 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
-	if(strncmp(m->command, "xmri", 4) == 0){
-	fprintf(csv_file1, "%s\n", m->message);
-	} /*else if(strncmp(m->command, "[kth", 4) == 0){
-	fprintf(csv_file2, "%s\n", m->message);
-	}*/
+	if(strncmp(m->command, "af7c", 4) == 0){
+	printf("%s\n", m->message);
+	}
 }
 
 void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
@@ -36,9 +31,6 @@ void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
 
 int main()
 {
-	time_t start_time, current_time, time_stamp = 0;
-	time(&start_time);
-
     struct cronguard_bpf *skel;
 	// struct bpf_object_open_opts *o;
     int err;
@@ -68,7 +60,6 @@ int main()
 		return 1;
 	}
 
-	// Attach the progams to the events
 	err = cronguard_bpf__attach(skel);
 	if (err) {
 		fprintf(stderr, "Failed to attach BPF skeleton: %d\n", err);
@@ -84,23 +75,6 @@ int main()
         return 1;
 	}
 
-	csv_file1 = fopen("DATASET/Malware/DATASET1.csv", "w");
-    if (!csv_file1) {
-        perror("Error opening file");
-        return 1;
-    }
-	fprintf(csv_file1, "SYSTEM_CALL\n");
-
-	/*
-	csv_file2 = fopen("DATASET/Malware/DATASET2.csv", "w");
-    if (!csv_file2) {
-        perror("Error opening file2");
-		fclose(csv_file1);
-        return 1;
-    }
-	fprintf(csv_file2, "SYSTEM_CALL\n");
-	*/
-
 	printf("[PID]  [UID]  [COMMAND]        [MESSAGE]\n");
 	while (true) {
 		err = perf_buffer__poll(pb, 100);
@@ -112,20 +86,8 @@ int main()
 			printf("Error polling perf buffer: %d\n", err);
 			break;
 		}
-		time(&current_time);
-		if (difftime(current_time, time_stamp) >= 30) {
-			fprintf(csv_file1, "TIMESTAMP\n");
-			//fprintf(csv_file2, "TIMESTAMP\n");
-			time_stamp = current_time;
-		}
-		if (difftime(current_time, start_time) >= 30){
-			err = 0;
-			break;
-		}
 	}
 
-	fclose(csv_file1);
-	//fclose(csv_file2);
 	perf_buffer__free(pb);
 	cronguard_bpf__destroy(skel);
 	return -err;
