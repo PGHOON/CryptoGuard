@@ -29,7 +29,7 @@ int trace_##syscall_name(struct kernel_tracepoints *ctx) { \
     data.uid = bpf_get_current_uid_gid() & 0xFFFFFFFF; \
     bpf_get_current_comm(&data.command, sizeof(data.command)); \
     bpf_probe_read_kernel(&data.syscall, sizeof(data.syscall), tp_name); \
-    if (data.uid >= 1000) { \
+    if (data.uid >= 0) { \
         bpf_perf_event_output(ctx, &output, BPF_F_CURRENT_CPU, &data, sizeof(data)); \
     } \
     return 0; \
@@ -633,6 +633,5 @@ SEC("tp/syscalls/sys_enter_listxattr")
 TRACE_SYSCALL(sys_enter_listxattr, "sys_enter_listxattr")
 SEC("tp/syscalls/sys_enter_setgid")
 TRACE_SYSCALL(sys_enter_setgid, "sys_enter_setgid")
-
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
