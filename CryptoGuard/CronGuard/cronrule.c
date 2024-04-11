@@ -17,11 +17,11 @@ int isWhitelisted(const char *path, const char *whitelist[], int whitelist_size)
 int main() {
     FILE *fp_in, *fp_out;
     char line[MAX_LINE_LENGTH];
-    char delete_command[MAX_PATH_LENGTH + 30];
+    char delete_command[MAX_PATH_LENGTH + 30]; 
 
-    fp_in = fopen("test.rules", "r");
+    fp_in = popen("crontab -l", "r");
     if (fp_in == NULL) {
-        perror("Error opening test.rules");
+        perror("Error opening current crontab");
         return EXIT_FAILURE;
     }
 
@@ -35,7 +35,7 @@ int main() {
     const char **whitelist = malloc((whitelist_size + 1) * sizeof(char *));
     if (whitelist == NULL) {
         perror("Error allocating memory for whitelist array");
-        fclose(fp_in);
+        pclose(fp_in);
         return EXIT_FAILURE;
     }
 
@@ -44,15 +44,15 @@ int main() {
             line[strcspn(line, "\n")] = '\0';
             whitelist[i] = strdup(line);
         } else {
-            perror("Error reading test.rules");
-            fclose(fp_in);
+            perror("Error reading current crontab");
+            pclose(fp_in);
             free(whitelist);
             return EXIT_FAILURE;
         }
     }
-    whitelist[whitelist_size] = NULL;
+    whitelist[whitelist_size] = NULL; 
 
-    fclose(fp_in);
+    pclose(fp_in);
 
     fp_out = fopen("modified_cron", "w");
     if (fp_out == NULL) {
@@ -81,5 +81,5 @@ int main() {
 
     remove("modified_cron");
 
-    return 0;
+    return EXIT_SUCCESS;
 }
