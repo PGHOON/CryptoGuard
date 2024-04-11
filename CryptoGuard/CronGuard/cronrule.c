@@ -19,6 +19,8 @@ int main() {
     char line[MAX_LINE_LENGTH];
     char delete_command[MAX_PATH_LENGTH + 30]; 
 
+    printf("Reading crontab...\n");
+
     // Open crontab file for reading
     fp_in = fopen("/etc/crontab", "r");
     if (fp_in == NULL) {
@@ -55,6 +57,9 @@ int main() {
 
     fclose(fp_in);
 
+    printf("Checking and deleting unwanted cron jobs...\n");
+
+    // Open a temporary file for writing modified cron jobs
     fp_out = fopen("modified_cron", "w");
     if (fp_out == NULL) {
         perror("Error creating modified_cron file");
@@ -68,6 +73,7 @@ int main() {
             fputs("\n", fp_out);
         } else {
             sprintf(delete_command, "crontab -l | sed '/%s/d' | crontab", whitelist[i]);
+            printf("Executing command: %s\n", delete_command);
             system(delete_command);
             printf("Crontab containing '%s' has been removed!\n", whitelist[i]);
         }
@@ -81,6 +87,8 @@ int main() {
     free(whitelist);
 
     remove("modified_cron");
+
+    printf("Finished!\n");
 
     return EXIT_SUCCESS;
 }
