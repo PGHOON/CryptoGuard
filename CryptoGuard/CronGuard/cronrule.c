@@ -19,9 +19,10 @@ int main() {
     char line[MAX_LINE_LENGTH];
     char delete_command[MAX_PATH_LENGTH + 30]; 
 
-    fp_in = popen("crontab -l", "r");
+    // Open crontab file for reading
+    fp_in = fopen("/etc/crontab", "r");
     if (fp_in == NULL) {
-        perror("Error opening current crontab");
+        perror("Error opening crontab file");
         return EXIT_FAILURE;
     }
 
@@ -35,7 +36,7 @@ int main() {
     const char **whitelist = malloc((whitelist_size + 1) * sizeof(char *));
     if (whitelist == NULL) {
         perror("Error allocating memory for whitelist array");
-        pclose(fp_in);
+        fclose(fp_in);
         return EXIT_FAILURE;
     }
 
@@ -44,15 +45,15 @@ int main() {
             line[strcspn(line, "\n")] = '\0';
             whitelist[i] = strdup(line);
         } else {
-            perror("Error reading current crontab");
-            pclose(fp_in);
+            perror("Error reading crontab file");
+            fclose(fp_in);
             free(whitelist);
             return EXIT_FAILURE;
         }
     }
     whitelist[whitelist_size] = NULL; 
 
-    pclose(fp_in);
+    fclose(fp_in);
 
     fp_out = fopen("modified_cron", "w");
     if (fp_out == NULL) {
