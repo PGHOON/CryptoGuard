@@ -1,2 +1,1 @@
-# CryotoGuard: A Fast and Precise Detection System for Host-Based Cryptojackers
-
+# CryptoGuard: Hybrid Detection and Prevention using Deep Learning and eBPF for Cryptojackers
