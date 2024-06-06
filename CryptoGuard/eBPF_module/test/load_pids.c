@@ -51,20 +51,30 @@ void load_pids_into_map(int map_fd, const char* csv_file_path) {
     fclose(file);
 }
 
+void pin_bpf_map(int map_fd, const char *pin_path) {
+    if (bpf_obj_pin(map_fd, pin_path) != 0) {
+        fprintf(stderr, "Error pinning BPF map: %s\n", strerror(errno));
+        close(map_fd);
+        exit(EXIT_FAILURE);
+    }
+}
+
 int main(int argc, char **argv) {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: %s <csv_file_path>\n", argv[0]);
+    if (argc != 3) {
+        fprintf(stderr, "Usage: %s <csv_file_path> <pin_path>\n", argv[0]);
         return EXIT_FAILURE;
     }
 
     const char *csv_file_path = argv[1];
+    const char *pin_path = argv[2];
 
     int map_fd = create_bpf_map();
     load_pids_into_map(map_fd, csv_file_path);
 
-    printf("PIDs from %s have been loaded into the BPF map.\n", csv_file_path);
+    pin_bpf_map(map_fd, pin_path);
+
+    printf("PIDs from %s have been loaded into the BPF map and pinned at %s.\n", csv_file_path, pin_path);
     close(map_fd);
 
     return EXIT_SUCCESS;
 }
-
