@@ -2,7 +2,7 @@
 
 gcc -o load_map load_pids.c -lbpf
 
-sudo ./load_pids pids.csv /sys/fs/bpf/pids_map
+sudo ./load_map pids.csv /sys/fs/bpf/pids_map
 
 sudo bpftool map show
 
