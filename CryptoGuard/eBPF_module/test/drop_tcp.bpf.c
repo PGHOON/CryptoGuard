@@ -1,7 +1,12 @@
+#define __VMLINUX_H__
+
+#include "vmlinux.h"
 #include <linux/bpf.h>
 #include <linux/tcp.h>
 #include <linux/in.h>
 #include <bpf/bpf_helpers.h>
+
+#undef __VMLINUX_H__
 
 struct {
     __uint(type, BPF_MAP_TYPE_HASH);
@@ -11,12 +16,12 @@ struct {
 } pids_map SEC(".maps");
 
 SEC("xdp")
-int xdp_prog(struct xdp_md *ctx) {
-    __u32 *pid_entry;
+int tcp_drop(struct xdp_md *ctx) {
+    __u32 *target;
 
-    __u32 pid = bpf_get_current_pid_tgid() >> 32;
-    pid_entry = bpf_map_lookup_elem(&pids_map, &pid);
-    if (pid_entry) {
+    __u32 pid = 1234;
+    target = bpf_map_lookup_elem(&pids_map, &pid);
+    if (target) {
         return XDP_DROP;
     }
 
@@ -24,3 +29,6 @@ int xdp_prog(struct xdp_md *ctx) {
 }
 
 char _license[] SEC("license") = "GPL";
+
+//clang -target bpf -D __BPF_TRACING__ -D __TARGET_ARCH_x86 -Wall -O2 -g -o drop_tcp.o -c drop_tcp.bpf.c
+//bpftool prog load drop_tcp.o /sys/fs/bpf/drop_tcp
