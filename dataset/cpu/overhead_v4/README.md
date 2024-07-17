@@ -25,6 +25,8 @@ docker run --rm --network=host redis:latest redis-benchmark -h localhost -p 6379
 
 # Mysql
 sysbench --db-driver=mysql --mysql-user=root --mysql_password=root --mysql-db=testdb --tables=10 --table-size=10000 oltp_read_write prepare
+
 sysbench --db-driver=mysql --mysql-user=root --mysql_password=root --mysql-db=testdb --tables=10 --table-size=10000 --threads=10 --events=1000 oltp_read_write run
+
 sysbench --db-driver=mysql --mysql-user=root --mysql_password=root --mysql-db=testdb --tables=10 --table-size=10000 oltp_read_write cleanup
 
