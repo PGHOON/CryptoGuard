@@ -83,7 +83,7 @@ int main()
         return 1;
 	}
 
-	csv_file1 = fopen("DATASET/Malware/DATASET1.csv", "w");
+	csv_file1 = fopen("DATASET/Malware/1.csv", "w");
     if (!csv_file1) {
         perror("Error opening file");
         return 1;
@@ -112,7 +112,7 @@ int main()
 			break;
 		}
 		time(&current_time);
-		if (difftime(current_time, time_stamp) >= 30) {
+		if (difftime(current_time, time_stamp) >= 10) {
 			fprintf(csv_file1, "TIMESTAMP\n");
 			//fprintf(csv_file2, "TIMESTAMP\n");
 			time_stamp = current_time;
