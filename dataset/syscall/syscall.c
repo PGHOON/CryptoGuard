@@ -11,6 +11,8 @@
 static FILE *csv_file1;
 //static FILE *csv_file2;
 
+static char filter_command[5];
+
 static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va_list args)
 {
 	if (level >= LIBBPF_DEBUG)
@@ -22,8 +24,8 @@ static int libbpf_print_fn(enum libbpf_print_level level, const char *format, va
 void handle_event(void *ctx, int cpu, void *data, unsigned int data_sz)
 {
 	struct data_t *m = data;
-	if(strncmp(m->command, "1b29", 4) == 0){
-	fprintf(csv_file1, "%s\n", m->message);
+	if(strncmp(m->command, filter_command, 4) == 0){
+		fprintf(csv_file1, "%s\n", m->message);
 	} /*else if(strncmp(m->command, "[kth", 4) == 0){
 	fprintf(csv_file2, "%s\n", m->message);
 	}*/
@@ -34,14 +36,22 @@ void lost_event(void *ctx, int cpu, long long unsigned int data_sz)
 	printf("lost event\n");
 }
 
-int main()
+int main(int argc, char **argv)
 {
+	if (argc != 2) {
+		fprintf(stderr, "Usage: %s <filter_command>\n", argv[0]);
+		return 1;
+	}
+
+	strncpy(filter_command, argv[1], 4);
+	filter_command[4] = '\0'; // Ensure null termination
+
 	time_t start_time, current_time, time_stamp = 0;
 	time(&start_time);
 
-    struct syscall_bpf *skel;
+	struct syscall_bpf *skel;
 	// struct bpf_object_open_opts *o;
-    int err;
+	int err;
 	struct perf_buffer *pb = NULL;
 
 	libbpf_set_print(libbpf_print_fn);
@@ -67,7 +77,7 @@ int main()
 		return 1;
 	}
 
-	// Attach the progams to the events
+	// Attach the programs to the events
 	err = syscall_bpf__attach(skel);
 	if (err) {
 		fprintf(stderr, "Failed to attach BPF skeleton: %d\n", err);
@@ -83,7 +93,7 @@ int main()
         return 1;
 	}
 
-	csv_file1 = fopen("DATASET/Malware/1.csv", "w");
+	csv_file1 = fopen("DATASET/Malware/test.csv", "w");
     if (!csv_file1) {
         perror("Error opening file");
         return 1;
@@ -100,7 +110,7 @@ int main()
 	fprintf(csv_file2, "SYSTEM_CALL\n");
 	*/
 
-	printf("[PID]  [UID]  [COMMAND]        [MESSAGE]\n");
+	printf("collecting system calls...\n");
 	while (true) {
 		err = perf_buffer__poll(pb, 100);
 		if (err == -EINTR) {
