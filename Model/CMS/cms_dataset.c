@@ -64,7 +64,6 @@ void printCMS(CountMinSketch *cms) {
 }
 
 void saveCMSToCSV(CountMinSketch *cms, const char *filename) {
-    // Ensure the directory exists
     char directory[256];
     strcpy(directory, filename);
     char *last_slash = strrchr(directory, '/');
@@ -121,7 +120,6 @@ void generateRandomFiles(char *files[], int num_files, char *all_files[], int to
     int selected[total_files];
     memset(selected, 0, sizeof(selected));
 
-    srand(time(NULL));
     for (int i = 0; i < num_files; i++) {
         int index;
         do {
@@ -160,6 +158,8 @@ void collectAllFiles(const char *directory, char *all_files[], int *total_files)
 }
 
 int main() {
+    srand(time(NULL));
+
     char *all_files[TOTAL_FILES];
     int total_files = 0;
     collectAllFiles("../dataset/0", all_files, &total_files);
