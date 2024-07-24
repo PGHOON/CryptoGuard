@@ -1,0 +1,32 @@
+#cloud-config
+users:
+  - name: ubuntu
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC98Uh41qeF69yejWr938vGuH/45s0avQrb/U6xVsCw66vZXWxW2f7W3bbMsUtKhGej8bOcaDpon3aeLizC4thHOgBAkslvCk8JF+jLAfomwqkBwTC88P5VAVlr0iSsRGaLn/d/Iv0dIMazpbOMExpwh3BFqzeKY49vv0w6NK7qSMojvjGGA5aDXFkAUVSJobVNjTx14ZuQ6Xk1w8IxSLLnWdQj7TSIcbCIz4ISavXQ2VSADzZiPrrWaekeUbloezwOR7thVwcJQHa1+M4BP4jG+97WKTDbcu75BzRGyoV9GeoA9dMRZNDpEuWIpe2mmN5n+r82AZ+VZW4vwWTWB9qVEl17wACIhRWknRxLCxVR+YpcbBiYm2YUhbNccCq+F4BfnDnDxNTUHDnaJ2Vz2DoEgTi0nq9fDgWxi7sxEgBoI3cptrNVgiPAeDeFd/fUzHWqR7+gjSDB+CGtI30VaHy29+JpgEiLm6efUbVxAV+am1fa5GLYzpWIZeYBtYFxm3Y9HpVPMSNVGXsDGskfA80kaZhvB/LZ3jeXAePQ57V9y8/8/wUcuS7mBRMBtOhwOJjPAYZz+9Z60UZscfDl/6hBDMO0YRl7+MfEDMNYMBxsyXScueOoF9IdOuJFhK4cFwTciDwG2ruwOl/2qGu46nFDEd9oMLLmtddbx6jYmkmPkw== cnslab@cryptoguard2
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+
+package_update: true
+packages:
+  - qemu-guest-agent
+  - apache2
+  - mysql-server
+  - tomcat9
+  - redis-server
+  - apache2-utils  # for ab
+  - sysbench
+  - nfs-common
+
+runcmd:
+  - [ sudo, systemctl, enable, apache2 ]
+  - [ sudo, systemctl, start, apache2 ]
+  - [ sudo, systemctl, enable, mysql ]
+  - [ sudo, systemctl, start, mysql ]
+  - [ sudo, systemctl, enable, tomcat9 ]
+  - [ sudo, systemctl, start, tomcat9 ]
+  - [ sudo, systemctl, enable, redis-server ]
+  - [ sudo, systemctl, start, redis-server ]
+  - [ sudo, systemctl, start, qemu-guest-agent ]
+  - [ sudo, mkdir, -p, /mnt/binaries ]
+  - [ sudo, mount, -t, nfs, 192.168.122.1:/home/cnslab/vm/binaries, /mnt/binaries ]
