@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_IMAGE="/var/lib/libvirt/images/jammy-server-cloudimg-amd64.img"
+BASE_IMAGE="/var/lib/libvirt/images/base-vm.qcow2"
 VM_DIR="/var/lib/libvirt/images"
 CLOUD_INIT_DIR="/var/lib/libvirt/cloud-init"
 RAM=2048
@@ -8,9 +8,9 @@ VCPUS=2
 OS_VARIANT="ubuntu22.04"
 NETWORK="default"
 
-NET_CONFIG_TEMPLATE="net-config-template.yaml"
 META_DATA_TEMPLATE="meta-data-template.yaml"
 USER_DATA_TEMPLATE="user-data-template.yaml"
+NET_CONFIG_TEMPLATE="net-config-template.yaml"
 
 mkdir -p $CLOUD_INIT_DIR
 
@@ -34,9 +34,9 @@ read_template() {
 }
 
 # 템플릿 파일 내용 읽기
-NET_CONFIG_TEMPLATE_CONTENT=$(read_template $NET_CONFIG_TEMPLATE)
 META_DATA_TEMPLATE_CONTENT=$(read_template $META_DATA_TEMPLATE)
 USER_DATA_TEMPLATE_CONTENT=$(read_template $USER_DATA_TEMPLATE)
+NET_CONFIG_TEMPLATE_CONTENT=$(read_template $NET_CONFIG_TEMPLATE)
 
 # VM_COUNT만큼 가상 머신 생성
 for (( i=1; i<=VM_COUNT; i++ ))
@@ -51,8 +51,8 @@ do
 
   # 템플릿에서 실제 파일 생성
   NET_CONFIG=$(echo "$NET_CONFIG_TEMPLATE_CONTENT" | sed "s/{{IP_ADDRESS}}/${IP_ADDRESS}/g")
-  META_DATA=$(echo "$META_DATA_TEMPLATE_CONTENT" | sed "s/{{VM_NAME}}/${VM_NAME}/g")
-  USER_DATA=$(echo "$USER_DATA_TEMPLATE_CONTENT" | sed "s/{{VM_NAME}}/${VM_NAME}/g")
+  META_DATA=$(echo "$META_DATA_TEMPLATE_CONTENT" | sed "s/{{VM_NAME}}/${VM_NAME}/g" | sed "s/{{IP_ADDRESS}}/${IP_ADDRESS}/g")
+  USER_DATA=$(echo "$USER_DATA_TEMPLATE_CONTENT" | sed "s/{{VM_NAME}}/${VM_NAME}/g" | sed "s/{{IP_ADDRESS}}/${IP_ADDRESS}/g")
 
   # 실제 파일에 내용 쓰기
   NET_CONFIG_FILE="$CLOUD_INIT_DIR/net-config-$VM_NAME.yaml"
@@ -64,10 +64,9 @@ do
   echo "$USER_DATA" > $USER_DATA_FILE
 
   # cloud-init ISO 생성
-  sudo cloud-localds -N $NET_CONFIG_FILE $CLOUD_INIT_ISO $META_DAT_FILEA $USER_DATA_FILE
-  #sudo genisoimage -output $CLOUD_INIT_ISO -volid cidata -joliet -rock $META_DATA_FILE $USER_DATA_FILE $NET_CONFIG_FILE
+  sudo cloud-localds -v --network-config=$NET_CONFIG_FILE $CLOUD_INIT_ISO $USER_DATA_FILE $META_DATA_FILE
 
-  virt-install \
+  sudo virt-install \
     --name ${VM_NAME} \
     --ram $RAM \
     --vcpus $VCPUS \
@@ -75,7 +74,7 @@ do
     --disk path=$VM_IMAGE,format=qcow2 \
     --disk path=$CLOUD_INIT_ISO,device=cdrom \
     --import \
-    --network network=$NETWORK \
+    --network network=default \
     --graphics none \
     --console pty,target_type=serial \
     --noautoconsole

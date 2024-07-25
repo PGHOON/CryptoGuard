@@ -1,3 +1,10 @@
 instance-id: {{VM_NAME}}
 local-hostname: {{VM_NAME}}
 
+network-interfaces: |
+  iface enp1s0 inet static
+  address {{IP_ADDRESS}}
+  network 192.168.122.0
+  netmask 255.255.255.0
+  broadcast 192.168.122.255
+  gateway 192.168.122.254
