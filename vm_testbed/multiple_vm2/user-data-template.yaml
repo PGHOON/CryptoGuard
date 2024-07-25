@@ -1,0 +1,64 @@
+#cloud-config
+
+users:
+  - name: cnslab
+    passwd: $6$rounds=4096$dsRGKLsB7Ji5xM/x$/QB1QWJhJITvnDHVi99yNnVV9.LtRiHrUdALIxfG92FYyDfRzNo0XkvH9nhsfV7gbrusSJGGrlgjCMJMupHtj/
+    groups: [ sudo ]
+    lock_passwd: false
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC98Uh41qeF69yejWr938vGuH/45s0avQrb/U6xVsCw66vZXWxW2f7W3bbMsUtKhGej8bOcaDpon3aeLizC4thHOgBAkslvCk8JF+jLAfomwqkBwTC88P5VAVlr0iSsRGaLn/d/Iv0dIMazpbOMExpwh3BFqzeKY49vv0w6NK7qSMojvjGGA5aDXFkAUVSJobVNjTx14ZuQ6Xk1w8IxSLLnWdQj7TSIcbCIz4ISavXQ2VSADzZiPrrWaekeUbloezwOR7thVwcJQHa1+M4BP4jG+97WKTDbcu75BzRGyoV9GeoA9dMRZNDpEuWIpe2mmN5n+r82AZ+VZW4vwWTWB9qVEl17wACIhRWknRxLCxVR+YpcbBiYm2YUhbNccCq+F4BfnDnDxNTUHDnaJ2Vz2DoEgTi0nq9fDgWxi7sxEgBoI3cptrNVgiPAeDeFd/fUzHWqR7+gjSDB+CGtI30VaHy29+JpgEiLm6efUbVxAV+am1fa5GLYzpWIZeYBtYFxm3Y9HpVPMSNVGXsDGskfA80kaZhvB/LZ3jeXAePQ57V9y8/8/wUcuS7mBRMBtOhwOJjPAYZz+9Z60UZscfDl/6hBDMO0YRl7+MfEDMNYMBxsyXScueOoF9IdOuJFhK4cFwTciDwG2ruwOl/2qGu46nFDEd9oMLLmtddbx6jYmkmPkw== cnslab@cryptoguard2
+
+network: {config: disabled}
+
+# Hostname management
+preserve_hostname: false
+hostname: {{VM_NAME}}
+fqdn: {{VM_NAME}}
+
+output:
+  all: ">> /var/log/{{VM_NAME}}.log"
+
+package_update: true
+packages:
+  - qemu-guest-agent
+  - apache2
+  - mysql-server
+  - tomcat9
+  - redis-server
+  - apache2-utils  # for ab
+  - sysbench
+  - nfs-common
+
+runcmd:
+  - systemctl restart sshd
+  - systemctl enable qemu-guest-agent
+  - systemctl start qemu-guest-agent
+  - systemctl enable apache2
+  - systemctl start apache2
+  - systemctl enable mysql
+  - systemctl start mysql
+  - systemctl enable tomcat9
+  - systemctl start tomcat9
+  - systemctl enable redis-server
+  - systemctl start redis-server
+  - mkdir -p /root/binaries
+  - mount -t nfs 192.168.122.1:/home/cnslab/CryptoGuard/vm_testbed/binaries /root/binaries
+  - apt-get update
+  - apt-get install -y pkg-config gcc clang llvm libelf-dev make git wget lsb-release software-properties-common gnupg
+  - wget https://apt.llvm.org/llvm.sh
+  - chmod +x llvm.sh
+  - ./llvm.sh
+  - apt-get install -y clang-18 llvm-18 libclang-18-dev
+  - bash -c "echo 'export CC=clang-18' >> /etc/profile"
+  - bash -c "echo 'export LLVM=llvm-18' >> /etc/profile"
+  - bash -c "echo 'export CLANG=clang-18' >> /etc/profile"
+  - git clone https://github.com/PGHOON/eBPF_syscall.git /root/eBPF_syscall
+  - bash -c "cd /root/eBPF_syscall/libbpf/src && make install"
+  - git clone --recurse-submodules https://github.com/libbpf/bpftool.git /root/bpftool
+  - bash -c "cd /root/bpftool/src && make install"
+  - bash -c "cd /root/eBPF_syscall/monitor2 && make"
+  - mkdir -p /root/eBPF_syscall/monitor/dataset
+  - sudo mount -t nfs 192.168.122.1:/home/cnslab/CryptoGuard/vm_testbed/multiple_vms/{{VM_NAME}}_dataset /root/eBPF_syscall/monitor/dataset
+
