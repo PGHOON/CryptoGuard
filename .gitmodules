@@ -1,0 +1,3 @@
+[submodule "cryptojacker/tau-research"]
+	path = cryptojacker/tau-research
+	url = https://github.com/vmware-samples/tau-research.git
