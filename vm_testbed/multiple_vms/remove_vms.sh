@@ -1,12 +1,14 @@
 #!/bin/bash
 
-NUM_VMS=50
+starti=$1
+endi=$2
 VM_DIR="/var/lib/libvirt/images"
 CLOUD_INIT_DIR="/var/lib/libvirt/cloud-init"
 
 # 기존 VM 정의 및 디스크 이미지 삭제 함수
 clean_existing_vms_and_disks() {
-  for i in $(seq 1 $NUM_VMS); do
+  for ((i=$starti; i<=$endi; i++))
+  do
     VM_NAME="vm${i}"
     VM_IMAGE="${VM_DIR}/${VM_NAME}.qcow2"
     SEED_IMAGE="${CLOUD_INIT_DIR}/${VM_NAME}-seed.img"

@@ -38,5 +38,7 @@ runcmd:
   - systemctl start tomcat9
   - systemctl enable redis-server
   - systemctl start redis-server
-  - mount -t nfs 192.168.122.1:/home/cnslab/CryptoGuard/vm_testbed/binaries /root/binaries
+  #- git clone https://github.com/PGHOON/eBPF_syscall.git /root/eBPF_syscall
+  #- mkdir -p /root/binaries
+  #- mount -t nfs 192.168.122.1:/home/cnslab/CryptoGuard/vm_testbed/binaries /root/binaries
 

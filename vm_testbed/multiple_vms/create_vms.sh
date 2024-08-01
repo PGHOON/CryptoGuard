@@ -14,7 +14,11 @@ NET_CONFIG_TEMPLATE="net-config-template.yaml"
 
 mkdir -p $CLOUD_INIT_DIR
 
-VM_COUNT=$1
+starti=$1
+endi=$2
+VM_COUNT=$((endi - starti))
+
+echo $VM_COUNT
 
 # 유효한 가상 머신 개수인지 확인
 if [[ -z "$VM_COUNT" || "$VM_COUNT" -le 0 ]]; then
@@ -39,15 +43,17 @@ USER_DATA_TEMPLATE_CONTENT=$(read_template $USER_DATA_TEMPLATE)
 NET_CONFIG_TEMPLATE_CONTENT=$(read_template $NET_CONFIG_TEMPLATE)
 
 # VM_COUNT만큼 가상 머신 생성
-for (( i=1; i<=VM_COUNT; i++ ))
+for (( i=$starti; i<=$endi; i++ ))
 do
   VM_NAME="vm$i"
   VM_IMAGE="$VM_DIR/${VM_NAME}.qcow2"
   CLOUD_INIT_ISO="$CLOUD_INIT_DIR/${VM_NAME}-cloud-init.iso"
-  IP_ADDRESS="192.168.122.10${i}"
+  IP_SUFFIX=$((100+$i))
+  IP_ADDRESS="192.168.122.$IP_SUFFIX"
+
+  echo $IP_ADDRESS
 
   sudo qemu-img create -f qcow2 -b ${BASE_IMAGE} -F qcow2 ${VM_IMAGE} 10G
-  mkdir -p vm_datasets/${VM_NAME}_dataset
 
   # 템플릿에서 실제 파일 생성
   NET_CONFIG=$(echo "$NET_CONFIG_TEMPLATE_CONTENT" | sed "s/{{IP_ADDRESS}}/${IP_ADDRESS}/g")

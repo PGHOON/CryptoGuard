@@ -6,23 +6,21 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-count=$1
+starti=$1
+endi=$2
+target_dir=$3
 username="root"
 
 # 각 IP 주소에 대해 SSH 접속하여 명령 실행
-for ((i=1; i<=count; i++))
+for ((i=$starti; i<=$endi; i++))
 do
-    ip="192.168.122.10$i"
+    IP_SUFFIX=$((100 + i))
+    ip="192.168.122.${IP_SUFFIX}"
     echo "Connecting to $ip..."
 
     # SSH 접속 및 명령 실행
-    ssh -tt -o StrictHostKeyChecking=no "$username@$ip" <<EOF
-cd ~/eBPF_syscall/monitor2
-sudo ./monitor2 60 272 3 > ~/cryptoguard.log 2>&1 &
-disown
-exit
-EOF
-
+    mkdir -p $target_dir/vm${i}_dataset/
+    scp -r -o StrictHostKeyChecking=no root@${ip}:/root/eBPF_syscall/monitor2/dataset/* $target_dir/vm${i}_dataset/
 done
 
 echo "Commands have been executed."
