@@ -1,1 +1,1 @@
-# CryptoGuard: Hybrid Detection and Prevention using Deep Learning and eBPF for Cryptojackers
+# CCryptoGuard: Lightweight Hybrid Detection and Prevention of Host-based Cryptojackers
