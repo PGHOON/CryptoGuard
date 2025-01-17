@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ebpf-syscall
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app: ebpf-syscall
+  template:
+    metadata:
+      labels:
+        app: ebpf-syscall
+    spec:
+      hostPID: true # 호스트의 PID 네임스페이스 사용
+      containers:
+      - name: ebpf-syscall
+        image: thrice/ebpf:latest
+        securityContext:
+          privileged: true # privileged 모드 설정
+        volumeMounts:
+        - name: debugfs
+          mountPath: /sys/kernel/debug # 디버그 파일 시스템 마운트
+          readOnly: false
+        command: ["/bin/bash"]
+        args: ["-c", "sleep infinity"] # 컨테이너를 유지하기 위한 명령
+      volumes:
+      - name: debugfs
+        hostPath:
+          path: /sys/kernel/debug
+          type: Directory
