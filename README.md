@@ -1,1 +1,1 @@
-# CryptoGuard: Lightweight Hybrid Detection and Prevention of Host-based Cryptojackers
+# CryptoGuard: Lightweight Hybrid Detection and Response to Host-based Cryptojackers in Linux Cloud Environments
