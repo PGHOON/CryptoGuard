@@ -1,6 +1,6 @@
 # CryptoGuard: Lightweight Hybrid Detection and Response to Host-based Cryptojackers in Linux Cloud Environments
 
-<code style="color : color">/*TO BE UPDATED by May 25*/</code>
+<code style="color : color">/*Pending update for easier deployment in a cloud env*/</code>
 
 ## How to Use
 ### - Installation
