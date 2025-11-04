@@ -1,0 +1,86 @@
+---
+- name: Setup eBPF development environment
+  hosts: all
+  become: yes
+  vars:
+    home_dir: "/home/{{ ansible_user }}"
+
+  tasks:
+    - name: Update system packages
+      apt:
+        update_cache: yes
+        upgrade: no
+
+    - name: Install required packages
+      apt:
+        name:
+          - pkg-config
+          - gcc
+          - clang
+          - llvm
+          - libelf-dev
+          - make
+          - git
+          - wget
+          - lsb-release
+          - software-properties-common
+          - gnupg
+        state: present
+
+    - name: Add LLVM apt repository
+      apt_repository:
+        repo: "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-18 main"
+        state: present
+
+    - name: Add LLVM GPG key
+      apt_key:
+        url: https://apt.llvm.org/llvm-snapshot.gpg.key
+        state: present
+
+    - name: Update apt cache after adding LLVM repo
+      apt:
+        update_cache: yes
+
+    - name: Install clang-18 and llvm-18
+      apt:
+        name:
+          - clang-18
+          - llvm-18
+          - libclang-18-dev
+        state: present
+
+    - name: Set environment variables for LLVM/Clang
+      lineinfile:
+        path: /etc/environment
+        line: "{{ item }}"
+        create: yes
+      loop:
+        - 'CC=clang-18'
+        - 'LLVM=llvm-18'
+        - 'CLANG=clang-18'
+
+    - name: Clone libbpf repository
+      git:
+        repo: https://github.com/libbpf/libbpf.git
+        dest: "{{ home_dir }}/libbpf"
+        version: master
+        force: yes
+
+    - name: Build and install libbpf
+      make:
+        chdir: "{{ home_dir }}/libbpf/src"
+        target: install
+
+    - name: Clone bpftool repository (with submodules)
+      git:
+        repo: https://github.com/libbpf/bpftool.git
+        dest: "{{ home_dir }}/bpftool"
+        recursive: yes
+        update: yes
+        force: yes
+
+    - name: Build and install bpftool
+      make:
+        chdir: "{{ home_dir }}/bpftool/src"
+        target: install
+
